@@ -52,13 +52,13 @@ Module Module2
 
     Public Sub LocalUpdate()
         If toddaypic = "http://api.map.baidu.com/images/weather/day/qing.png" Then
-            frmMain.BackgroundImage = FloatingWindow.My.Resources.晴
+            frmMain.BackgroundImage = My.Resources.晴
         End If
         If toddaypic = "http://api.map.baidu.com/images/weather/day/yin.png" Or toddaypic = "http://api.map.baidu.com/images/weather/day/duoyun.png" Then
-            frmMain.BackgroundImage = FloatingWindow.My.Resources.阴
+            frmMain.BackgroundImage = My.Resources.阴
         End If
         If toddaypic = "http://api.map.baidu.com/images/weather/day/yinyu.png" Then
-            frmMain.BackgroundImage = FloatingWindow.My.Resources.阴雨
+            frmMain.BackgroundImage = My.Resources.阴雨
         End If
         If toddaypic = "http://api.map.baidu.com/images/weather/day/xiaoyu.png" Or toddaypic = "http://api.map.baidu.com/images/weather/day/zhenyu.png" Then
             frmMain.BackgroundImage = FloatingWindow.My.Resources.小雨

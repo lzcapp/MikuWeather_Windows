@@ -1,6 +1,5 @@
 ﻿Imports System.Xml
 Imports System.IO
-Imports Microsoft.Win32
 Imports System.Net
 Imports System.Text
 Imports Newtonsoft.Json.Linq
@@ -226,6 +225,6 @@ Public Class frmMain
         frmSetting.Show()
         'frmSetting.LinkLabel13.Show()
         frmSetting.PictureBox3.Show()
-        Me.Close()
+        Close()
     End Sub
 End Class

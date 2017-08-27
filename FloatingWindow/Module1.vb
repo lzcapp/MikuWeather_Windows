@@ -25,15 +25,15 @@ Module Module1
 
     Public Sub IPLocation()
         Dim strLocNet As String
-        Try
-            'Using webcIP As New WebClient
-            'webcIP.Encoding = Encoding.Default
-            'ip = webcIP.DownloadString("http://www.whatsmyip.us/showipsimple.php")
-            'ip = ip.Substring(16)
-            'ip = ip.Remove(ip.Length - 3)
-            'End Using
+        'Try
+        'Using webcIP As New WebClient
+        'webcIP.Encoding = Encoding.Default
+        'ip = webcIP.DownloadString("http://www.whatsmyip.us/showipsimple.php")
+        'ip = ip.Substring(16)
+        'ip = ip.Remove(ip.Length - 3)
+        'End Using
 
-            Using webcIPloc As New WebClient
+        Using webcIPloc As New WebClient
                 webcIPloc.Encoding = Encoding.Default
                 strLocNet = webcIPloc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75")
             End Using
@@ -51,18 +51,18 @@ Module Module1
                 frmMsg.Show()
             End If
 
-        Catch ex As Exception
-            StrMsgTitle = "Miku似乎遇到麻烦了！"
-            StrMsg = "Mod1异常：" + ex.Message
-            frmMsg.Show()
-        End Try
+        'Catch ex As Exception
+        'StrMsgTitle = "Miku似乎遇到麻烦了！"
+        'StrMsg = "Mod1异常：" + ex.Message
+        'frmMsg.Show()
+        'End Try
     End Sub
 
     Public Sub GetWeatherData()
         Dim strWeatherNet As String
-        Try
-            'If 
-            Using weatherWebc As New WebClient
+        'Try
+        'If 
+        Using weatherWebc As New WebClient
                 weatherWebc.Encoding = Encoding.UTF8
                 strWeatherNet = weatherWebc.DownloadString("http://api.map.baidu.com/telematics/v3/weather?location=" + strSetLoc + "&output=json&ak=edUWu66ddGavrmj9a6vcsa75")
             End Using
@@ -87,20 +87,20 @@ Module Module1
                 tomweather = joWeather.SelectToken("results[0].weather_data[1].weather").ToString
                 tomtemp = joWeather.SelectToken("results[0].weather_data[1].temperature").ToString
 
-                strCloDs = joWeather.SelectToken("results[0].index[0].zs").ToString
-                strClo = joWeather.SelectToken("results[0].index[0].des").ToString
-                strCarDs = joWeather.SelectToken("results[0].index[1].zs").ToString
-                strCar = joWeather.SelectToken("results[0].index[1].des").ToString
-                strTraDS = joWeather.SelectToken("results[0].index[2].zs").ToString
-                strTra = joWeather.SelectToken("results[0].index[2].des").ToString
-                strSicDs = joWeather.SelectToken("results[0].index[3].zs").ToString
-                strSic = joWeather.SelectToken("results[0].index[3].des").ToString
-                strSpoDS = joWeather.SelectToken("results[0].index[4].zs").ToString
-                strSpo = joWeather.SelectToken("results[0].index[4].des").ToString
-                strUVDs = joWeather.SelectToken("results[0].index[5].zs").ToString
-                strUV = joWeather.SelectToken("results[0].index[5].des").ToString
+            strCloDs = joWeather.SelectToken("results[0].index[0].zs").ToString
+            strClo = joWeather.SelectToken("results[0].index[0].des").ToString
+            strCarDs = joWeather.SelectToken("results[0].index[1].zs").ToString
+            strCar = joWeather.SelectToken("results[0].index[1].des").ToString
+            'strTraDS = joWeather.SelectToken("results[0].index[2].zs").ToString
+            'strTra = joWeather.SelectToken("results[0].index[2].des").ToString
+            strSicDs = joWeather.SelectToken("results[0].index[2].zs").ToString
+            strSic = joWeather.SelectToken("results[0].index[2].des").ToString
+            strSpoDS = joWeather.SelectToken("results[0].index[3].zs").ToString
+            strSpo = joWeather.SelectToken("results[0].index[3].des").ToString
+            strUVDs = joWeather.SelectToken("results[0].index[4].zs").ToString
+            strUV = joWeather.SelectToken("results[0].index[4].des").ToString
 
-                LocalUpdate()
+            LocalUpdate()
             Else
                 intErrCode = intErrCodeWeather
                 ErrorCheck()
@@ -109,23 +109,23 @@ Module Module1
                 frmMsg.Show()
             End If
 
-        Catch ex As Net.WebException
-            StrMsgTitle = "Miku似乎遇到麻烦了！"
-            StrMsg = "好像网络坏掉了o(>﹏<)o！ Mod1异常：" + ex.Message
-            frmMsg.Show()
-            frmShow.LinkLabel3.Text = "No Data"
-            frmShow.LinkLabel4.Text = "No Data"
-        Catch ex As EntryPointNotFoundException
-            StrMsgTitle = "Miku似乎遇到麻烦了！"
-            StrMsg = "您的网络似乎有问题？ Mod1异常：" + ex.Message
-            frmMsg.Show()
-            frmShow.LinkLabel3.Text = "No Data"
-            frmShow.LinkLabel4.Text = "No Data"
-        Catch ex As Exception
-            StrMsgTitle = "Miku似乎遇到麻烦了！"
-            StrMsg = "Mod1异常：" + ex.Message
-            frmMsg.Show()
-        End Try
+        'Catch ex As Net.WebException
+        'StrMsgTitle = "Miku似乎遇到麻烦了！"
+        'StrMsg = "好像网络坏掉了o(>﹏<)o！ Mod1异常：" + ex.Message
+        'frmMsg.Show()
+        'frmShow.LinkLabel3.Text = "No Data"
+        'frmShow.LinkLabel4.Text = "No Data"
+        'Catch ex As EntryPointNotFoundException
+        'StrMsgTitle = "Miku似乎遇到麻烦了！"
+        'StrMsg = "您的网络似乎有问题？ Mod1异常：" + ex.Message
+        'frmMsg.Show()
+        'frmShow.LinkLabel3.Text = "No Data"
+        'frmShow.LinkLabel4.Text = "No Data"
+        'Catch ex As Exception
+        'StrMsgTitle = "Miku似乎遇到麻烦了！"
+        'StrMsg = "Mod1异常：" + ex.Message
+        'frmMsg.Show()
+        'End Try
     End Sub
 
     Public Sub ErrorCheck()

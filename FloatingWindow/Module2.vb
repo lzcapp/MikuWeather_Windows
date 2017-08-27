@@ -40,13 +40,13 @@ Module Module2
         frmDetail.lnkCloTitle.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point, 1)
         frmDetail.lnkSicTitle.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point, 1)
         frmDetail.lnkUVTitle.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point, 1)
-        frmDetail.lnkTraTitle.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point, 1)
+        'frmDetail.lnkTraTitle.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point, 1)
         frmDetail.lnkSpoTitle.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point, 1)
         frmDetail.lnkCar.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
         frmDetail.lnkClo.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
         frmDetail.lnkSic.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
         frmDetail.lnkUV.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
-        frmDetail.lnkTra.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
+        'frmDetail.lnkTra.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
         frmDetail.lnkSpo.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
     End Sub
 
@@ -247,8 +247,8 @@ Module Module2
         frmDetail.lnkClo.Text = strClo
         frmDetail.lnkCarTitle.Text = "洗车 · " + strCarDs
         frmDetail.lnkCar.Text = strCar
-        frmDetail.lnkTraTitle.Text = "旅游 · " + strTraDS
-        frmDetail.lnkTra.Text = strTra
+        'frmDetail.lnkTraTitle.Text = "旅游 · " + strTraDS
+        'frmDetail.lnkTra.Text = strTra
         frmDetail.lnkSicTitle.Text = "感冒 · " + strSicDs
         frmDetail.lnkSic.Text = strSic
         frmDetail.lnkSpoTitle.Text = "运动 · " + strSpoDS

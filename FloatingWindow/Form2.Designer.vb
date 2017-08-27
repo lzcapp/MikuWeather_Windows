@@ -36,7 +36,7 @@ Partial Class frmMsg
         Me.LinkLabel1.Font = New System.Drawing.Font("条幅黑体", 14.25!)
         Me.LinkLabel1.ForeColor = System.Drawing.Color.MediumTurquoise
         Me.LinkLabel1.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel1.Location = New System.Drawing.Point(63, 9)
+        Me.LinkLabel1.Location = New System.Drawing.Point(63, 8)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(48, 22)
         Me.LinkLabel1.TabIndex = 0
@@ -46,12 +46,12 @@ Partial Class frmMsg
         '
         Me.LinkLabel2.AutoSize = True
         Me.LinkLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel2.Font = New System.Drawing.Font("造字工房雅圆（非商用）常规体", 14.25!)
+        Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.LinkLabel2.ForeColor = System.Drawing.Color.MediumTurquoise
         Me.LinkLabel2.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel2.Location = New System.Drawing.Point(122, 7)
+        Me.LinkLabel2.Location = New System.Drawing.Point(122, 6)
         Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(111, 26)
+        Me.LinkLabel2.Size = New System.Drawing.Size(101, 24)
         Me.LinkLabel2.TabIndex = 1
         Me.LinkLabel2.Text = "Notification"
         '
@@ -61,7 +61,7 @@ Partial Class frmMsg
         Me.PictureBox1.Image = Global.FloatingWindow.My.Resources.Resources.abc_ic_clear_normal
         Me.PictureBox1.Location = New System.Drawing.Point(258, 1)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox1.Size = New System.Drawing.Size(25, 23)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
@@ -69,21 +69,21 @@ Partial Class frmMsg
         'LinkLabel3
         '
         Me.LinkLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel3.Font = New System.Drawing.Font("RTWS ShangYa Demo Regular", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.LinkLabel3.Font = New System.Drawing.Font("造字工房尚雅体演示版常规体", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel3.ForeColor = System.Drawing.Color.SandyBrown
         Me.LinkLabel3.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel3.Location = New System.Drawing.Point(12, 39)
+        Me.LinkLabel3.Location = New System.Drawing.Point(12, 36)
         Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(260, 78)
+        Me.LinkLabel3.Size = New System.Drawing.Size(260, 72)
         Me.LinkLabel3.TabIndex = 3
         Me.LinkLabel3.Text = "通知内容："
         '
         'frmMsg
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.FloatingWindow.My.Resources.Resources.bg_wdtb
-        Me.ClientSize = New System.Drawing.Size(284, 126)
+        Me.ClientSize = New System.Drawing.Size(284, 116)
         Me.Controls.Add(Me.LinkLabel3)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.LinkLabel2)

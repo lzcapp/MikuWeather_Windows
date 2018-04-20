@@ -13,8 +13,8 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("初音天气")> 
 <Assembly: AssemblyDescription("初音天气")> 
 <Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("Miku Weather China")> 
-<Assembly: AssemblyCopyright("Copyright © Rainy Summer 2015")> 
+<Assembly: AssemblyProduct("Miku Weather China")>
+<Assembly: AssemblyCopyright("Copyright © Rainy Summer 2018")>
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)> 

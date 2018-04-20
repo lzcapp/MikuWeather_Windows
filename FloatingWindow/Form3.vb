@@ -127,94 +127,77 @@ Public Class frmMain
         frmShow.PictureBox3.BackColor = Color.Transparent
         frmShow.PictureBox3.Parent = frmShow
 
-
-        'Try
-        If strSetAddr = Nothing Then
-            If File.Exists(Application.StartupPath + "\set.xml") = True Then
-                xmlSetFile.Load(Application.StartupPath + "\set.xml")
-                strSetAddr = Application.StartupPath + "\set.xml"
-            Else
-                StrMsg = "没能找到设置文件欸！请一定要放在和程序同一个文件夹下。"
-                StrMsgTitle = "Miku似乎遇到麻烦了！"
-                frmMsg.Show()
-                End
+        Try
+            If strSetAddr = Nothing Then
+                If File.Exists(Application.StartupPath + "\set.xml") = True Then
+                    xmlSetFile.Load(Application.StartupPath + "\set.xml")
+                    strSetAddr = Application.StartupPath + "\set.xml"
+                Else
+                    StrMsg = "没能找到设置文件欸！请一定要放在和程序同一个文件夹下。"
+                    StrMsgTitle = "Miku似乎遇到麻烦了！"
+                    frmMsg.Show()
+                    End
+                End If
+            Else : xmlSetFile.Load(strSetAddr)
             End If
-        Else : xmlSetFile.Load(strSetAddr)
-        End If
 
-        xmlnsSetMain = xmlSetFile.ChildNodes
-        xmlnSetMain = xmlnsSetMain.ItemOf(1)
-        xmlnsSetSet = xmlnSetMain.ChildNodes
+            xmlnsSetMain = xmlSetFile.ChildNodes
+            xmlnSetMain = xmlnsSetMain.ItemOf(1)
+            xmlnsSetSet = xmlnSetMain.ChildNodes
 
-        strSetLoc = xmlnsSetSet.ItemOf(0).InnerText
-        intSetIntv = xmlnsSetSet.ItemOf(1).InnerText
-        strSetWeather = xmlnsSetSet.ItemOf(2).InnerText
-        intSource = xmlnsSetSet.ItemOf(4).InnerText
+            strSetLoc = xmlnsSetSet.ItemOf(0).InnerText
+            intSetIntv = xmlnsSetSet.ItemOf(1).InnerText
+            strSetWeather = xmlnsSetSet.ItemOf(2).InnerText
+            '            intSource = xmlnsSetSet.ItemOf(4).InnerText
 
-        LinkLabel2.Text = strSetLoc
-        Timer1.Interval = intSetIntv
+            LinkLabel2.Text = strSetLoc
+            Timer1.Interval = intSetIntv
 
-        Using weatherWebc As New WebClient
-            weatherWebc.Encoding = Encoding.UTF8
-            joWeather = JObject.Parse(weatherWebc.DownloadString("http://api.map.baidu.com/telematics/v3/weather?location=" + strSetLoc + "&output=json&ak=edUWu66ddGavrmj9a6vcsa75"))
-        End Using
+            '            Using weatherWebc As New WebClient
+            '                weatherWebc.Encoding = Encoding.UTF8
+            '                joWeather = JObject.Parse(weatherWebc.DownloadString("http://api.map.baidu.com/telematics/v3/weather?location=" + strSetLoc + "&output=json&ak=edUWu66ddGavrmj9a6vcsa75"))
+            '            End Using
+            '
+            '            If joWeather.SelectToken("error").ToString = "0" Then
+            '                blnWeatherSer = True
+            '                frmSetting.CheckBox2.Enabled = True
+            '            Else
+            '                blnWeatherSer = False
+            '                intErrCode = intErrCodeWeather
+            '                ErrorCheck()
+            '                StrMsgTitle = "天气数据获取失败"
+            '                StrMsg = "Miku无法获取天气预报的相关数据，错误信息：error code = " + Str(intErrCode) + " /" + strErrMsg
+            '                frmMsg.Show()
+            '            End If
 
-        If joWeather.SelectToken("error").ToString = "0" Then
-            blnWeatherSer = True
-            frmSetting.CheckBox2.Enabled = True
-        Else
-            blnWeatherSer = False
-            intErrCode = intErrCodeWeather
-            ErrorCheck()
-            StrMsgTitle = "天气数据获取失败"
-            StrMsg = "Miku无法获取天气预报的相关数据，错误信息：error code = " + Str(intErrCode) + " /" + strErrMsg
-            frmMsg.Show()
-        End If
-
-        If xmlnsSetSet.ItemOf(3).InnerText = "1" Then
-            Using iplocWebc As New WebClient
-                iplocWebc.Encoding = Encoding.Default
-                joLoc = JObject.Parse(iplocWebc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75"))
-            End Using
-            If joLoc.SelectToken("status").ToString = "0" Then
-                blnAutoIPLoc = True
-                blnIPSer = True
-            Else
-                blnAutoIPLoc = False
-                blnIPSer = False
-                StrMsgTitle = "IP定位服务错误"
-                StrMsg = "Miku无法获取您的位置信息，自动定位。错误信息：error code = " + joLoc.SelectToken("status").ToString
-                frmMsg.Show()
+            If xmlnsSetSet.ItemOf(3).InnerText = "1" Then
+                Using iplocWebc As New WebClient
+                    iplocWebc.Encoding = Encoding.Default
+                    joLoc = JObject.Parse(iplocWebc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75"))
+                End Using
+                If joLoc.SelectToken("status").ToString = "0" Then
+                    blnAutoIPLoc = True
+                    blnIPSer = True
+                Else
+                    blnAutoIPLoc = False
+                    blnIPSer = False
+                    StrMsgTitle = "IP定位服务错误"
+                    StrMsg = "Miku无法获取您的位置信息，自动定位。错误信息：error code = " + joLoc.SelectToken("status").ToString
+                    frmMsg.Show()
+                End If
             End If
-        ElseIf xmlnsSetSet.ItemOf(3).InnerText = "0" Then
-            blnAutoIPLoc = False
-            Using iplocWebc As New WebClient
-                iplocWebc.Encoding = Encoding.Default
-                joLoc = JObject.Parse(iplocWebc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75"))
-            End Using
-            If joLoc.SelectToken("status").ToString = "0" Then
-                blnAutoIPLoc = True
-                blnIPSer = True
-            Else
-                blnAutoIPLoc = False
-                blnIPSer = False
-                StrMsgTitle = "IP定位服务错误"
-                StrMsg = "Miku无法获取您的位置信息，自动定位。错误信息：error code = " + joLoc.SelectToken("status").ToString
-                frmMsg.Show()
-            End If
-        End If
 
-        GetWeatherData()
+            GetWeatherData()
 
-        'Catch ex As Net.WebException
-        'StrMsgTitle = "Miku似乎遇到麻烦了！"
-        'StrMsg = "您的好像网络坏掉了o(>﹏<)o！frmMain异常：" + ex.Message
-        'frmMsg.Show()
-        'Catch ex As Exception
-        'StrMsgTitle = "Miku似乎遇到麻烦了！"
-        'StrMsg = "frmMain异常：" + ex.Message
-        'frmMsg.Show()
-        'End Try
+        Catch ex As WebException
+            'StrMsgTitle = "Miku似乎遇到麻烦了！"
+            'StrMsg = "您的好像网络坏掉了o(>﹏<)o！frmMain异常：" + ex.Message
+            'frmMsg.Show()
+        Catch ex As Exception
+            'StrMsgTitle = "Miku似乎遇到麻烦了！"
+            'StrMsg = "frmMain异常：" + ex.Message
+            'frmMsg.Show()
+        End Try
     End Sub
 
     Private Sub 天气详情ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 天气详情ToolStripMenuItem.Click

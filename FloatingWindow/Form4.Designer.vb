@@ -66,10 +66,10 @@ Partial Class frmSetting
         Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox7.ErrorImage = Nothing
         Me.PictureBox7.Image = Global.FloatingWindow.My.Resources.Resources.abc_ic_clear_normal
-        Me.PictureBox7.Location = New System.Drawing.Point(367, 1)
-        Me.PictureBox7.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.PictureBox7.Location = New System.Drawing.Point(275, 1)
+        Me.PictureBox7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(33, 29)
+        Me.PictureBox7.Size = New System.Drawing.Size(25, 23)
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox7.TabIndex = 49
         Me.PictureBox7.TabStop = False
@@ -80,10 +80,10 @@ Partial Class frmSetting
         Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Default
         Me.PictureBox6.Enabled = False
         Me.PictureBox6.Image = Global.FloatingWindow.My.Resources.Resources.ic_menu_refresh
-        Me.PictureBox6.Location = New System.Drawing.Point(227, 158)
-        Me.PictureBox6.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.PictureBox6.Location = New System.Drawing.Point(170, 126)
+        Me.PictureBox6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(28, 32)
+        Me.PictureBox6.Size = New System.Drawing.Size(21, 26)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox6.TabIndex = 48
         Me.PictureBox6.TabStop = False
@@ -94,10 +94,10 @@ Partial Class frmSetting
         Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox5.Image = Global.FloatingWindow.My.Resources.Resources.abc_ic_clear_normal
-        Me.PictureBox5.Location = New System.Drawing.Point(256, 376)
-        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.PictureBox5.Location = New System.Drawing.Point(192, 301)
+        Me.PictureBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(61, 47)
+        Me.PictureBox5.Size = New System.Drawing.Size(46, 38)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox5.TabIndex = 47
         Me.PictureBox5.TabStop = False
@@ -107,10 +107,10 @@ Partial Class frmSetting
         Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox4.Image = Global.FloatingWindow.My.Resources.Resources.abc_ic_cab_done_holo_dark
-        Me.PictureBox4.Location = New System.Drawing.Point(93, 376)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.PictureBox4.Location = New System.Drawing.Point(70, 301)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(55, 44)
+        Me.PictureBox4.Size = New System.Drawing.Size(41, 35)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox4.TabIndex = 46
         Me.PictureBox4.TabStop = False
@@ -122,10 +122,9 @@ Partial Class frmSetting
         Me.LinkLabel9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.LinkLabel9.ForeColor = System.Drawing.Color.MediumTurquoise
         Me.LinkLabel9.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel9.Location = New System.Drawing.Point(35, 230)
-        Me.LinkLabel9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel9.Location = New System.Drawing.Point(26, 184)
         Me.LinkLabel9.Name = "LinkLabel9"
-        Me.LinkLabel9.Size = New System.Drawing.Size(172, 25)
+        Me.LinkLabel9.Size = New System.Drawing.Size(137, 20)
         Me.LinkLabel9.TabIndex = 42
         Me.LinkLabel9.Text = "天气数据提供商："
         '
@@ -136,10 +135,9 @@ Partial Class frmSetting
         Me.LinkLabel8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.LinkLabel8.ForeColor = System.Drawing.Color.MediumTurquoise
         Me.LinkLabel8.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel8.Location = New System.Drawing.Point(276, 295)
-        Me.LinkLabel8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel8.Location = New System.Drawing.Point(207, 236)
         Me.LinkLabel8.Name = "LinkLabel8"
-        Me.LinkLabel8.Size = New System.Drawing.Size(52, 25)
+        Me.LinkLabel8.Size = New System.Drawing.Size(41, 20)
         Me.LinkLabel8.TabIndex = 41
         Me.LinkLabel8.Text = "分钟"
         '
@@ -151,10 +149,10 @@ Partial Class frmSetting
         Me.ComboBox1.ForeColor = System.Drawing.Color.DarkTurquoise
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"60", "90", "120", "180", "300"})
-        Me.ComboBox1.Location = New System.Drawing.Point(189, 293)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.ComboBox1.Location = New System.Drawing.Point(142, 234)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(77, 28)
+        Me.ComboBox1.Size = New System.Drawing.Size(59, 24)
         Me.ComboBox1.TabIndex = 40
         '
         'LinkLabel7
@@ -164,10 +162,9 @@ Partial Class frmSetting
         Me.LinkLabel7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.LinkLabel7.ForeColor = System.Drawing.Color.MediumTurquoise
         Me.LinkLabel7.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel7.Location = New System.Drawing.Point(297, 194)
-        Me.LinkLabel7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel7.Location = New System.Drawing.Point(223, 155)
         Me.LinkLabel7.Name = "LinkLabel7"
-        Me.LinkLabel7.Size = New System.Drawing.Size(32, 25)
+        Me.LinkLabel7.Size = New System.Drawing.Size(25, 20)
         Me.LinkLabel7.TabIndex = 39
         Me.LinkLabel7.Text = "市"
         '
@@ -178,10 +175,10 @@ Partial Class frmSetting
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox1.ForeColor = System.Drawing.Color.DarkTurquoise
         Me.TextBox1.ImeMode = System.Windows.Forms.ImeMode.[On]
-        Me.TextBox1.Location = New System.Drawing.Point(147, 192)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.TextBox1.Location = New System.Drawing.Point(110, 154)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(142, 30)
+        Me.TextBox1.Size = New System.Drawing.Size(107, 26)
         Me.TextBox1.TabIndex = 38
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -189,13 +186,12 @@ Partial Class frmSetting
         '
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.BackColor = System.Drawing.Color.Transparent
-        Me.CheckBox2.Enabled = False
         Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.CheckBox2.ForeColor = System.Drawing.Color.DarkGray
-        Me.CheckBox2.Location = New System.Drawing.Point(40, 162)
-        Me.CheckBox2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.CheckBox2.Location = New System.Drawing.Point(30, 130)
+        Me.CheckBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(172, 29)
+        Me.CheckBox2.Size = New System.Drawing.Size(139, 24)
         Me.CheckBox2.TabIndex = 33
         Me.CheckBox2.Text = "自动进行IP定位"
         Me.CheckBox2.UseVisualStyleBackColor = False
@@ -207,10 +203,9 @@ Partial Class frmSetting
         Me.LinkLabel5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.LinkLabel5.ForeColor = System.Drawing.Color.MediumTurquoise
         Me.LinkLabel5.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel5.Location = New System.Drawing.Point(35, 195)
-        Me.LinkLabel5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel5.Location = New System.Drawing.Point(26, 156)
         Me.LinkLabel5.Name = "LinkLabel5"
-        Me.LinkLabel5.Size = New System.Drawing.Size(112, 25)
+        Me.LinkLabel5.Size = New System.Drawing.Size(89, 20)
         Me.LinkLabel5.TabIndex = 32
         Me.LinkLabel5.Text = "所在城市："
         '
@@ -221,10 +216,9 @@ Partial Class frmSetting
         Me.LinkLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.LinkLabel4.ForeColor = System.Drawing.Color.MediumTurquoise
         Me.LinkLabel4.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel4.Location = New System.Drawing.Point(35, 295)
-        Me.LinkLabel4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel4.Location = New System.Drawing.Point(26, 236)
         Me.LinkLabel4.Name = "LinkLabel4"
-        Me.LinkLabel4.Size = New System.Drawing.Size(152, 25)
+        Me.LinkLabel4.Size = New System.Drawing.Size(121, 20)
         Me.LinkLabel4.TabIndex = 31
         Me.LinkLabel4.Text = "数据更新间隔："
         '
@@ -235,10 +229,9 @@ Partial Class frmSetting
         Me.LinkLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel3.ForeColor = System.Drawing.Color.MediumTurquoise
         Me.LinkLabel3.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel3.Location = New System.Drawing.Point(63, 87)
-        Me.LinkLabel3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel3.Location = New System.Drawing.Point(47, 70)
         Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(100, 29)
+        Me.LinkLabel3.Size = New System.Drawing.Size(76, 24)
         Me.LinkLabel3.TabIndex = 30
         Me.LinkLabel3.Text = "Settings"
         '
@@ -249,10 +242,9 @@ Partial Class frmSetting
         Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel2.ForeColor = System.Drawing.Color.MediumTurquoise
         Me.LinkLabel2.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel2.Location = New System.Drawing.Point(5, 89)
-        Me.LinkLabel2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel2.Location = New System.Drawing.Point(4, 71)
         Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(61, 29)
+        Me.LinkLabel2.Size = New System.Drawing.Size(48, 24)
         Me.LinkLabel2.TabIndex = 29
         Me.LinkLabel2.Text = "设置"
         '
@@ -264,10 +256,10 @@ Partial Class frmSetting
         Me.CheckBox1.CheckState = System.Windows.Forms.CheckState.Indeterminate
         Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.CheckBox1.ForeColor = System.Drawing.Color.DarkGray
-        Me.CheckBox1.Location = New System.Drawing.Point(40, 125)
-        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.CheckBox1.Location = New System.Drawing.Point(30, 100)
+        Me.CheckBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(134, 29)
+        Me.CheckBox1.Size = New System.Drawing.Size(108, 24)
         Me.CheckBox1.TabIndex = 28
         Me.CheckBox1.Text = "开机自启动"
         Me.CheckBox1.UseVisualStyleBackColor = False
@@ -279,10 +271,9 @@ Partial Class frmSetting
         Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel1.ForeColor = System.Drawing.Color.MediumTurquoise
         Me.LinkLabel1.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel1.Location = New System.Drawing.Point(272, 29)
-        Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel1.Location = New System.Drawing.Point(204, 23)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(117, 26)
+        Me.LinkLabel1.Size = New System.Drawing.Size(90, 20)
         Me.LinkLabel1.TabIndex = 27
         Me.LinkLabel1.Text = "LinkLabel1"
         '
@@ -292,10 +283,10 @@ Partial Class frmSetting
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox2.ErrorImage = Global.FloatingWindow.My.Resources.Resources.action_title
         Me.PictureBox2.Image = Global.FloatingWindow.My.Resources.Resources.action_title
-        Me.PictureBox2.Location = New System.Drawing.Point(20, 15)
-        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.PictureBox2.Location = New System.Drawing.Point(15, 12)
+        Me.PictureBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(248, 58)
+        Me.PictureBox2.Size = New System.Drawing.Size(186, 46)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox2.TabIndex = 26
         Me.PictureBox2.TabStop = False
@@ -303,10 +294,10 @@ Partial Class frmSetting
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.FloatingWindow.My.Resources.Resources.bg_btn
-        Me.PictureBox1.Location = New System.Drawing.Point(-9, -6)
+        Me.PictureBox1.Location = New System.Drawing.Point(-7, -5)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(427, 84)
+        Me.PictureBox1.Size = New System.Drawing.Size(320, 67)
         Me.PictureBox1.TabIndex = 25
         Me.PictureBox1.TabStop = False
         '
@@ -314,10 +305,10 @@ Partial Class frmSetting
         '
         Me.picLoc.BackColor = System.Drawing.Color.Transparent
         Me.picLoc.Image = Global.FloatingWindow.My.Resources.Resources.noloc
-        Me.picLoc.Location = New System.Drawing.Point(343, 70)
-        Me.picLoc.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.picLoc.Location = New System.Drawing.Point(257, 56)
+        Me.picLoc.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.picLoc.Name = "picLoc"
-        Me.picLoc.Size = New System.Drawing.Size(52, 58)
+        Me.picLoc.Size = New System.Drawing.Size(39, 46)
         Me.picLoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.picLoc.TabIndex = 45
         Me.picLoc.TabStop = False
@@ -328,10 +319,10 @@ Partial Class frmSetting
         Me.radBaiduapi.BackColor = System.Drawing.Color.Transparent
         Me.radBaiduapi.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.radBaiduapi.ForeColor = System.Drawing.Color.DarkGray
-        Me.radBaiduapi.Location = New System.Drawing.Point(40, 258)
-        Me.radBaiduapi.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.radBaiduapi.Location = New System.Drawing.Point(30, 206)
+        Me.radBaiduapi.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.radBaiduapi.Name = "radBaiduapi"
-        Me.radBaiduapi.Size = New System.Drawing.Size(165, 29)
+        Me.radBaiduapi.Size = New System.Drawing.Size(133, 24)
         Me.radBaiduapi.TabIndex = 50
         Me.radBaiduapi.Text = "百度车联网API"
         Me.radBaiduapi.UseVisualStyleBackColor = False
@@ -343,10 +334,10 @@ Partial Class frmSetting
         Me.radJuhe.Enabled = False
         Me.radJuhe.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.radJuhe.ForeColor = System.Drawing.Color.DarkGray
-        Me.radJuhe.Location = New System.Drawing.Point(256, 258)
-        Me.radJuhe.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.radJuhe.Location = New System.Drawing.Point(192, 206)
+        Me.radJuhe.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.radJuhe.Name = "radJuhe"
-        Me.radJuhe.Size = New System.Drawing.Size(113, 29)
+        Me.radJuhe.Size = New System.Drawing.Size(91, 24)
         Me.radJuhe.TabIndex = 51
         Me.radJuhe.Text = "聚合数据"
         Me.radJuhe.UseVisualStyleBackColor = False
@@ -357,10 +348,9 @@ Partial Class frmSetting
         Me.LinkLabel10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel10.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.LinkLabel10.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel10.Location = New System.Drawing.Point(89, 51)
-        Me.LinkLabel10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel10.Location = New System.Drawing.Point(67, 41)
         Me.LinkLabel10.Name = "LinkLabel10"
-        Me.LinkLabel10.Size = New System.Drawing.Size(264, 22)
+        Me.LinkLabel10.Size = New System.Drawing.Size(198, 18)
         Me.LinkLabel10.TabIndex = 60
         Me.LinkLabel10.Text = "Copyright © 2016  Rainy Summer"
         '
@@ -372,10 +362,9 @@ Partial Class frmSetting
         Me.LinkLabel11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!)
         Me.LinkLabel11.ForeColor = System.Drawing.Color.MediumTurquoise
         Me.LinkLabel11.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel11.Location = New System.Drawing.Point(5, 337)
-        Me.LinkLabel11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel11.Location = New System.Drawing.Point(4, 270)
         Me.LinkLabel11.Name = "LinkLabel11"
-        Me.LinkLabel11.Size = New System.Drawing.Size(109, 29)
+        Me.LinkLabel11.Size = New System.Drawing.Size(86, 24)
         Me.LinkLabel11.TabIndex = 61
         Me.LinkLabel11.Text = "意见反馈"
         '
@@ -387,10 +376,9 @@ Partial Class frmSetting
         Me.LinkLabel12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel12.ForeColor = System.Drawing.Color.MediumTurquoise
         Me.LinkLabel12.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel12.Location = New System.Drawing.Point(116, 335)
-        Me.LinkLabel12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel12.Location = New System.Drawing.Point(87, 268)
         Me.LinkLabel12.Name = "LinkLabel12"
-        Me.LinkLabel12.Size = New System.Drawing.Size(121, 29)
+        Me.LinkLabel12.Size = New System.Drawing.Size(95, 24)
         Me.LinkLabel12.TabIndex = 62
         Me.LinkLabel12.Text = "Feedback"
         '
@@ -405,10 +393,9 @@ Partial Class frmSetting
         Me.LinkLabel6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LinkLabel6.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.LinkLabel6.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel6.Location = New System.Drawing.Point(5, 428)
-        Me.LinkLabel6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LinkLabel6.Location = New System.Drawing.Point(4, 342)
         Me.LinkLabel6.Name = "LinkLabel6"
-        Me.LinkLabel6.Size = New System.Drawing.Size(393, 22)
+        Me.LinkLabel6.Size = New System.Drawing.Size(295, 18)
         Me.LinkLabel6.TabIndex = 63
         Me.LinkLabel6.Text = "Powered By:  百度车联网API、聚合数据（待开发）"
         '
@@ -417,10 +404,10 @@ Partial Class frmSetting
         Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.PictureBox3.Cursor = System.Windows.Forms.Cursors.Cross
         Me.PictureBox3.Image = Global.FloatingWindow.My.Resources.Resources.liantu
-        Me.PictureBox3.Location = New System.Drawing.Point(16, 12)
-        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.PictureBox3.Location = New System.Drawing.Point(12, 10)
+        Me.PictureBox3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(369, 320)
+        Me.PictureBox3.Size = New System.Drawing.Size(277, 256)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox3.TabIndex = 64
         Me.PictureBox3.TabStop = False
@@ -428,11 +415,11 @@ Partial Class frmSetting
         '
         'frmSetting
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.FloatingWindow.My.Resources.Resources.bg_wdtb
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(401, 451)
+        Me.ClientSize = New System.Drawing.Size(301, 361)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.LinkLabel6)
         Me.Controls.Add(Me.LinkLabel11)
@@ -461,7 +448,7 @@ Partial Class frmSetting
         Me.Controls.Add(Me.LinkLabel12)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "frmSetting"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmSetting"

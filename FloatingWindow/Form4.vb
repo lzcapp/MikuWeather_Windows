@@ -17,7 +17,7 @@ Public Class frmSetting
         LinkLabel1.Text = "v" + Split(Application.ProductVersion, ".")(0) + "." + Split(Application.ProductVersion, ".")(1) + "." + Split(Application.ProductVersion, ".")(2)
 
         If blnIPSer = True Then
-            CheckBox2.Enabled = True
+            'CheckBox2.Enabled = True
             If blnAutoIPLoc = True Then
                 picLoc.Image = My.Resources.loc
                 CheckBox2.CheckState = CheckState.Checked
@@ -30,7 +30,7 @@ Public Class frmSetting
                 TextBox1.Text = strSetLoc
             End If
         Else
-            CheckBox2.Enabled = False
+            'CheckBox2.Enabled = False
             picLoc.Image = My.Resources.noloc
             CheckBox2.CheckState = CheckState.Unchecked
             CheckBox2.ForeColor = Color.DarkGray
@@ -126,22 +126,21 @@ Public Class frmSetting
                     setxmlnodes2.ItemOf(3).InnerText = "0"
                 End If
 
-                If radBaiduapi.Checked = True Then
-                    intSource = 0
-                    setxmlnodes2.ItemOf(4).InnerText = "0"
-                End If
+                'If radBaiduapi.Checked = True Then
+                'intSource = 0
+                'setxmlnodes2.ItemOf(4).InnerText = "0"
+                'End If
 
-                If radJuhe.Checked = True Then
-                    intSource = 1
-                    setxmlnodes2.ItemOf(4).InnerText = "1"
-
-                End If
+                'If radJuhe.Checked = True Then
+                'intSource = 1
+                'setxmlnodes2.ItemOf(4).InnerText = "1"
+                'End If
 
                 setxmlform2.Save(strSetAddr)
-
                 frmMain.Show()
-                Me.Close()
-                Me.Dispose()
+                Close()
+                Dispose()
+
             Else
                 StrMsgTitle = "设置"
                 StrMsg = "请一定要填好城市名,还有更新间隔啊~"
@@ -154,8 +153,6 @@ Public Class frmSetting
             StrMsgTitle = "Miku遇到麻烦了"
             StrMsg = "frmSetting异常：" + ex.Message
             frmMsg.Show()
-            'TextBox1.Text = setloc
-            'ComboBox1.SelectedItem = ComboBox1.Items.Item(0)
         End Try
     End Sub
 

@@ -14,9 +14,7 @@ Module Module2
         frmSetting.LinkLabel10.Font = New Font(fontclYayuan.Families(0).Name, 9, FontStyle.Regular, GraphicsUnit.Point, 134)
         frmSetting.LinkLabel1.Font = New Font(fontclYayuan.Families(0).Name, 12.75, FontStyle.Regular, GraphicsUnit.Point, 134)
         frmSetting.LinkLabel2.Font = New Font(fontclTiaofu.Families(0).Name, 14.25, FontStyle.Regular, GraphicsUnit.Point, 134)
-        frmSetting.LinkLabel11.Font = New Font(fontclTiaofu.Families(0).Name, 14.25, FontStyle.Regular, GraphicsUnit.Point, 134)
         frmSetting.LinkLabel3.Font = New Font(fontclTiaofu.Families(0).Name, 14.25, FontStyle.Regular, GraphicsUnit.Point, 134)
-        frmSetting.LinkLabel12.Font = New Font(fontclTiaofu.Families(0).Name, 14.25, FontStyle.Regular, GraphicsUnit.Point, 134)
         frmSetting.CheckBox1.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point, 134)
         frmSetting.CheckBox2.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point, 134)
         frmSetting.TextBox1.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point, 134)
@@ -234,7 +232,7 @@ Module Module2
             frmShow.LinkLabel4.Text = "No Data"
         End If
 
-        frmShow.LinkLabel1.Text = nowtemp + " | " + todtemp
+        frmShow.LinkLabel1.Text = nowtemp + "  |  " + todtemp
         frmShow.LinkLabel2.Text = tomtemp
         frmShow.LinkLabel3.Text = todweather
         frmShow.LinkLabel4.Text = tomweather

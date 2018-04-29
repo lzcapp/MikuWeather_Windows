@@ -37,16 +37,14 @@ Public Class frmSetting
             TextBox1.Text = strSetLoc
         End If
 
-        If intSetIntv = (60 * 1000 * 60) Then
+        If intSetIntv = (30 * 1000 * 60) Then
             ComboBox1.SelectedItem = ComboBox1.Items.Item(0)
-        ElseIf intSetIntv = (90 * 1000 * 60) Then
+        ElseIf intSetIntv = (60 * 1000 * 60) Then
             ComboBox1.SelectedItem = ComboBox1.Items.Item(1)
-        ElseIf intSetIntv = (120 * 1000 * 60) Then
+        ElseIf intSetIntv = (90 * 1000 * 60) Then
             ComboBox1.SelectedItem = ComboBox1.Items.Item(2)
-        ElseIf intSetIntv = (180 * 1000 * 60) Then
+        ElseIf intSetIntv = (120 * 1000 * 60) Then
             ComboBox1.SelectedItem = ComboBox1.Items.Item(3)
-        ElseIf intSetIntv = (300 * 1000 * 60) Then
-            ComboBox1.SelectedItem = ComboBox1.Items.Item(4)
         End If
 
         If intSource = 0 Then
@@ -205,33 +203,7 @@ Public Class frmSetting
         ToolTip1.Show("功能开发中，敬请期待", radJuhe)
     End Sub
 
+    Private Sub PictureBox3_Click(sender As Object, e As EventArgs)
 
-    Private Sub LinkLabel11_MouseClick(sender As Object, e As MouseEventArgs) Handles LinkLabel11.MouseClick
-        If PictureBox3.Visible = True Then
-            PictureBox3.Visible = False
-            'LinkLabel13.Visible = False
-        ElseIf PictureBox3.Visible = False Then
-            PictureBox3.Visible = True
-            'LinkLabel13.Visible = True
-        End If
-    End Sub
-
-    Private Sub LinkLabel12_MouseClick(sender As Object, e As MouseEventArgs) Handles LinkLabel12.MouseClick
-        If PictureBox3.Visible = True Then
-            PictureBox3.Visible = False
-            'LinkLabel13.Visible = False
-        ElseIf PictureBox3.Visible = False Then
-            PictureBox3.Visible = True
-            'LinkLabel13.Visible = True
-        End If
-    End Sub
-
-    Private Sub PictureBox3_Click(sender As Object, e As EventArgs) Handles PictureBox3.Click
-
-    End Sub
-
-    Private Sub PictureBox3_MouseClick(sender As Object, e As MouseEventArgs) Handles PictureBox3.MouseClick
-        PictureBox3.Visible = False
-        'LinkLabel13.Visible = False
     End Sub
 End Class

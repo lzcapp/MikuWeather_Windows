@@ -18,22 +18,12 @@ Public Class frmMain
 
 
     Private Sub Form3_MouseEnter(sender As Object, e As EventArgs) Handles Me.MouseEnter
-        frmShow.SetBounds(Me.Location.X - 90, Me.Location.Y - 190, 349, 196)
-        frmShow.Show()
-    End Sub
-
-    Private Sub LinkLabel1_MouseEnter(sender As Object, e As EventArgs) Handles LinkLabel1.MouseEnter
-        frmShow.SetBounds(Me.Location.X - 90, Me.Location.Y - 190, 349, 196)
+        frmShow.SetBounds(Me.Location.X - 90, Me.Location.Y - 193, 349, 196)
         frmShow.Show()
     End Sub
 
     Private Sub Form3_MouseHover(sender As Object, e As EventArgs) Handles Me.MouseHover
-        frmShow.SetBounds(Me.Location.X - 90, Me.Location.Y - 190, 349, 196)
-        frmShow.Show()
-    End Sub
-
-    Private Sub LinkLabel1_MouseHover(sender As Object, e As EventArgs) Handles LinkLabel1.MouseHover
-        frmShow.SetBounds(Me.Location.X - 90, Me.Location.Y - 190, 349, 196)
+        frmShow.SetBounds(Me.Location.X - 90, Me.Location.Y - 193, 349, 196)
         frmShow.Show()
     End Sub
 
@@ -42,7 +32,7 @@ Public Class frmMain
         frmShow.Dispose()
     End Sub
 
-    Private Sub LinkLabel1_MouseLeave(sender As Object, e As EventArgs) Handles LinkLabel1.MouseLeave
+    Private Sub LinkLabel1_MouseLeave(sender As Object, e As EventArgs)
         frmShow.Hide()
         frmShow.Dispose()
     End Sub
@@ -53,17 +43,17 @@ Public Class frmMain
             Dim mousePos As Point
             mousePos = sender.findform().MousePosition
             'mousePos.Offset(-mp.X, 0)
-            mousePos.Y = intScreenY - Me.Size.Height + 20
+            mousePos.Y = intScreenY - Me.Size.Height + 16
             If (Me.Location.X > Screen.PrimaryScreen.WorkingArea.Width - 272 Or Me.Location.X < 100) = False Then
                 sender.findform().Location = mousePos
             End If
 
             If Me.Location.X > Screen.PrimaryScreen.WorkingArea.Width - 272 Then
-                Me.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, intScreenY - Me.Size.Height + 20, Me.Size.Width, Me.Size.Height)
+                Me.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, intScreenY - Me.Size.Height + 16, Me.Size.Width, Me.Size.Height)
             End If
 
             If Me.Location.X < 100 Then
-                Me.SetBounds(100, intScreenY - Me.Size.Height + 20, Me.Size.Width, Me.Size.Height)
+                Me.SetBounds(100, intScreenY - Me.Size.Height + 16, Me.Size.Width, Me.Size.Height)
             End If
         End If
     End Sub
@@ -105,22 +95,23 @@ Public Class frmMain
     End Sub
 
     Private Sub MikuWeatherToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuWebsite.Click
-        System.Diagnostics.Process.Start("http://www.mikuweather.icoc.cc/")
+        System.Diagnostics.Process.Start("http://www.mikuweatherchina.weebly.com/")
     End Sub
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim frmMain1 As frmMain = Me
         'If My.Computer.Screen.BitsPerPixel >= 32 Then
-        Me.BackColor = Color.White
+        frmMain1.BackColor = Color.Snow
         'ElseIf My.Computer.Screen.BitsPerPixel >= 16 And My.Computer.Screen.BitsPerPixel < 32 Then
         'Me.BackColor = Color.White
         'End If
-        Me.TransparencyKey = Me.BackColor
+        frmMain1.TransparencyKey = frmMain1.BackColor
 
         intScreenY = Screen.PrimaryScreen.WorkingArea.Bottom
 
-        Me.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, intScreenY - Me.Size.Height + 20, Me.Size.Width, Me.Size.Height)
+        frmMain1.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, frmMain1.intScreenY - frmMain1.Size.Height + 16, frmMain1.Size.Width, frmMain1.Size.Height)
 
-        Me.Icon = My.Resources.hi
+        frmMain1.Icon = My.Resources.hi
 
         frmShow.PictureBox2.BackColor = Color.Transparent
         frmShow.PictureBox2.Parent = frmShow
@@ -205,9 +196,6 @@ Public Class frmMain
     End Sub
 
     Private Sub 关于ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 关于ToolStripMenuItem.Click
-        frmSetting.Show()
-        'frmSetting.LinkLabel13.Show()
-        frmSetting.PictureBox3.Show()
-        Close()
+        System.Diagnostics.Process.Start("http://www.mikuweatherchina.weebly.com/")
     End Sub
 End Class

@@ -14,7 +14,11 @@ Module Module1
     Public blnAutoIPLoc, blnIPSer, blnWeatherSer As Boolean
 
     Public todweather, tomweather, nowtemp, todtemp, tomtemp, toddaypic, tomdaypic, todevepic, tomevepic As String
-    Public strCloDs, strClo, strCarDs, strCar, strTraDS, strTra, strSicDs, strSic, strSpoDS, strSpo, strUVDs, strUV As String
+
+    Public _
+        strCloDs, strClo, strCarDs, strCar, strTraDS, strTra, strSicDs, strSic, strSpoDS, strSpo, strUVDs, strUV _
+            As String
+
     Public intPM As Integer
     Public strWind As String
 
@@ -33,22 +37,22 @@ Module Module1
         'End Using
 
         Using webcIPloc As New WebClient
-                webcIPloc.Encoding = Encoding.Default
-                strLocNet = webcIPloc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75")
-            End Using
+            webcIPloc.Encoding = Encoding.Default
+            strLocNet = webcIPloc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75")
+        End Using
 
-            joLoc = JObject.Parse(strLocNet)
+        joLoc = JObject.Parse(strLocNet)
 
-            intErrCodeIP = Int(joLoc.SelectToken("status").ToString)
-            If intErrCodeIP = 0 Then
-                iploc = Split(joLoc.SelectToken("content.address_detail.city").ToString, "市")(0)
-            Else
-                intErrCode = intErrCodeIP
-                ErrorCheck()
-                StrMsgTitle = "IP定位失败"
-                StrMsg = "Miku无法获取您的位置，错误信息：error code = " + Str(intErrCode) + " /" + strErrMsg
-                frmMsg.Show()
-            End If
+        intErrCodeIP = Int(joLoc.SelectToken("status").ToString)
+        If intErrCodeIP = 0 Then
+            iploc = Split(joLoc.SelectToken("content.address_detail.city").ToString, "市")(0)
+        Else
+            intErrCode = intErrCodeIP
+            ErrorCheck()
+            StrMsgTitle = "IP定位失败"
+            StrMsg = "Miku无法获取您的位置，错误信息：error code = " + Str(intErrCode) + " /" + strErrMsg
+            frmMsg.Show()
+        End If
 
         'Catch ex As Exception
         'StrMsgTitle = "Miku似乎遇到麻烦了！"
@@ -62,29 +66,32 @@ Module Module1
         'Try
         'If 
         Using weatherWebc As New WebClient
-                weatherWebc.Encoding = Encoding.UTF8
-                strWeatherNet = weatherWebc.DownloadString("http://api.map.baidu.com/telematics/v3/weather?location=" + strSetLoc + "&output=json&ak=edUWu66ddGavrmj9a6vcsa75")
-            End Using
+            weatherWebc.Encoding = Encoding.UTF8
+            strWeatherNet =
+                weatherWebc.DownloadString(
+                    "http://api.map.baidu.com/telematics/v3/weather?location=" + strSetLoc +
+                    "&output=json&ak=edUWu66ddGavrmj9a6vcsa75")
+        End Using
 
-            joWeather = JObject.Parse(strWeatherNet)
+        joWeather = JObject.Parse(strWeatherNet)
 
-            intErrCodeWeather = joWeather.SelectToken("error").ToString
-            If intErrCodeWeather = 0 Then
-                intPM = Int(joWeather.SelectToken("results[0].pm25").ToString)
+        intErrCodeWeather = joWeather.SelectToken("error").ToString
+        If intErrCodeWeather = 0 Then
+            intPM = Int(joWeather.SelectToken("results[0].pm25").ToString)
 
-                strWind = joWeather.SelectToken("results[0].weather_data[0].wind").ToString
+            strWind = joWeather.SelectToken("results[0].weather_data[0].wind").ToString
 
-                nowtemp = Split(Split(joWeather.SelectToken("results[0].weather_data[0].date").ToString, "：")(1), "℃")(0)
+            nowtemp = Split(Split(joWeather.SelectToken("results[0].weather_data[0].date").ToString, "：")(1), "℃")(0)
 
-                toddaypic = joWeather.SelectToken("results[0].weather_data[0].dayPictureUrl").ToString
-                todevepic = joWeather.SelectToken("results[0].weather_data[0].nightPictureUrl").ToString
-                todweather = joWeather.SelectToken("results[0].weather_data[0].weather").ToString
-                todtemp = joWeather.SelectToken("results[0].weather_data[0].temperature").ToString
+            toddaypic = joWeather.SelectToken("results[0].weather_data[0].dayPictureUrl").ToString
+            todevepic = joWeather.SelectToken("results[0].weather_data[0].nightPictureUrl").ToString
+            todweather = joWeather.SelectToken("results[0].weather_data[0].weather").ToString
+            todtemp = joWeather.SelectToken("results[0].weather_data[0].temperature").ToString
 
-                tomdaypic = joWeather.SelectToken("results[0].weather_data[1].dayPictureUrl").ToString
-                tomevepic = joWeather.SelectToken("results[0].weather_data[1].nightPictureUrl").ToString
-                tomweather = joWeather.SelectToken("results[0].weather_data[1].weather").ToString
-                tomtemp = joWeather.SelectToken("results[0].weather_data[1].temperature").ToString
+            tomdaypic = joWeather.SelectToken("results[0].weather_data[1].dayPictureUrl").ToString
+            tomevepic = joWeather.SelectToken("results[0].weather_data[1].nightPictureUrl").ToString
+            tomweather = joWeather.SelectToken("results[0].weather_data[1].weather").ToString
+            tomtemp = joWeather.SelectToken("results[0].weather_data[1].temperature").ToString
 
             strCloDs = joWeather.SelectToken("results[0].index[0].zs").ToString
             strClo = joWeather.SelectToken("results[0].index[0].des").ToString
@@ -100,13 +107,13 @@ Module Module1
             strUV = joWeather.SelectToken("results[0].index[4].des").ToString
 
             LocalUpdate()
-            Else
-                intErrCode = intErrCodeWeather
-                ErrorCheck()
-                StrMsgTitle = "天气数据获取失败"
-                StrMsg = "Miku无法获取天气预报的相关数据，错误信息：error code = " + Str(intErrCode) + " /" + strErrMsg
-                frmMsg.Show()
-            End If
+        Else
+            intErrCode = intErrCodeWeather
+            ErrorCheck()
+            StrMsgTitle = "天气数据获取失败"
+            StrMsg = "Miku无法获取天气预报的相关数据，错误信息：error code = " + Str(intErrCode) + " /" + strErrMsg
+            frmMsg.Show()
+        End If
 
         'Catch ex As Net.WebException
         'StrMsgTitle = "Miku似乎遇到麻烦了！"

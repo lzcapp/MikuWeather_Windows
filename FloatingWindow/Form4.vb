@@ -1,10 +1,7 @@
 ﻿Imports System.Xml
-Imports System.Net
-Imports System.Text
-Imports System.Drawing
 
 Public Class frmSetting
-    Dim setxmlform2 As New XmlDocument
+    Dim ReadOnly setxmlform2 As New XmlDocument
     Dim setxmlnode As XmlNode
     Dim setxmlnodes1, setxmlnodes2 As XmlNodeList
     Dim ii As Integer
@@ -14,7 +11,8 @@ Public Class frmSetting
         PictureBox2.Parent = PictureBox1
         LinkLabel1.Parent = PictureBox1
 
-        LinkLabel1.Text = "v" + Split(Application.ProductVersion, ".")(0) + "." + Split(Application.ProductVersion, ".")(1) + "." + Split(Application.ProductVersion, ".")(2)
+        LinkLabel1.Text = "v" + Split(Application.ProductVersion, ".")(0) + "." +
+                          Split(Application.ProductVersion, ".")(1) + "." + Split(Application.ProductVersion, ".")(2)
 
         If blnIPSer = True Then
             'CheckBox2.Enabled = True
@@ -37,13 +35,13 @@ Public Class frmSetting
             TextBox1.Text = strSetLoc
         End If
 
-        If intSetIntv = (30 * 1000 * 60) Then
+        If intSetIntv = (30*1000*60) Then
             ComboBox1.SelectedItem = ComboBox1.Items.Item(0)
-        ElseIf intSetIntv = (60 * 1000 * 60) Then
+        ElseIf intSetIntv = (60*1000*60) Then
             ComboBox1.SelectedItem = ComboBox1.Items.Item(1)
-        ElseIf intSetIntv = (90 * 1000 * 60) Then
+        ElseIf intSetIntv = (90*1000*60) Then
             ComboBox1.SelectedItem = ComboBox1.Items.Item(2)
-        ElseIf intSetIntv = (120 * 1000 * 60) Then
+        ElseIf intSetIntv = (120*1000*60) Then
             ComboBox1.SelectedItem = ComboBox1.Items.Item(3)
         End If
 
@@ -87,15 +85,15 @@ Public Class frmSetting
     End Sub
 
     Private Sub PictureBox8_DoubleClick(sender As Object, e As EventArgs)
-        System.Diagnostics.Process.Start("http://www.juhe.cn/")
+        Process.Start("http://www.juhe.cn/")
     End Sub
 
     Private Sub PictureBox11_DoubleClick(sender As Object, e As EventArgs)
-        System.Diagnostics.Process.Start("http://www.juhe.cn/")
+        Process.Start("http://www.juhe.cn/")
     End Sub
 
     Private Sub PictureBox11_Click(sender As Object, e As EventArgs)
-        System.Diagnostics.Process.Start("http://developer.baidu.com/")
+        Process.Start("http://developer.baidu.com/")
     End Sub
 
     Private Sub PictureBox4_Click(sender As Object, e As EventArgs) Handles PictureBox4.Click
@@ -104,7 +102,7 @@ Public Class frmSetting
         Try
             If TextBox1.Text <> "" And (ComboBox1.SelectedItem = Nothing) = False Then
                 strSetLoc = TextBox1.Text
-                intSetIntv = CInt(ComboBox1.SelectedItem) * 1000 * 60
+                intSetIntv = CInt(ComboBox1.SelectedItem)*1000*60
                 frmMain.Timer1.Interval = intSetIntv
 
                 setxmlform2.Load(strSetAddr)
@@ -178,7 +176,7 @@ Public Class frmSetting
     End Sub
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        System.Diagnostics.Process.Start("http://www.mikuweather.icoc.cc/")
+        Process.Start("http://www.mikuweather.icoc.cc/")
     End Sub
 
     Private Sub PictureBox5_Click(sender As Object, e As EventArgs) Handles PictureBox5.Click
@@ -204,6 +202,5 @@ Public Class frmSetting
     End Sub
 
     Private Sub PictureBox3_Click(sender As Object, e As EventArgs)
-
     End Sub
 End Class

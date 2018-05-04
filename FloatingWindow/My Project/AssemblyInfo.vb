@@ -1,7 +1,5 @@
-﻿Imports System.Resources
-
-Imports System
-Imports System.Reflection
+﻿Imports System.Reflection
+Imports System.Resources
 Imports System.Runtime.InteropServices
 
 ' 有关程序集的常规信息通过下列特性集
@@ -10,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' 查看程序集特性的值
 
-<Assembly: AssemblyTitle("初音天气")> 
-<Assembly: AssemblyDescription("初音天气")> 
-<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyTitle("初音天气")>
+<Assembly: AssemblyDescription("初音天气")>
+<Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("Miku Weather China")>
 <Assembly: AssemblyCopyright("Copyright © Rainy Summer 2018")>
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyTrademark("")>
 
-<Assembly: ComVisible(False)> 
+<Assembly: ComVisible(False)>
 
 '如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-<Assembly: Guid("b624a600-ad05-4606-89ee-d64ce01ac3f7")> 
+<Assembly: Guid("b624a600-ad05-4606-89ee-d64ce01ac3f7")>
 
 ' 程序集的版本信息由下面四个值组成: 
 '
@@ -33,7 +31,7 @@ Imports System.Runtime.InteropServices
 ' 方法是按如下所示使用“*”: 
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("3.9.*")> 
+<Assembly: AssemblyVersion("3.9.*")>
 '<Assembly: AssemblyFileVersion("3.9.0.0")> 
 
-<Assembly: NeutralResourcesLanguageAttribute("zh")> 
+<Assembly: NeutralResourcesLanguage("zh")>

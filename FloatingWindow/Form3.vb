@@ -1,14 +1,14 @@
-﻿Imports System.Xml
-Imports System.IO
+﻿Imports System.IO
 Imports System.Net
 Imports System.Text
+Imports System.Xml
 Imports Newtonsoft.Json.Linq
 
 Public Class frmMain
-    Inherits System.Windows.Forms.Form
+    Inherits Form
 
     Dim intScreenY As Integer
-    Dim xmlSetFile As New XmlDocument
+    ReadOnly xmlSetFile As New XmlDocument
     Dim xmlnSetMain As XmlNode
     Dim xmlnsSetMain, xmlnsSetSet As XmlNodeList
 
@@ -49,7 +49,8 @@ Public Class frmMain
             End If
 
             If Me.Location.X > Screen.PrimaryScreen.WorkingArea.Width - 272 Then
-                Me.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, intScreenY - Me.Size.Height + 16, Me.Size.Width, Me.Size.Height)
+                Me.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, intScreenY - Me.Size.Height + 16,
+                             Me.Size.Width, Me.Size.Height)
             End If
 
             If Me.Location.X < 100 Then
@@ -63,7 +64,7 @@ Public Class frmMain
     End Sub
 
     Private Sub NotifyIcon1_MouseClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseClick
-        If e.Button = Windows.Forms.MouseButtons.Right Then
+        If e.Button = MouseButtons.Right Then
             ContextMenuStrip1.Show()
         End If
     End Sub
@@ -95,7 +96,7 @@ Public Class frmMain
     End Sub
 
     Private Sub MikuWeatherToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuWebsite.Click
-        System.Diagnostics.Process.Start("http://www.mikuweatherchina.weebly.com/")
+        Process.Start("http://www.mikuweatherchina.weebly.com/")
     End Sub
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -109,7 +110,8 @@ Public Class frmMain
 
         intScreenY = Screen.PrimaryScreen.WorkingArea.Bottom
 
-        frmMain1.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, frmMain1.intScreenY - frmMain1.Size.Height + 16, frmMain1.Size.Width, frmMain1.Size.Height)
+        frmMain1.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, frmMain1.intScreenY - frmMain1.Size.Height + 16,
+                           frmMain1.Size.Width, frmMain1.Size.Height)
 
         frmMain1.Icon = My.Resources.hi
 
@@ -164,7 +166,9 @@ Public Class frmMain
             If xmlnsSetSet.ItemOf(3).InnerText = "1" Then
                 Using iplocWebc As New WebClient
                     iplocWebc.Encoding = Encoding.Default
-                    joLoc = JObject.Parse(iplocWebc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75"))
+                    joLoc =
+                        JObject.Parse(
+                            iplocWebc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75"))
                 End Using
                 If joLoc.SelectToken("status").ToString = "0" Then
                     blnAutoIPLoc = True
@@ -196,6 +200,6 @@ Public Class frmMain
     End Sub
 
     Private Sub 关于ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 关于ToolStripMenuItem.Click
-        System.Diagnostics.Process.Start("http://www.mikuweatherchina.weebly.com/")
+        Process.Start("http://www.mikuweatherchina.weebly.com/")
     End Sub
 End Class

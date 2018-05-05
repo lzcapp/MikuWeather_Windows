@@ -154,8 +154,8 @@ Public Class frmSetting
 
     Private Sub PictureBox5_DoubleClick(sender As Object, e As EventArgs) Handles PictureBox5.DoubleClick
         frmMain.Show()
-        Me.Close()
-        Me.Dispose()
+        Close()
+        Dispose()
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged

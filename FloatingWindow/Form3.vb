@@ -199,7 +199,7 @@ Public Class frmMain
         frmDetail.Show()
     End Sub
 
-    Private Sub 关于ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 关于ToolStripMenuItem.Click
+    Private Sub 关于ToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         Process.Start("http://www.mikuweatherchina.weebly.com/")
     End Sub
 End Class

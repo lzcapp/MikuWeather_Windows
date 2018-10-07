@@ -87,7 +87,7 @@ Partial Class frmShow
         'PictureBox2
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.Image = Global.FloatingWindow.My.Resources.Resources.N2
+        Me.PictureBox2.Image = Global.MikuWeather.My.Resources.Resources.N2
         Me.PictureBox2.Location = New System.Drawing.Point(18, 16)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(144, 143)
@@ -98,7 +98,7 @@ Partial Class frmShow
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox3.Image = Global.FloatingWindow.My.Resources.Resources.N2
+        Me.PictureBox3.Image = Global.MikuWeather.My.Resources.Resources.N2
         Me.PictureBox3.Location = New System.Drawing.Point(184, 16)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(144, 143)
@@ -111,7 +111,7 @@ Partial Class frmShow
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BackgroundImage = Global.FloatingWindow.My.Resources.Resources.bg_wdt
+        Me.BackgroundImage = Global.MikuWeather.My.Resources.Resources.bg_wdt
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(349, 196)
         Me.Controls.Add(Me.LinkLabel4)

@@ -96,7 +96,7 @@ Public Class frmMain
     End Sub
 
     Private Sub MikuWeatherToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuWebsite.Click
-        Process.Start("http://www.mikuweatherchina.weebly.com/")
+        Process.Start("https://github.com/RainySummerLuo/MikuWeather_Windows")
     End Sub
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load

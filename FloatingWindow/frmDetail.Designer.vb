@@ -49,7 +49,7 @@ Partial Class frmDetail
         '
         'picTitleBack
         '
-        Me.picTitleBack.Image = Global.FloatingWindow.My.Resources.Resources.bg_btn
+        Me.picTitleBack.Image = Global.MikuWeather.My.Resources.Resources.bg_btn
         Me.picTitleBack.Location = New System.Drawing.Point(-9, -7)
         Me.picTitleBack.Margin = New System.Windows.Forms.Padding(0)
         Me.picTitleBack.Name = "picTitleBack"
@@ -75,7 +75,7 @@ Partial Class frmDetail
         Me.picClose.BackColor = System.Drawing.Color.Transparent
         Me.picClose.Cursor = System.Windows.Forms.Cursors.Hand
         Me.picClose.ErrorImage = Nothing
-        Me.picClose.Image = Global.FloatingWindow.My.Resources.Resources.abc_ic_clear_normal
+        Me.picClose.Image = Global.MikuWeather.My.Resources.Resources.abc_ic_clear_normal
         Me.picClose.Location = New System.Drawing.Point(376, 8)
         Me.picClose.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.picClose.Name = "picClose"
@@ -102,8 +102,8 @@ Partial Class frmDetail
         '
         Me.picTitle.BackColor = System.Drawing.Color.Transparent
         Me.picTitle.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.picTitle.ErrorImage = Global.FloatingWindow.My.Resources.Resources.action_title
-        Me.picTitle.Image = Global.FloatingWindow.My.Resources.Resources.action_title
+        Me.picTitle.ErrorImage = Global.MikuWeather.My.Resources.Resources.action_title
+        Me.picTitle.Image = Global.MikuWeather.My.Resources.Resources.action_title
         Me.picTitle.Location = New System.Drawing.Point(20, 16)
         Me.picTitle.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.picTitle.Name = "picTitle"
@@ -147,7 +147,7 @@ Partial Class frmDetail
         Me.LinkLabel8.Font = New System.Drawing.Font("造字工房尚雅体演示版常规体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel8.ForeColor = System.Drawing.Color.LightSkyBlue
         Me.LinkLabel8.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel8.Location = New System.Drawing.Point(151, 92)
+        Me.LinkLabel8.Location = New System.Drawing.Point(149, 92)
         Me.LinkLabel8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LinkLabel8.Name = "LinkLabel8"
         Me.LinkLabel8.Size = New System.Drawing.Size(94, 27)
@@ -161,7 +161,7 @@ Partial Class frmDetail
         Me.lnkPM.Font = New System.Drawing.Font("造字工房尚雅体演示版常规体", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.lnkPM.ForeColor = System.Drawing.Color.Cornsilk
         Me.lnkPM.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.lnkPM.Location = New System.Drawing.Point(149, 115)
+        Me.lnkPM.Location = New System.Drawing.Point(147, 115)
         Me.lnkPM.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lnkPM.Name = "lnkPM"
         Me.lnkPM.Size = New System.Drawing.Size(88, 34)
@@ -301,7 +301,7 @@ Partial Class frmDetail
         Me.LinkLabel1.Font = New System.Drawing.Font("造字工房尚雅体演示版常规体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel1.ForeColor = System.Drawing.Color.LightSkyBlue
         Me.LinkLabel1.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel1.Location = New System.Drawing.Point(254, 93)
+        Me.LinkLabel1.Location = New System.Drawing.Point(250, 93)
         Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(76, 27)
@@ -315,7 +315,7 @@ Partial Class frmDetail
         Me.lnkWind.Font = New System.Drawing.Font("造字工房尚雅体演示版常规体", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.lnkWind.ForeColor = System.Drawing.Color.Cornsilk
         Me.lnkWind.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.lnkWind.Location = New System.Drawing.Point(253, 116)
+        Me.lnkWind.Location = New System.Drawing.Point(249, 116)
         Me.lnkWind.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lnkWind.Name = "lnkWind"
         Me.lnkWind.Size = New System.Drawing.Size(65, 34)
@@ -326,7 +326,7 @@ Partial Class frmDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.FloatingWindow.My.Resources.Resources.bg_wdtb
+        Me.BackgroundImage = Global.MikuWeather.My.Resources.Resources.bg_wdtb
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(401, 493)
         Me.Controls.Add(Me.lnkVer)

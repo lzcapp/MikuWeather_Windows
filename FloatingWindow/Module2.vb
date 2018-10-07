@@ -13,7 +13,7 @@ Module Module2
         frmShow.LinkLabel3.Font = New Font(fontclYayuan.Families(0).Name, 13, FontStyle.Regular, GraphicsUnit.Point, 1)
         frmSetting.LinkLabel10.Font = New Font(fontclYayuan.Families(0).Name, 9, FontStyle.Regular, GraphicsUnit.Point,
                                                134)
-        frmSetting.LinkLabel1.Font = New Font(fontclYayuan.Families(0).Name, 12.75, FontStyle.Regular,
+        frmSetting.lnkVer.Font = New Font(fontclYayuan.Families(0).Name, 12.75, FontStyle.Regular,
                                               GraphicsUnit.Point, 134)
         frmSetting.LinkLabel2.Font = New Font(fontclTiaofu.Families(0).Name, 14.25, FontStyle.Regular,
                                               GraphicsUnit.Point, 134)

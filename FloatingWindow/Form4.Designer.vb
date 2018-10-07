@@ -38,7 +38,7 @@ Partial Class frmSetting
         Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.lnkVer = New System.Windows.Forms.LinkLabel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.picLoc = New System.Windows.Forms.PictureBox()
@@ -61,7 +61,7 @@ Partial Class frmSetting
         Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox7.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox7.ErrorImage = Nothing
-        Me.PictureBox7.Image = Global.FloatingWindow.My.Resources.Resources.abc_ic_clear_normal
+        Me.PictureBox7.Image = Global.MikuWeather.My.Resources.Resources.abc_ic_clear_normal
         Me.PictureBox7.Location = New System.Drawing.Point(367, 1)
         Me.PictureBox7.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.PictureBox7.Name = "PictureBox7"
@@ -75,7 +75,7 @@ Partial Class frmSetting
         Me.PictureBox6.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox6.Cursor = System.Windows.Forms.Cursors.Default
         Me.PictureBox6.Enabled = False
-        Me.PictureBox6.Image = Global.FloatingWindow.My.Resources.Resources.ic_menu_refresh
+        Me.PictureBox6.Image = Global.MikuWeather.My.Resources.Resources.ic_menu_refresh
         Me.PictureBox6.Location = New System.Drawing.Point(227, 168)
         Me.PictureBox6.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.PictureBox6.Name = "PictureBox6"
@@ -89,7 +89,7 @@ Partial Class frmSetting
         '
         Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox5.Image = Global.FloatingWindow.My.Resources.Resources.abc_ic_clear_normal
+        Me.PictureBox5.Image = Global.MikuWeather.My.Resources.Resources.abc_ic_clear_normal
         Me.PictureBox5.Location = New System.Drawing.Point(256, 390)
         Me.PictureBox5.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.PictureBox5.Name = "PictureBox5"
@@ -102,7 +102,7 @@ Partial Class frmSetting
         '
         Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox4.Image = Global.FloatingWindow.My.Resources.Resources.abc_ic_cab_done_holo_dark
+        Me.PictureBox4.Image = Global.MikuWeather.My.Resources.Resources.abc_ic_cab_done_holo_dark
         Me.PictureBox4.Location = New System.Drawing.Point(92, 390)
         Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.PictureBox4.Name = "PictureBox4"
@@ -233,7 +233,7 @@ Partial Class frmSetting
         Me.LinkLabel3.Location = New System.Drawing.Point(73, 95)
         Me.LinkLabel3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(91, 31)
+        Me.LinkLabel3.Size = New System.Drawing.Size(95, 33)
         Me.LinkLabel3.TabIndex = 30
         Me.LinkLabel3.Text = "Settings"
         '
@@ -247,7 +247,7 @@ Partial Class frmSetting
         Me.LinkLabel2.Location = New System.Drawing.Point(5, 95)
         Me.LinkLabel2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(60, 31)
+        Me.LinkLabel2.Size = New System.Drawing.Size(63, 33)
         Me.LinkLabel2.TabIndex = 29
         Me.LinkLabel2.Text = "设置"
         '
@@ -267,26 +267,26 @@ Partial Class frmSetting
         Me.CheckBox1.Text = "开机自启动"
         Me.CheckBox1.UseVisualStyleBackColor = False
         '
-        'LinkLabel1
+        'lnkVer
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel1.Font = New System.Drawing.Font("造字工房雅圆（非商用）常规体", 12.5!)
-        Me.LinkLabel1.ForeColor = System.Drawing.Color.MediumTurquoise
-        Me.LinkLabel1.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel1.Location = New System.Drawing.Point(270, 32)
-        Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(107, 29)
-        Me.LinkLabel1.TabIndex = 27
-        Me.LinkLabel1.Text = "v 3.9.6633"
+        Me.lnkVer.AutoSize = True
+        Me.lnkVer.BackColor = System.Drawing.Color.Transparent
+        Me.lnkVer.Font = New System.Drawing.Font("造字工房雅圆（非商用）常规体", 12.5!)
+        Me.lnkVer.ForeColor = System.Drawing.Color.MediumTurquoise
+        Me.lnkVer.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
+        Me.lnkVer.Location = New System.Drawing.Point(270, 32)
+        Me.lnkVer.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lnkVer.Name = "lnkVer"
+        Me.lnkVer.Size = New System.Drawing.Size(73, 29)
+        Me.lnkVer.TabIndex = 27
+        Me.lnkVer.Text = "v 3.9.8"
         '
         'PictureBox2
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox2.ErrorImage = Global.FloatingWindow.My.Resources.Resources.action_title
-        Me.PictureBox2.Image = Global.FloatingWindow.My.Resources.Resources.action_title
+        Me.PictureBox2.ErrorImage = Global.MikuWeather.My.Resources.Resources.action_title
+        Me.PictureBox2.Image = Global.MikuWeather.My.Resources.Resources.action_title
         Me.PictureBox2.Location = New System.Drawing.Point(20, 16)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.PictureBox2.Name = "PictureBox2"
@@ -297,7 +297,7 @@ Partial Class frmSetting
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.FloatingWindow.My.Resources.Resources.bg_btn
+        Me.PictureBox1.Image = Global.MikuWeather.My.Resources.Resources.bg_btn
         Me.PictureBox1.Location = New System.Drawing.Point(-9, -7)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.PictureBox1.Name = "PictureBox1"
@@ -308,7 +308,7 @@ Partial Class frmSetting
         'picLoc
         '
         Me.picLoc.BackColor = System.Drawing.Color.Transparent
-        Me.picLoc.Image = Global.FloatingWindow.My.Resources.Resources.noloc
+        Me.picLoc.Image = Global.MikuWeather.My.Resources.Resources.noloc
         Me.picLoc.Location = New System.Drawing.Point(343, 75)
         Me.picLoc.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.picLoc.Name = "picLoc"
@@ -381,7 +381,7 @@ Partial Class frmSetting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.FloatingWindow.My.Resources.Resources.bg_wdtb
+        Me.BackgroundImage = Global.MikuWeather.My.Resources.Resources.bg_wdtb
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(401, 481)
         Me.Controls.Add(Me.LinkLabel6)
@@ -403,7 +403,7 @@ Partial Class frmSetting
         Me.Controls.Add(Me.LinkLabel3)
         Me.Controls.Add(Me.LinkLabel2)
         Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.LinkLabel1)
+        Me.Controls.Add(Me.lnkVer)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.picLoc)
@@ -439,7 +439,7 @@ Partial Class frmSetting
     Friend WithEvents LinkLabel3 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
+    Friend WithEvents lnkVer As System.Windows.Forms.LinkLabel
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents picLoc As System.Windows.Forms.PictureBox

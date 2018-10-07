@@ -43,42 +43,42 @@ Partial Class frmMain
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuWebsite, Me.menuUpdate, Me.天气详情ToolStripMenuItem, Me.menuSet, Me.menuHide, Me.menuExit})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(211, 176)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(215, 176)
         '
         'menuWebsite
         '
         Me.menuWebsite.Name = "menuWebsite"
-        Me.menuWebsite.Size = New System.Drawing.Size(210, 24)
-        Me.menuWebsite.Text = "Miku Weather官网"
+        Me.menuWebsite.Size = New System.Drawing.Size(214, 24)
+        Me.menuWebsite.Text = "Miku Weather 官网"
         '
         'menuUpdate
         '
         Me.menuUpdate.Name = "menuUpdate"
-        Me.menuUpdate.Size = New System.Drawing.Size(210, 24)
+        Me.menuUpdate.Size = New System.Drawing.Size(214, 24)
         Me.menuUpdate.Text = "更新数据！"
         '
         '天气详情ToolStripMenuItem
         '
         Me.天气详情ToolStripMenuItem.Name = "天气详情ToolStripMenuItem"
-        Me.天气详情ToolStripMenuItem.Size = New System.Drawing.Size(210, 24)
+        Me.天气详情ToolStripMenuItem.Size = New System.Drawing.Size(214, 24)
         Me.天气详情ToolStripMenuItem.Text = "天气详情..."
         '
         'menuSet
         '
         Me.menuSet.Name = "menuSet"
-        Me.menuSet.Size = New System.Drawing.Size(210, 24)
+        Me.menuSet.Size = New System.Drawing.Size(214, 24)
         Me.menuSet.Text = "设置"
         '
         'menuHide
         '
         Me.menuHide.Name = "menuHide"
-        Me.menuHide.Size = New System.Drawing.Size(210, 24)
+        Me.menuHide.Size = New System.Drawing.Size(214, 24)
         Me.menuHide.Text = "隐藏到系统托盘"
         '
         'menuExit
         '
         Me.menuExit.Name = "menuExit"
-        Me.menuExit.Size = New System.Drawing.Size(210, 24)
+        Me.menuExit.Size = New System.Drawing.Size(214, 24)
         Me.menuExit.Text = "退出"
         '
         'NotifyIcon1
@@ -110,7 +110,7 @@ Partial Class frmMain
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Snow
-        Me.BackgroundImage = Global.FloatingWindow.My.Resources.Resources.N1
+        Me.BackgroundImage = Global.MikuWeather.My.Resources.Resources.N1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(223, 211)
         Me.ContextMenuStrip = Me.ContextMenuStrip1

@@ -9,9 +9,9 @@ Public Class frmSetting
     Private Sub Form4_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LinkLabel10.Parent = PictureBox1
         PictureBox2.Parent = PictureBox1
-        LinkLabel1.Parent = PictureBox1
+        lnkVer.Parent = PictureBox1
 
-        LinkLabel1.Text = "v" + Split(Application.ProductVersion, ".")(0) + "." +
+        lnkVer.Text = "v" + Split(Application.ProductVersion, ".")(0) + "." +
                           Split(Application.ProductVersion, ".")(1) + "." + Split(Application.ProductVersion, ".")(2)
 
         If blnIPSer = True Then
@@ -53,6 +53,9 @@ Public Class frmSetting
 
         TextBox1.BackColor = Color.FromArgb(59, 59, 59)
         ComboBox1.BackColor = Color.FromArgb(59, 59, 59)
+
+        lnkVer.Text = "v" + Split(Application.ProductVersion, ".")(0) + "." + Split(Application.ProductVersion, ".")(1) +
+                      "." + Split(Application.ProductVersion, ".")(2)
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged

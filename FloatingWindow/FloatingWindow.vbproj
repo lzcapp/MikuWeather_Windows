@@ -6,9 +6,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3CD1D1AD-E111-4838-BC59-8F795501A199}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>FloatingWindow.My.MyApplication</StartupObject>
-    <RootNamespace>FloatingWindow</RootNamespace>
-    <AssemblyName>FloatingWindow</AssemblyName>
+    <StartupObject>MikuWeather.My.MyApplication</StartupObject>
+    <RootNamespace>MikuWeather</RootNamespace>
+    <AssemblyName>MikuWeather</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -22,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>FloatingWindow.xml</DocumentationFile>
+    <DocumentationFile>MikuWeather.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
@@ -33,7 +33,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>FloatingWindow.xml</DocumentationFile>
+    <DocumentationFile>MikuWeather.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>

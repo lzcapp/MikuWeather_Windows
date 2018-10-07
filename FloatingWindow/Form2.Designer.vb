@@ -58,7 +58,7 @@ Partial Class frmMsg
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.FloatingWindow.My.Resources.Resources.abc_ic_clear_normal
+        Me.PictureBox1.Image = Global.MikuWeather.My.Resources.Resources.abc_ic_clear_normal
         Me.PictureBox1.Location = New System.Drawing.Point(258, 1)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(25, 23)
@@ -82,7 +82,7 @@ Partial Class frmMsg
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.FloatingWindow.My.Resources.Resources.bg_wdtb
+        Me.BackgroundImage = Global.MikuWeather.My.Resources.Resources.bg_wdtb
         Me.ClientSize = New System.Drawing.Size(284, 116)
         Me.Controls.Add(Me.LinkLabel3)
         Me.Controls.Add(Me.PictureBox1)

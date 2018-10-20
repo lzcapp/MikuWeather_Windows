@@ -4,36 +4,29 @@ Imports System.Text
 Imports System.Xml
 Imports Newtonsoft.Json.Linq
 
-Public Class frmMain
+Public Class FrmMain
     Inherits Form
 
-    Dim intScreenY As Integer
-    ReadOnly xmlSetFile As New XmlDocument
-    Dim xmlnSetMain As XmlNode
-    Dim xmlnsSetMain, xmlnsSetSet As XmlNodeList
+    Dim _intScreenY As Integer
+    ReadOnly _xmlSetFile As New XmlDocument
+    Dim _xmlnSetMain As XmlNode
+    Dim _xmlnsSetMain, _xmlnsSetSet As XmlNodeList
 
-    Private mp As Point
-
-    Dim joLoc, joWeather As JObject
+    Dim _joLoc As JObject
 
 
     Private Sub Form3_MouseEnter(sender As Object, e As EventArgs) Handles Me.MouseEnter
-        frmShow.SetBounds(Me.Location.X - 90, Me.Location.Y - 193, 349, 196)
+        frmShow.SetBounds(Location.X - 90, Location.Y - 193, 349, 196)
         frmShow.Show()
     End Sub
 
     Private Sub Form3_MouseHover(sender As Object, e As EventArgs) Handles Me.MouseHover
-        frmShow.SetBounds(Me.Location.X - 90, Me.Location.Y - 193, 349, 196)
+        frmShow.SetBounds(Location.X - 90, Location.Y - 193, 349, 196)
         frmShow.Show()
     End Sub
 
     Private Sub Form3_MouseLeave(sender As Object, e As EventArgs) Handles Me.MouseLeave
         frmShow.Close()
-        frmShow.Dispose()
-    End Sub
-
-    Private Sub LinkLabel1_MouseLeave(sender As Object, e As EventArgs)
-        frmShow.Hide()
         frmShow.Dispose()
     End Sub
 
@@ -43,18 +36,17 @@ Public Class frmMain
             Dim mousePos As Point
             mousePos = sender.findform().MousePosition
             'mousePos.Offset(-mp.X, 0)
-            mousePos.Y = intScreenY - Me.Size.Height + 16
-            If (Me.Location.X > Screen.PrimaryScreen.WorkingArea.Width - 272 Or Me.Location.X < 100) = False Then
+            mousePos.Y = _intScreenY - Size.Height + 16
+            If (Location.X > Screen.PrimaryScreen.WorkingArea.Width - 272 Or Location.X < 100) = False Then
                 sender.findform().Location = mousePos
             End If
 
-            If Me.Location.X > Screen.PrimaryScreen.WorkingArea.Width - 272 Then
-                Me.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, intScreenY - Me.Size.Height + 16,
-                             Me.Size.Width, Me.Size.Height)
+            If Location.X > Screen.PrimaryScreen.WorkingArea.Width - 272 Then
+                SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, _intScreenY - Size.Height + 16, Size.Width, Size.Height)
             End If
 
-            If Me.Location.X < 100 Then
-                Me.SetBounds(100, intScreenY - Me.Size.Height + 16, Me.Size.Width, Me.Size.Height)
+            If Location.X < 100 Then
+                SetBounds(100, _intScreenY - Size.Height + 16, Size.Width, Size.Height)
             End If
         End If
     End Sub
@@ -71,17 +63,20 @@ Public Class frmMain
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         GetWeatherData()
+        ' ReSharper disable once LocalizableElement
         NotifyIcon1.Text = "您忙了好久了，歇会吧~ 天气都给您更新好啦！"
     End Sub
 
     Private Sub 暂时去托盘躲躲啊ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuHide.Click
-        Me.Hide()
+        Hide()
+        ' ReSharper disable once LocalizableElement
         NotifyIcon1.BalloonTipText = "Miku到这了哟~ 要叫我就直接双击"
         NotifyIcon1.ShowBalloonTip(700)
     End Sub
 
     Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
-        Me.Show()
+        Show()
+        ' ReSharper disable once LocalizableElement
         NotifyIcon1.BalloonTipText = "Miku出来啦~~"
         NotifyIcon1.ShowBalloonTip(700)
     End Sub
@@ -92,7 +87,7 @@ Public Class frmMain
 
     Private Sub 设置ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuSet.Click
         frmSetting.Show()
-        Me.Close()
+        Close()
     End Sub
 
     Private Sub MikuWeatherToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuWebsite.Click
@@ -100,17 +95,17 @@ Public Class frmMain
     End Sub
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim frmMain1 As frmMain = Me
+        Dim frmMain1 As FrmMain = Me
         'If My.Computer.Screen.BitsPerPixel >= 32 Then
-        frmMain1.BackColor = Color.Snow
+        frmMain1.BackColor = Color.GhostWhite
         'ElseIf My.Computer.Screen.BitsPerPixel >= 16 And My.Computer.Screen.BitsPerPixel < 32 Then
         'Me.BackColor = Color.White
         'End If
         frmMain1.TransparencyKey = frmMain1.BackColor
 
-        intScreenY = Screen.PrimaryScreen.WorkingArea.Bottom
+        _intScreenY = Screen.PrimaryScreen.WorkingArea.Bottom
 
-        frmMain1.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, frmMain1.intScreenY - frmMain1.Size.Height + 16,
+        frmMain1.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, frmMain1._intScreenY - frmMain1.Size.Height + 16,
                            frmMain1.Size.Width, frmMain1.Size.Height)
 
         frmMain1.Icon = My.Resources.hi
@@ -123,61 +118,43 @@ Public Class frmMain
         Try
             If strSetAddr = Nothing Then
                 If File.Exists(Application.StartupPath + "\set.xml") = True Then
-                    xmlSetFile.Load(Application.StartupPath + "\set.xml")
+                    _xmlSetFile.Load(Application.StartupPath + "\set.xml")
                     strSetAddr = Application.StartupPath + "\set.xml"
                 Else
-                    StrMsg = "没能找到设置文件欸！请一定要放在和程序同一个文件夹下。"
-                    StrMsgTitle = "Miku似乎遇到麻烦了！"
-                    frmMsg.Show()
+                    ' StrMsg = "没能找到设置文件欸！请一定要放在和程序同一个文件夹下。"
+                    ' StrMsgTitle = "Miku似乎遇到麻烦了！"
+                    ' frmMsg.Show()
                     End
                 End If
-            Else : xmlSetFile.Load(strSetAddr)
+            Else : _xmlSetFile.Load(strSetAddr)
             End If
 
-            xmlnsSetMain = xmlSetFile.ChildNodes
-            xmlnSetMain = xmlnsSetMain.ItemOf(1)
-            xmlnsSetSet = xmlnSetMain.ChildNodes
+            _xmlnsSetMain = _xmlSetFile.ChildNodes
+            _xmlnSetMain = _xmlnsSetMain.ItemOf(1)
+            _xmlnsSetSet = _xmlnSetMain.ChildNodes
 
-            strSetLoc = xmlnsSetSet.ItemOf(0).InnerText
-            intSetIntv = xmlnsSetSet.ItemOf(1).InnerText
-            strSetWeather = xmlnsSetSet.ItemOf(2).InnerText
-            '            intSource = xmlnsSetSet.ItemOf(4).InnerText
+            strSetLoc = _xmlnsSetSet.ItemOf(0).InnerText
+            intSetIntv = _xmlnsSetSet.ItemOf(1).InnerText
+            strSetWeather = _xmlnsSetSet.ItemOf(2).InnerText
 
             LinkLabel2.Text = strSetLoc
             Timer1.Interval = intSetIntv
 
-            '            Using weatherWebc As New WebClient
-            '                weatherWebc.Encoding = Encoding.UTF8
-            '                joWeather = JObject.Parse(weatherWebc.DownloadString("http://api.map.baidu.com/telematics/v3/weather?location=" + strSetLoc + "&output=json&ak=edUWu66ddGavrmj9a6vcsa75"))
-            '            End Using
-            '
-            '            If joWeather.SelectToken("error").ToString = "0" Then
-            '                blnWeatherSer = True
-            '                frmSetting.CheckBox2.Enabled = True
-            '            Else
-            '                blnWeatherSer = False
-            '                intErrCode = intErrCodeWeather
-            '                ErrorCheck()
-            '                StrMsgTitle = "天气数据获取失败"
-            '                StrMsg = "Miku无法获取天气预报的相关数据，错误信息：error code = " + Str(intErrCode) + " /" + strErrMsg
-            '                frmMsg.Show()
-            '            End If
-
-            If xmlnsSetSet.ItemOf(3).InnerText = "1" Then
+            If _xmlnsSetSet.ItemOf(3).InnerText = "1" Then
                 Using iplocWebc As New WebClient
                     iplocWebc.Encoding = Encoding.Default
-                    joLoc =
+                    _joLoc =
                         JObject.Parse(
                             iplocWebc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75"))
                 End Using
-                If joLoc.SelectToken("status").ToString = "0" Then
+                If _joLoc.SelectToken("status").ToString = "0" Then
                     blnAutoIPLoc = True
                     blnIPSer = True
                 Else
                     blnAutoIPLoc = False
                     blnIPSer = False
                     StrMsgTitle = "IP定位服务错误"
-                    StrMsg = "Miku无法获取您的位置信息，自动定位。错误信息：error code = " + joLoc.SelectToken("status").ToString
+                    StrMsg = "Miku无法获取您的位置信息，自动定位。错误信息：error code = " + _joLoc.SelectToken("status").ToString
                     frmMsg.Show()
                 End If
             End If
@@ -197,9 +174,5 @@ Public Class frmMain
 
     Private Sub 天气详情ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 天气详情ToolStripMenuItem.Click
         frmDetail.Show()
-    End Sub
-
-    Private Sub 关于ToolStripMenuItem_Click(sender As Object, e As EventArgs) 
-        Process.Start("http://www.mikuweatherchina.weebly.com/")
     End Sub
 End Class

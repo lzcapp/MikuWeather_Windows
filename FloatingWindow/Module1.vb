@@ -103,8 +103,8 @@ Module Module1
             strSic = joWeather.SelectToken("results[0].index[2].des").ToString
             strSpoDS = joWeather.SelectToken("results[0].index[3].zs").ToString
             strSpo = joWeather.SelectToken("results[0].index[3].des").ToString
-            strUVDs = joWeather.SelectToken("results[0].index[4].zs").ToString
-            strUV = joWeather.SelectToken("results[0].index[4].des").ToString
+            ' strUVDs = joWeather.SelectToken("results[0].index[4].zs").ToString
+            ' strUV = joWeather.SelectToken("results[0].index[4].des").ToString
 
             LocalUpdate()
         Else

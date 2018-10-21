@@ -1,4 +1,4 @@
-﻿Public Class frmDetail
+﻿Public Class FrmDetail
     Private Sub frmDetail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lnkCopy.Parent = picTitleBack
         lnkVer.Parent = picTitleBack

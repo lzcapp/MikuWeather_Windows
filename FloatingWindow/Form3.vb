@@ -42,7 +42,8 @@ Public Class FrmMain
             End If
 
             If Location.X > Screen.PrimaryScreen.WorkingArea.Width - 272 Then
-                SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, _intScreenY - Size.Height + 16, Size.Width, Size.Height)
+                SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, _intScreenY - Size.Height + 16, Size.Width,
+                          Size.Height)
             End If
 
             If Location.X < 100 Then
@@ -105,7 +106,8 @@ Public Class FrmMain
 
         _intScreenY = Screen.PrimaryScreen.WorkingArea.Bottom
 
-        frmMain1.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272, frmMain1._intScreenY - frmMain1.Size.Height + 16,
+        frmMain1.SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272,
+                           frmMain1._intScreenY - frmMain1.Size.Height + 16,
                            frmMain1.Size.Width, frmMain1.Size.Height)
 
         frmMain1.Icon = My.Resources.hi
@@ -133,11 +135,11 @@ Public Class FrmMain
             _xmlnSetMain = _xmlnsSetMain.ItemOf(1)
             _xmlnsSetSet = _xmlnSetMain.ChildNodes
 
-            strSetLoc = _xmlnsSetSet.ItemOf(0).InnerText
+            StrSetLoc = _xmlnsSetSet.ItemOf(0).InnerText
             intSetIntv = _xmlnsSetSet.ItemOf(1).InnerText
             strSetWeather = _xmlnsSetSet.ItemOf(2).InnerText
 
-            LinkLabel2.Text = strSetLoc
+            LinkLabel2.Text = StrSetLoc
             Timer1.Interval = intSetIntv
 
             If _xmlnsSetSet.ItemOf(3).InnerText = "1" Then

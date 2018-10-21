@@ -11,28 +11,29 @@
 Option Strict On
 Option Explicit On
 
+Imports Microsoft.VisualBasic.ApplicationServices
 
 Namespace My
-    
+
     '注意:此文件是自动生成的；请勿直接进行修改。若要更改，
     ' 或者如果您在此文件中遇到生成错误，请转至项目设计器
     ' (转至“项目属性”或在解决方案资源管理器中双击“我的项目”节点)，
     ' 然后在“应用程序”选项卡中进行更改。
     '
     Partial Friend Class MyApplication
-        
-        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
+
+        <DebuggerStepThrough()>
         Public Sub New()
-            MyBase.New(Global.Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows)
-            Me.IsSingleInstance = true
-            Me.EnableVisualStyles = true
-            Me.SaveMySettingsOnExit = false
-            Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterAllFormsClose
+            MyBase.New(AuthenticationMode.Windows)
+            Me.IsSingleInstance = True
+            Me.EnableVisualStyles = True
+            Me.SaveMySettingsOnExit = False
+            Me.ShutdownStyle = ShutdownMode.AfterAllFormsClose
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
+
+        <DebuggerStepThrough()>
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.MikuWeather.frmMain
+            Me.MainForm = MikuWeather.FrmMain
         End Sub
     End Class
 End Namespace

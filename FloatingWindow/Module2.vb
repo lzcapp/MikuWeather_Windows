@@ -14,7 +14,7 @@ Module Module2
         frmSetting.LinkLabel10.Font = New Font(fontclYayuan.Families(0).Name, 9, FontStyle.Regular, GraphicsUnit.Point,
                                                134)
         frmSetting.lnkVer.Font = New Font(fontclYayuan.Families(0).Name, 12.75, FontStyle.Regular,
-                                              GraphicsUnit.Point, 134)
+                                          GraphicsUnit.Point, 134)
         frmSetting.LinkLabel2.Font = New Font(fontclTiaofu.Families(0).Name, 14.25, FontStyle.Regular,
                                               GraphicsUnit.Point, 134)
         frmSetting.LinkLabel3.Font = New Font(fontclTiaofu.Families(0).Name, 14.25, FontStyle.Regular,
@@ -365,8 +365,10 @@ Module Module2
         If todevepic = Nothing And tomevepic = Nothing Then
             frmShow.PictureBox3.Image = My.Resources.N1
             frmShow.PictureBox2.Image = My.Resources.N1
-            frmShow.LinkLabel3.Text = "No Data"
-            frmShow.LinkLabel4.Text = "No Data"
+            ' ReSharper disable once LocalizableElement
+            FrmShow.LinkLabel3.Text = "No Data"
+            ' ReSharper disable once LocalizableElement
+            FrmShow.LinkLabel4.Text = "No Data"
         End If
 
         frmShow.LinkLabel1.Text = nowtemp + "  |  " + todtemp
@@ -374,7 +376,7 @@ Module Module2
         frmShow.LinkLabel3.Text = todweather
         frmShow.LinkLabel4.Text = tomweather
 
-        frmDetail.lnkCity.Text = strSetLoc
+        frmDetail.lnkCity.Text = StrSetLoc
 
         frmDetail.lnkWind.Text = strWind
 
@@ -412,7 +414,7 @@ Module Module2
         End If
     End Sub
 
-    Public Sub CheckUI(ui As Object)
+    Public Sub CheckUi(ui As Object)
         If ui.Checked = True Then
             ui.ForeColor = Color.SandyBrown
         Else : ui.ForeColor = Color.DarkGray

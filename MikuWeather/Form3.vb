@@ -32,10 +32,8 @@ Public Class FrmMain
 
     Private Sub Form1_MouseMove(sender As Object, e As MouseEventArgs) Handles Me.MouseMove
         If e.Button = MouseButtons.Left Then
-            'If Me.Location.X > Screen.PrimaryScreen.WorkingArea.Width - 272 And Me.Location.X < 100 Then
             Dim mousePos As Point
             mousePos = sender.findform().MousePosition
-            'mousePos.Offset(-mp.X, 0)
             mousePos.Y = _intScreenY - Size.Height + 16
             If (Location.X > Screen.PrimaryScreen.WorkingArea.Width - 272 Or Location.X < 100) = False Then
                 sender.findform().Location = mousePos
@@ -52,7 +50,7 @@ Public Class FrmMain
         End If
     End Sub
 
-    Private Sub 退出ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuExit.Click
+    Private Shared Sub 退出ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuExit.Click
         End
     End Sub
 
@@ -82,7 +80,7 @@ Public Class FrmMain
         NotifyIcon1.ShowBalloonTip(700)
     End Sub
 
-    Private Sub 给我去更新天气ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuUpdate.Click
+    Private Shared Sub 给我去更新天气ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuUpdate.Click
         GetWeatherData()
     End Sub
 
@@ -91,11 +89,11 @@ Public Class FrmMain
         Close()
     End Sub
 
-    Private Sub MikuWeatherToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuWebsite.Click
+    Private Shared Sub MikuWeathrToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menuWebsite.Click
         Process.Start("https://github.com/RainySummerLuo/MikuWeather_Windows")
     End Sub
 
-    Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim frmMain1 As FrmMain = Me
         'If My.Computer.Screen.BitsPerPixel >= 32 Then
         frmMain1.BackColor = Color.GhostWhite
@@ -112,23 +110,23 @@ Public Class FrmMain
 
         frmMain1.Icon = My.Resources.hi
 
-        frmShow.PictureBox2.BackColor = Color.Transparent
-        frmShow.PictureBox2.Parent = frmShow
-        frmShow.PictureBox3.BackColor = Color.Transparent
-        frmShow.PictureBox3.Parent = frmShow
+        FrmShow.PictureBox2.BackColor = Color.Transparent
+        FrmShow.PictureBox2.Parent = FrmShow
+        FrmShow.PictureBox3.BackColor = Color.Transparent
+        FrmShow.PictureBox3.Parent = FrmShow
 
         Try
-            If strSetAddr = Nothing Then
+            If StrSetAddr = Nothing Then
                 If File.Exists(Application.StartupPath + "\set.xml") = True Then
                     _xmlSetFile.Load(Application.StartupPath + "\set.xml")
-                    strSetAddr = Application.StartupPath + "\set.xml"
+                    StrSetAddr = Application.StartupPath + "\set.xml"
                 Else
                     ' StrMsg = "没能找到设置文件欸！请一定要放在和程序同一个文件夹下。"
                     ' StrMsgTitle = "Miku似乎遇到麻烦了！"
                     ' frmMsg.Show()
                     End
                 End If
-            Else : _xmlSetFile.Load(strSetAddr)
+            Else : _xmlSetFile.Load(StrSetAddr)
             End If
 
             _xmlnsSetMain = _xmlSetFile.ChildNodes
@@ -136,11 +134,11 @@ Public Class FrmMain
             _xmlnsSetSet = _xmlnSetMain.ChildNodes
 
             StrSetLoc = _xmlnsSetSet.ItemOf(0).InnerText
-            intSetIntv = _xmlnsSetSet.ItemOf(1).InnerText
-            strSetWeather = _xmlnsSetSet.ItemOf(2).InnerText
+            IntSetIntv = _xmlnsSetSet.ItemOf(1).InnerText
+            StrSetWeather = _xmlnsSetSet.ItemOf(2).InnerText
 
             LinkLabel2.Text = StrSetLoc
-            Timer1.Interval = intSetIntv
+            Timer1.Interval = IntSetIntv
 
             If _xmlnsSetSet.ItemOf(3).InnerText = "1" Then
                 Using iplocWebc As New WebClient
@@ -150,14 +148,14 @@ Public Class FrmMain
                             iplocWebc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75"))
                 End Using
                 If _joLoc.SelectToken("status").ToString = "0" Then
-                    blnAutoIPLoc = True
-                    blnIPSer = True
+                    BlnAutoIpLoc = True
+                    BlnIpSer = True
                 Else
-                    blnAutoIPLoc = False
-                    blnIPSer = False
+                    BlnAutoIpLoc = False
+                    BlnIpSer = False
                     StrMsgTitle = "IP定位服务错误"
                     StrMsg = "Miku无法获取您的位置信息，自动定位。错误信息：error code = " + _joLoc.SelectToken("status").ToString
-                    frmMsg.Show()
+                    FrmMsg.Show()
                 End If
             End If
 

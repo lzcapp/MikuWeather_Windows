@@ -57,17 +57,14 @@ Module Module2
                                               1)
         frmDetail.lnkSicTitle.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point,
                                               1)
-        frmDetail.lnkUVTitle.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point,
-                                             1)
         'frmDetail.lnkTraTitle.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point, 1)
-        frmDetail.lnkSpoTitle.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point,
+        FrmDetail.lnkSpoTitle.Font = New Font(fontclShangya.Families(0).Name, 12, FontStyle.Regular, GraphicsUnit.Point,
                                               1)
         frmDetail.lnkCar.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
         frmDetail.lnkClo.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
         frmDetail.lnkSic.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
-        frmDetail.lnkUV.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
         'frmDetail.lnkTra.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
-        frmDetail.lnkSpo.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
+        FrmDetail.lnkSpo.Font = New Font(fontclShangya.Families(0).Name, 10, FontStyle.Regular, GraphicsUnit.Point, 134)
     End Sub
 
     Public Sub LocalUpdate()
@@ -389,9 +386,7 @@ Module Module2
         frmDetail.lnkSicTitle.Text = "感冒 · " + strSicDs
         frmDetail.lnkSic.Text = strSic
         frmDetail.lnkSpoTitle.Text = "运动 · " + strSpoDS
-        frmDetail.lnkSpo.Text = strSpo
-        frmDetail.lnkUVTitle.Text = "紫外线 · " + strUVDs
-        frmDetail.lnkUV.Text = strUV
+        frmDetail.lnkSpo.Text = StrSpo
 
         If intPM < 50 Then
             frmDetail.lnkPM.Text = intPM.ToString + " · 优"

@@ -25,69 +25,69 @@ Partial Class FrmMain
     '不要使用代码编辑器修改它。
     <DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New Container()
-        Dim resources As ComponentResourceManager = New ComponentResourceManager(GetType(FrmMain))
-        Me.ContextMenuStrip1 = New ContextMenuStrip(Me.components)
-        Me.menuWebsite = New ToolStripMenuItem()
-        Me.menuUpdate = New ToolStripMenuItem()
-        Me.天气详情ToolStripMenuItem = New ToolStripMenuItem()
-        Me.menuSet = New ToolStripMenuItem()
-        Me.menuHide = New ToolStripMenuItem()
-        Me.menuExit = New ToolStripMenuItem()
-        Me.NotifyIcon1 = New NotifyIcon(Me.components)
-        Me.Timer1 = New Timer(Me.components)
-        Me.LinkLabel2 = New LinkLabel()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMain))
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.menuWebsite = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuUpdate = New System.Windows.Forms.ToolStripMenuItem()
+        Me.天气详情ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuSet = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuHide = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuExit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.BackColor = SystemColors.Control
-        Me.ContextMenuStrip1.ImageScalingSize = New Size(20, 20)
-        Me.ContextMenuStrip1.Items.AddRange(New ToolStripItem() {Me.menuWebsite, Me.menuUpdate, Me.天气详情ToolStripMenuItem, Me.menuSet, Me.menuHide, Me.menuExit})
+        Me.ContextMenuStrip1.BackColor = System.Drawing.SystemColors.Control
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuWebsite, Me.menuUpdate, Me.天气详情ToolStripMenuItem, Me.menuSet, Me.menuHide, Me.menuExit})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New Size(215, 176)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(187, 136)
         '
         'menuWebsite
         '
         Me.menuWebsite.Name = "menuWebsite"
-        Me.menuWebsite.Size = New Size(214, 24)
+        Me.menuWebsite.Size = New System.Drawing.Size(186, 22)
         Me.menuWebsite.Text = "Miku Weather 官网"
         '
         'menuUpdate
         '
         Me.menuUpdate.Name = "menuUpdate"
-        Me.menuUpdate.Size = New Size(214, 24)
+        Me.menuUpdate.Size = New System.Drawing.Size(186, 22)
         Me.menuUpdate.Text = "更新数据！"
         '
         '天气详情ToolStripMenuItem
         '
         Me.天气详情ToolStripMenuItem.Name = "天气详情ToolStripMenuItem"
-        Me.天气详情ToolStripMenuItem.Size = New Size(214, 24)
+        Me.天气详情ToolStripMenuItem.Size = New System.Drawing.Size(186, 22)
         Me.天气详情ToolStripMenuItem.Text = "天气详情..."
         '
         'menuSet
         '
         Me.menuSet.Name = "menuSet"
-        Me.menuSet.Size = New Size(214, 24)
+        Me.menuSet.Size = New System.Drawing.Size(186, 22)
         Me.menuSet.Text = "设置"
         '
         'menuHide
         '
         Me.menuHide.Name = "menuHide"
-        Me.menuHide.Size = New Size(214, 24)
+        Me.menuHide.Size = New System.Drawing.Size(186, 22)
         Me.menuHide.Text = "隐藏到系统托盘"
         '
         'menuExit
         '
         Me.menuExit.Name = "menuExit"
-        Me.menuExit.Size = New Size(214, 24)
+        Me.menuExit.Size = New System.Drawing.Size(186, 22)
         Me.menuExit.Text = "退出"
         '
         'NotifyIcon1
         '
         Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), Icon)
+        Me.NotifyIcon1.Icon = CType(resources.GetObject("NotifyIcon1.Icon"), System.Drawing.Icon)
         Me.NotifyIcon1.Text = "Miku Weather"
         Me.NotifyIcon1.Visible = True
         '
@@ -97,38 +97,37 @@ Partial Class FrmMain
         '
         'LinkLabel2
         '
-        Me.LinkLabel2.BackColor = Color.Transparent
-        Me.LinkLabel2.Font = New Font("条幅黑体", 16.2!, FontStyle.Regular, GraphicsUnit.Point, CType(134, Byte))
-        Me.LinkLabel2.LinkArea = New LinkArea(0, 0)
-        Me.LinkLabel2.Location = New Point(60, 20)
-        Me.LinkLabel2.Margin = New Padding(4, 0, 4, 0)
+        Me.LinkLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLabel2.Font = New System.Drawing.Font("条幅黑体", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.LinkLabel2.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
+        Me.LinkLabel2.Location = New System.Drawing.Point(45, 15)
         Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New Size(164, 31)
+        Me.LinkLabel2.Size = New System.Drawing.Size(123, 23)
         Me.LinkLabel2.TabIndex = 1
         Me.LinkLabel2.Text = "广州"
-        Me.LinkLabel2.TextAlign = ContentAlignment.MiddleRight
+        Me.LinkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'frmMain
+        'FrmMain
         '
-        Me.AutoScaleDimensions = New SizeF(8.0!, 16.0!)
-        Me.AutoScaleMode = AutoScaleMode.Font
-        Me.BackColor = Color.Snow
-        Me.BackgroundImage = My.Resources.Resources.N1
-        Me.BackgroundImageLayout = ImageLayout.Zoom
-        Me.ClientSize = New Size(223, 211)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.GreenYellow
+        Me.BackgroundImage = Global.MikuWeather.My.Resources.Resources.N1
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.ClientSize = New System.Drawing.Size(167, 158)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Controls.Add(Me.LinkLabel2)
         Me.DoubleBuffered = True
-        Me.FormBorderStyle = FormBorderStyle.None
-        Me.Margin = New Padding(4, 3, 4, 3)
-        Me.Name = "frmMain"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Name = "FrmMain"
         Me.Opacity = 0.98R
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = FormStartPosition.Manual
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "frmMain"
         Me.TopMost = True
-        Me.TransparencyKey = Color.Snow
+        Me.TransparencyKey = System.Drawing.Color.Snow
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 

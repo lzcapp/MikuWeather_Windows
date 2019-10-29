@@ -96,7 +96,7 @@ Public Class FrmMain
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim frmMain1 As FrmMain = Me
         'If My.Computer.Screen.BitsPerPixel >= 32 Then
-        frmMain1.BackColor = Color.GhostWhite
+        frmMain1.BackColor = Color.FloralWhite
         'ElseIf My.Computer.Screen.BitsPerPixel >= 16 And My.Computer.Screen.BitsPerPixel < 32 Then
         'Me.BackColor = Color.White
         'End If

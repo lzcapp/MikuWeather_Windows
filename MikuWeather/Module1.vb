@@ -15,9 +15,8 @@ Module Module1
 
     Public Todweather, Tomweather, Nowtemp, Todtemp, Tomtemp, Toddaypic, Tomdaypic, Todevepic, Tomevepic As String
 
-    ' ReSharper disable once UnusedMember.Global
     Public _
-        StrCloDs, StrClo, StrCarDs, StrCar, StrTraDs, StrSicDs, StrSic, StrSpoDs, StrSpo As String
+        StrCloDs, StrClo, StrCarDs, StrCar, StrSicDs, StrSic, StrSpoDs, StrSpo As String
 
     Public IntPm As Integer
     Public StrWind As String
@@ -48,12 +47,6 @@ Module Module1
             StrMsg = "Miku无法获取您的位置，错误信息：error code = " + Str(_intErrCode) + " /" + _strErrMsg
             FrmMsg.Show()
         End If
-
-        'Catch ex As Exception
-        'StrMsgTitle = "Miku似乎遇到麻烦了！"
-        'StrMsg = "Mod1异常：" + ex.Message
-        'frmMsg.Show()
-        'End Try
     End Sub
 
     Public Sub GetWeatherData()

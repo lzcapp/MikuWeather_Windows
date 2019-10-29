@@ -3,7 +3,7 @@ Imports System.Text
 Imports Newtonsoft.Json.Linq
 
 Module Module1
-    Public StrSetLoc, StrSetWeather As String
+    Public StrSetLoc As String
     Public IntSetIntv As Integer
 
     Public Iploc As String
@@ -17,8 +17,7 @@ Module Module1
 
     ' ReSharper disable once UnusedMember.Global
     Public _
-        StrCloDs, StrClo, StrCarDs, StrCar, StrTraDs, StrTra, StrSicDs, StrSic, StrSpoDs, StrSpo, StrUvDs, StrUv _
-            As String
+        StrCloDs, StrClo, StrCarDs, StrCar, StrTraDs, StrSicDs, StrSic, StrSpoDs, StrSpo As String
 
     Public IntPm As Integer
     Public StrWind As String
@@ -31,14 +30,7 @@ Module Module1
 
     Public Sub IpLocation()
         Dim strLocNet As String
-        'Try
-        'Using webcIP As New WebClient
-        'webcIP.Encoding = Encoding.Default
-        'ip = webcIP.DownloadString("http://www.whatsmyip.us/showipsimple.php")
-        'ip = ip.Substring(16)
-        'ip = ip.Remove(ip.Length - 3)
-        'End Using
-
+        
         Using webcIPloc As New WebClient
             webcIPloc.Encoding = Encoding.Default
             strLocNet = webcIPloc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75")
@@ -66,8 +58,6 @@ Module Module1
 
     Public Sub GetWeatherData()
         Dim strWeatherNet As String
-        'Try
-        'If 
         Using weatherWebc As New WebClient
             weatherWebc.Encoding = Encoding.UTF8
             strWeatherNet =
@@ -82,7 +72,7 @@ Module Module1
         If _intErrCodeWeather = 0 Then
             IntPm = Int(_joWeather.SelectToken("results[0].pm25").ToString)
             StrWind = _joWeather.SelectToken("results[0].weather_data[0].wind").ToString
-            Nowtemp = Split(Split(_joWeather.SelectToken("results[0].weather_data[0].date").ToString, "：")(1), "℃")(0)
+            Nowtemp = Split(Split(_joWeather.SelectToken("results[0].weather_data[0].date").ToString, "：")(1), "℃")(0) + " ℃"
             Toddaypic = _joWeather.SelectToken("results[0].weather_data[0].dayPictureUrl").ToString
             Todevepic = _joWeather.SelectToken("results[0].weather_data[0].nightPictureUrl").ToString
             Todweather = _joWeather.SelectToken("results[0].weather_data[0].weather").ToString
@@ -95,14 +85,12 @@ Module Module1
             StrClo = _joWeather.SelectToken("results[0].index[0].des").ToString
             StrCarDs = _joWeather.SelectToken("results[0].index[1].zs").ToString
             StrCar = _joWeather.SelectToken("results[0].index[1].des").ToString
-            'strTraDS = joWeather.SelectToken("results[0].index[2].zs").ToString
-            'strTra = joWeather.SelectToken("results[0].index[2].des").ToString
             StrSicDs = _joWeather.SelectToken("results[0].index[2].zs").ToString
             StrSic = _joWeather.SelectToken("results[0].index[2].des").ToString
             StrSpoDs = _joWeather.SelectToken("results[0].index[3].zs").ToString
             StrSpo = _joWeather.SelectToken("results[0].index[3].des").ToString
-            ' strUVDs = joWeather.SelectToken("results[0].index[4].zs").ToString
-            ' strUV = joWeather.SelectToken("results[0].index[4].des").ToString
+            Todtemp = Split(Split(Todtemp, " ~ ")(1), "℃")(0) + " ~ " + Split(Todtemp, " ~ ")(0) + " ℃"
+            Tomtemp = Split(Split(Tomtemp, " ~ ")(1), "℃")(0) + " ~ " + Split(Tomtemp, " ~ ")(0) + " ℃"
             LocalUpdate()
         Else
             _intErrCode = _intErrCodeWeather

@@ -135,7 +135,6 @@ Public Class FrmMain
 
             StrSetLoc = _xmlnsSetSet.ItemOf(0).InnerText
             IntSetIntv = _xmlnsSetSet.ItemOf(1).InnerText
-            StrSetWeather = _xmlnsSetSet.ItemOf(2).InnerText
 
             LinkLabel2.Text = StrSetLoc
             Timer1.Interval = IntSetIntv

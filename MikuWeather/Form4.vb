@@ -34,13 +34,13 @@ Public Class FrmSetting
             TextBox1.Text = StrSetLoc
         End If
 
-        If IntSetIntv = (30 * 1000 * 60) Then
+        If IntSetIntv = (30*1000*60) Then
             ComboBox1.SelectedItem = ComboBox1.Items.Item(0)
-        ElseIf IntSetIntv = (60 * 1000 * 60) Then
+        ElseIf IntSetIntv = (60*1000*60) Then
             ComboBox1.SelectedItem = ComboBox1.Items.Item(1)
-        ElseIf IntSetIntv = (90 * 1000 * 60) Then
+        ElseIf IntSetIntv = (90*1000*60) Then
             ComboBox1.SelectedItem = ComboBox1.Items.Item(2)
-        ElseIf IntSetIntv = (120 * 1000 * 60) Then
+        ElseIf IntSetIntv = (120*1000*60) Then
             ComboBox1.SelectedItem = ComboBox1.Items.Item(3)
         End If
 

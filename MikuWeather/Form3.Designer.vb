@@ -111,7 +111,7 @@ Partial Class FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.GreenYellow
+        Me.BackColor = System.Drawing.Color.FloralWhite
         Me.BackgroundImage = Global.MikuWeather.My.Resources.Resources.N1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ClientSize = New System.Drawing.Size(167, 158)

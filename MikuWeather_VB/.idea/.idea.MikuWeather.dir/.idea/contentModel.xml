@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\rainy\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\rainy\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+    <e p="C:\Users\rainy\Programming\MikuWeather_VisualBasic\MikuWeather" t="IncludeRecursive">
+      <e p="App.config" t="Include" />
+      <e p="ApplicationEvents.vb" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Form1.Designer.vb" t="Include" />
+      <e p="Form1.resx" t="Include" />
+      <e p="Form1.vb" t="Include" />
+      <e p="Form2.Designer.vb" t="Include" />
+      <e p="Form2.resx" t="Include" />
+      <e p="Form2.vb" t="Include" />
+      <e p="Form3.Designer.vb" t="Include" />
+      <e p="Form3.resx" t="Include" />
+      <e p="Form3.vb" t="Include" />
+      <e p="Form4.Designer.vb" t="Include" />
+      <e p="Form4.resx" t="Include" />
+      <e p="Form4.vb" t="Include" />
+      <e p="frmDetail.Designer.vb" t="Include" />
+      <e p="frmDetail.resx" t="Include" />
+      <e p="frmDetail.vb" t="Include" />
+      <e p="hi.ico" t="Include" />
+      <e p="MikuWeather.vbproj" t="IncludeRecursive" />
+      <e p="Module1.vb" t="Include" />
+      <e p="Module2.vb" t="Include" />
+      <e p="My Project" t="Include">
+        <e p="app.manifest" t="Include" />
+        <e p="Application.Designer.vb" t="Include" />
+        <e p="Application.myapp" t="Include" />
+        <e p="AssemblyInfo.vb" t="Include" />
+        <e p="Resources.Designer.vb" t="Include" />
+        <e p="Resources.resx" t="Include" />
+        <e p="Settings.Designer.vb" t="Include" />
+        <e p="Settings.settings" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="packages.config" t="Include" />
+      <e p="Resources" t="Include">
+        <e p="827641735-34c136407348cc67.jpg" t="Include" />
+        <e p="827641735-34c136407348cc67_meitu_1.jpg" t="Include" />
+        <e p="abc_ic_cab_done_holo_dark.png" t="Include" />
+        <e p="abc_ic_clear_disabled.png" t="Include" />
+        <e p="abc_ic_clear_disabled1.png" t="Include" />
+        <e p="abc_ic_clear_normal.png" t="Include" />
+        <e p="action_title.png" t="Include" />
+        <e p="bg_btn.png" t="Include" />
+        <e p="bg_wdt 11.png" t="Include" />
+        <e p="bg_wdt.png" t="Include" />
+        <e p="bg_wdtb.png" t="Include" />
+        <e p="bg_weather.png" t="Include" />
+        <e p="hi.ico" t="Include" />
+        <e p="ic_menu_refresh (2).png" t="Include" />
+        <e p="ic_menu_refresh.png" t="Include" />
+        <e p="juhe.png" t="Include" />
+        <e p="liantu.png" t="Include" />
+        <e p="loc.png" t="Include" />
+        <e p="logo.png" t="Include" />
+        <e p="N1.png" t="Include" />
+        <e p="N2.png" t="Include" />
+        <e p="noloc.png" t="Include" />
+        <e p="QRcode.png" t="Include" />
+        <e p="U.png" t="Include" />
+        <e p="Untitled-1.png" t="Include" />
+        <e p="中雨1.png" t="Include" />
+        <e p="夜多云.png" t="Include" />
+        <e p="夜晴.png" t="Include" />
+        <e p="夜雨1.png" t="Include" />
+        <e p="夜雪.png" t="Include" />
+        <e p="夜雷阵雨.png" t="Include" />
+        <e p="大雨1.png" t="Include" />
+        <e p="小雨1.png" t="Include" />
+        <e p="无标题-1.png" t="Include" />
+        <e p="无标题-1M.png" t="Include" />
+        <e p="日多云.png" t="Include" />
+        <e p="日雪.png" t="Include" />
+        <e p="晴1.png" t="Include" />
+        <e p="暴雪1.png" t="Include" />
+        <e p="阴1.png" t="Include" />
+        <e p="阴雨1.png" t="Include" />
+        <e p="雨夹雪1.png" t="Include" />
+        <e p="雪1.png" t="Include" />
+        <e p="雷阵雨1.png" t="Include" />
+        <e p="雾1.png" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

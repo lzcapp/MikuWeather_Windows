@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\rainy\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\rainy\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_MikuWeather.653428619.00" t="ExcludeRecursive" />
-    <e p="C:\Users\rainy\Programming\MikuWeather_VisualBasic\MikuWeather_CS\MikuWeather" t="IncludeRecursive">
+    <e p="C:\Users\rainy\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_MikuWeather.1106955321.00" t="ExcludeRecursive" />
+    <e p="C:\Users\rainy\Programming\MikuWeather_VisualBasic\MikuWeather_CS" t="IncludeRecursive">
       <e p="App.config" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="Form1.cs" t="Include" />

@@ -20,7 +20,7 @@ namespace MikuWeather
             var intScreenY = Screen.PrimaryScreen.WorkingArea.Bottom;
 
             SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272,
-                intScreenY - Size.Height + 10,
+                intScreenY - Size.Height + 6,
                 Size.Width, Size.Height);
         }
     }

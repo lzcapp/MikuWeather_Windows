@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Windows.Forms;
 
 namespace MikuWeather {
     partial class FormShow {
@@ -26,127 +27,127 @@ namespace MikuWeather {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.picToday = new System.Windows.Forms.PictureBox();
+            this.picTomorrow = new System.Windows.Forms.PictureBox();
+            this.lnkTodayWeather = new System.Windows.Forms.LinkLabel();
+            this.lnkTodayTemp = new System.Windows.Forms.LinkLabel();
+            this.lnkTomorrowTemp = new System.Windows.Forms.LinkLabel();
+            this.lnkTomorrowWeather = new System.Windows.Forms.LinkLabel();
+            ((System.ComponentModel.ISupportInitialize)(this.picToday)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTomorrow)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // picToday
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::MikuWeather.Properties.Resources.晴1;
-            this.pictureBox1.Location = new System.Drawing.Point(18, 16);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 144);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picToday.BackColor = System.Drawing.Color.Transparent;
+            this.picToday.Image = global::MikuWeather.Properties.Resources.晴_日;
+            this.picToday.Location = new System.Drawing.Point(36, 32);
+            this.picToday.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.picToday.Name = "picToday";
+            this.picToday.Size = new System.Drawing.Size(288, 288);
+            this.picToday.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picToday.TabIndex = 0;
+            this.picToday.TabStop = false;
             // 
-            // pictureBox2
+            // picTomorrow
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::MikuWeather.Properties.Resources.晴1;
-            this.pictureBox2.Location = new System.Drawing.Point(184, 16);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(144, 144);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.picTomorrow.BackColor = System.Drawing.Color.Transparent;
+            this.picTomorrow.Image = global::MikuWeather.Properties.Resources.晴_日;
+            this.picTomorrow.Location = new System.Drawing.Point(368, 32);
+            this.picTomorrow.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.picTomorrow.Name = "picTomorrow";
+            this.picTomorrow.Size = new System.Drawing.Size(288, 288);
+            this.picTomorrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picTomorrow.TabIndex = 1;
+            this.picTomorrow.TabStop = false;
             // 
-            // linkLabel1
+            // lnkTodayWeather
             // 
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Font = new System.Drawing.Font("条幅黑体", 13.5F);
-            this.linkLabel1.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel1.Location = new System.Drawing.Point(0, 150);
-            this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(174, 21);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.Text = "无数据";
-            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lnkTodayWeather.BackColor = System.Drawing.Color.Transparent;
+            this.lnkTodayWeather.Font = new System.Drawing.Font("条幅黑体", 13.5F);
+            this.lnkTodayWeather.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lnkTodayWeather.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
+            this.lnkTodayWeather.Location = new System.Drawing.Point(0, 300);
+            this.lnkTodayWeather.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lnkTodayWeather.Name = "lnkTodayWeather";
+            this.lnkTodayWeather.Size = new System.Drawing.Size(348, 42);
+            this.lnkTodayWeather.TabIndex = 2;
+            this.lnkTodayWeather.Text = "无数据";
+            this.lnkTodayWeather.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // linkLabel3
+            // lnkTodayTemp
             // 
-            this.linkLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel3.Font = new System.Drawing.Font("MF YaYuan (Noncommercial) Regul", 13F);
-            this.linkLabel3.ForeColor = System.Drawing.Color.LightGreen;
-            this.linkLabel3.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel3.Location = new System.Drawing.Point(0, 170);
-            this.linkLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(174, 24);
-            this.linkLabel3.TabIndex = 4;
-            this.linkLabel3.Text = "-- °C";
-            this.linkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lnkTodayTemp.BackColor = System.Drawing.Color.Transparent;
+            this.lnkTodayTemp.Font = new System.Drawing.Font("MF YaYuan (Noncommercial) Regul", 13F);
+            this.lnkTodayTemp.ForeColor = System.Drawing.Color.LightGreen;
+            this.lnkTodayTemp.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
+            this.lnkTodayTemp.Location = new System.Drawing.Point(0, 340);
+            this.lnkTodayTemp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lnkTodayTemp.Name = "lnkTodayTemp";
+            this.lnkTodayTemp.Size = new System.Drawing.Size(348, 48);
+            this.lnkTodayTemp.TabIndex = 4;
+            this.lnkTodayTemp.Text = "-- °C";
+            this.lnkTodayTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // linkLabel2
+            // lnkTomorrowTemp
             // 
-            this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel2.Font = new System.Drawing.Font("MF YaYuan (Noncommercial) Regul", 13F);
-            this.linkLabel2.ForeColor = System.Drawing.Color.LightGreen;
-            this.linkLabel2.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel2.Location = new System.Drawing.Point(175, 170);
-            this.linkLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(174, 24);
-            this.linkLabel2.TabIndex = 6;
-            this.linkLabel2.Text = "-- °C";
-            this.linkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lnkTomorrowTemp.BackColor = System.Drawing.Color.Transparent;
+            this.lnkTomorrowTemp.Font = new System.Drawing.Font("MF YaYuan (Noncommercial) Regul", 13F);
+            this.lnkTomorrowTemp.ForeColor = System.Drawing.Color.LightGreen;
+            this.lnkTomorrowTemp.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
+            this.lnkTomorrowTemp.Location = new System.Drawing.Point(350, 340);
+            this.lnkTomorrowTemp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lnkTomorrowTemp.Name = "lnkTomorrowTemp";
+            this.lnkTomorrowTemp.Size = new System.Drawing.Size(348, 48);
+            this.lnkTomorrowTemp.TabIndex = 6;
+            this.lnkTomorrowTemp.Text = "-- °C";
+            this.lnkTomorrowTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // linkLabel4
+            // lnkTomorrowWeather
             // 
-            this.linkLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel4.Font = new System.Drawing.Font("条幅黑体", 13.5F);
-            this.linkLabel4.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.linkLabel4.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel4.Location = new System.Drawing.Point(175, 150);
-            this.linkLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(174, 21);
-            this.linkLabel4.TabIndex = 5;
-            this.linkLabel4.Text = "无数据";
-            this.linkLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lnkTomorrowWeather.BackColor = System.Drawing.Color.Transparent;
+            this.lnkTomorrowWeather.Font = new System.Drawing.Font("条幅黑体", 13.5F);
+            this.lnkTomorrowWeather.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lnkTomorrowWeather.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
+            this.lnkTomorrowWeather.Location = new System.Drawing.Point(350, 300);
+            this.lnkTomorrowWeather.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lnkTomorrowWeather.Name = "lnkTomorrowWeather";
+            this.lnkTomorrowWeather.Size = new System.Drawing.Size(348, 42);
+            this.lnkTomorrowWeather.TabIndex = 5;
+            this.lnkTomorrowWeather.Text = "无数据";
+            this.lnkTomorrowWeather.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormShow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MikuWeather.Properties.Resources.bg_wdt;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(349, 195);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel4);
-            this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(698, 390);
+            this.Controls.Add(this.lnkTomorrowTemp);
+            this.Controls.Add(this.lnkTomorrowWeather);
+            this.Controls.Add(this.lnkTodayTemp);
+            this.Controls.Add(this.lnkTodayWeather);
+            this.Controls.Add(this.picTomorrow);
+            this.Controls.Add(this.picToday);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormShow";
             this.Text = "FormShow";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picToday)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTomorrow)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel4;
+        private PictureBox picToday;
+        private PictureBox picTomorrow;
+        private LinkLabel lnkTodayWeather;
+        private LinkLabel lnkTodayTemp;
+        private LinkLabel lnkTomorrowTemp;
+        private LinkLabel lnkTomorrowWeather;
     }
 }

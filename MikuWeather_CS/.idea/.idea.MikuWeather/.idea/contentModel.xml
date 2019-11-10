@@ -9,6 +9,9 @@
       <e p="Form1.cs" t="Include" />
       <e p="Form1.Designer.cs" t="Include" />
       <e p="Form1.resx" t="Include" />
+      <e p="FormShow.cs" t="Include" />
+      <e p="FormShow.Designer.cs" t="Include" />
+      <e p="FormShow.resx" t="Include" />
       <e p="MikuWeather.csproj" t="IncludeRecursive" />
       <e p="MikuWeather.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
@@ -21,6 +24,29 @@
         <e p="Resources.resx" t="Include" />
         <e p="Settings.Designer.cs" t="Include" />
         <e p="Settings.settings" t="Include" />
+      </e>
+      <e p="Resources" t="Include">
+        <e p="bg_wdt.png" t="Include" />
+        <e p="中雨1.png" t="Include" />
+        <e p="夜多云.png" t="Include" />
+        <e p="夜晴.png" t="Include" />
+        <e p="夜雨1.png" t="Include" />
+        <e p="夜雪.png" t="Include" />
+        <e p="夜雷阵雨.png" t="Include" />
+        <e p="大雨1.png" t="Include" />
+        <e p="小雨1.png" t="Include" />
+        <e p="无标题_1.png" t="Include" />
+        <e p="无标题_1M.png" t="Include" />
+        <e p="日多云.png" t="Include" />
+        <e p="日雪.png" t="Include" />
+        <e p="晴1.png" t="Include" />
+        <e p="暴雪1.png" t="Include" />
+        <e p="阴1.png" t="Include" />
+        <e p="阴雨1.png" t="Include" />
+        <e p="雨夹雪1.png" t="Include" />
+        <e p="雪1.png" t="Include" />
+        <e p="雷阵雨1.png" t="Include" />
+        <e p="雾1.png" t="Include" />
       </e>
     </e>
   </component>

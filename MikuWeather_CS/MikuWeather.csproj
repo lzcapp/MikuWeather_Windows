@@ -38,6 +38,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,16 +51,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataQuery.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormShow.Designer.cs">
+      <DependentUpon>FormShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormShow.resx">
+      <DependentUpon>FormShow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +94,29 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\bg_wdt.png" />
+    <Content Include="Resources\中雨1.png" />
+    <Content Include="Resources\夜多云.png" />
+    <Content Include="Resources\夜晴.png" />
+    <Content Include="Resources\夜雨1.png" />
+    <Content Include="Resources\夜雪.png" />
+    <Content Include="Resources\夜雷阵雨.png" />
+    <Content Include="Resources\大雨1.png" />
+    <Content Include="Resources\小雨1.png" />
+    <Content Include="Resources\无标题_1.png" />
+    <Content Include="Resources\无标题_1M.png" />
+    <Content Include="Resources\日多云.png" />
+    <Content Include="Resources\日雪.png" />
+    <Content Include="Resources\晴1.png" />
+    <Content Include="Resources\暴雪1.png" />
+    <Content Include="Resources\阴1.png" />
+    <Content Include="Resources\阴雨1.png" />
+    <Content Include="Resources\雨夹雪1.png" />
+    <Content Include="Resources\雪1.png" />
+    <Content Include="Resources\雷阵雨1.png" />
+    <Content Include="Resources\雾1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -370,8 +370,8 @@ Module Module2
 
         frmShow.LinkLabel1.Text = nowtemp + "  |  " + todtemp
         frmShow.LinkLabel2.Text = tomtemp
-        frmShow.LinkLabel3.Text = todweather
-        frmShow.LinkLabel4.Text = tomweather
+        frmShow.LinkLabel3.Text = TodayWeather
+        frmShow.LinkLabel4.Text = TomorrowWeather
 
         frmDetail.lnkCity.Text = StrSetLoc
 

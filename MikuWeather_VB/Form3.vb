@@ -161,13 +161,13 @@ Public Class FrmMain
             GetWeatherData()
 
         Catch ex As WebException
-            'StrMsgTitle = "Miku似乎遇到麻烦了！"
-            'StrMsg = "您的好像网络坏掉了o(>﹏<)o！frmMain异常：" + ex.Message
-            'frmMsg.Show()
+            StrMsgTitle = "Miku似乎遇到麻烦了！"
+            StrMsg = "您的好像网络坏掉了o(>﹏<)o！frmMain异常：" + ex.Message
+            FrmMsg.Show()
         Catch ex As Exception
-            'StrMsgTitle = "Miku似乎遇到麻烦了！"
-            'StrMsg = "frmMain异常：" + ex.Message
-            'frmMsg.Show()
+            StrMsgTitle = "Miku似乎遇到麻烦了！"
+            StrMsg = "frmMain异常：" + ex.Message
+            FrmMsg.Show()
         End Try
     End Sub
 

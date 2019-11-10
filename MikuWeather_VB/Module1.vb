@@ -13,7 +13,7 @@ Module Module1
     Public StrSetAddr As String
     Public BlnAutoIpLoc, BlnIpSer As Boolean
 
-    Public Todweather, Tomweather, Nowtemp, Todtemp, Tomtemp, Toddaypic, Tomdaypic, Todevepic, Tomevepic As String
+    Public TodayWeather, TomorrowWeather, Nowtemp, Todtemp, Tomtemp, Toddaypic, Tomdaypic, Todevepic, Tomevepic As String
 
     Public _
         StrCloDs, StrClo, StrCarDs, StrCar, StrSicDs, StrSic, StrSpoDs, StrSpo As String
@@ -29,10 +29,10 @@ Module Module1
 
     Public Sub IpLocation()
         Dim strLocNet As String
-        
-        Using webcIPloc As New WebClient
-            webcIPloc.Encoding = Encoding.Default
-            strLocNet = webcIPloc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75")
+
+        Using webcIpLoc As New WebClient
+            webcIpLoc.Encoding = Encoding.Default
+            strLocNet = webcIpLoc.DownloadString("http://api.map.baidu.com/location/ip?ak=edUWu66ddGavrmj9a6vcsa75")
         End Using
 
         _joLoc = JObject.Parse(strLocNet)
@@ -65,14 +65,15 @@ Module Module1
         If _intErrCodeWeather = 0 Then
             IntPm = Int(_joWeather.SelectToken("results[0].pm25").ToString)
             StrWind = _joWeather.SelectToken("results[0].weather_data[0].wind").ToString
-            Nowtemp = Split(Split(_joWeather.SelectToken("results[0].weather_data[0].date").ToString, "：")(1), "℃")(0) + " ℃"
+            Nowtemp = Split(Split(_joWeather.SelectToken("results[0].weather_data[0].date").ToString, "：")(1), "℃")(0) +
+                      " ℃"
             Toddaypic = _joWeather.SelectToken("results[0].weather_data[0].dayPictureUrl").ToString
             Todevepic = _joWeather.SelectToken("results[0].weather_data[0].nightPictureUrl").ToString
-            Todweather = _joWeather.SelectToken("results[0].weather_data[0].weather").ToString
+            TodayWeather = _joWeather.SelectToken("results[0].weather_data[0].weather").ToString
             Todtemp = _joWeather.SelectToken("results[0].weather_data[0].temperature").ToString
             Tomdaypic = _joWeather.SelectToken("results[0].weather_data[1].dayPictureUrl").ToString
             Tomevepic = _joWeather.SelectToken("results[0].weather_data[1].nightPictureUrl").ToString
-            Tomweather = _joWeather.SelectToken("results[0].weather_data[1].weather").ToString
+            TomorrowWeather = _joWeather.SelectToken("results[0].weather_data[1].weather").ToString
             Tomtemp = _joWeather.SelectToken("results[0].weather_data[1].temperature").ToString
             StrCloDs = _joWeather.SelectToken("results[0].index[0].zs").ToString
             StrClo = _joWeather.SelectToken("results[0].index[0].des").ToString

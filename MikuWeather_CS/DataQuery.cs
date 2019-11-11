@@ -68,6 +68,10 @@ namespace MikuWeather {
             return resultDict;
         }
 
+        public static Dictionary<string, string> UpdateData_Caiyun() {
+
+        }
+
         private static string FormatTemp(string tempStr) {
             tempStr = tempStr.Replace("℃", "");
             var tempSplit = tempStr.Split('~');
@@ -77,10 +81,11 @@ namespace MikuWeather {
             return result;
         }
 
-        public static string GetLocation() {
+        public static Dictionary<string, string> GetLocation() {
+            var dictResult = new Dictionary<string, string>();
             const string url = "http://api.map.baidu.com/location/ip?ak=";
             var key = ConfigurationManager.AppSettings["apikey_baidu"];
-            var requestUrl = url + key;
+            var requestUrl = url + key + "&coor=gcj02";
             var request = (HttpWebRequest)WebRequest.Create(requestUrl);
             request.Method = "GET";
             string result;
@@ -90,18 +95,25 @@ namespace MikuWeather {
                     result = reader.ReadToEnd();
                 }
             }
-            catch (Exception) {
-                return "Exception";
+            catch (Exception ex) {
+                dictResult.Add("exception", ex.Message);
+                return dictResult;
             }
             var resultJo = JObject.Parse(result);
             var status = (string)resultJo.SelectToken("status");
             if (status != "0") {
-                return "status code ≠  0";
+                dictResult.Add("exception", "status code ≠  0");
+                return dictResult;
             }
-            var contentToken = resultJo.SelectToken("content").SelectToken("address_detail");
-            var cityToken = contentToken.SelectToken("city");
+            var contentToken = resultJo.SelectToken("content");
+            var addressToken = contentToken.SelectToken("address_detail");
+            var cityToken = addressToken.SelectToken("city");
             var cityName = cityToken.ToString().Split(Convert.ToChar("市"))[0];
-            return cityName;
+            var pointToken = contentToken.SelectToken("point");
+            var coordinate = pointToken.SelectToken("x").ToString() + "," + pointToken.SelectToken("y");
+            dictResult.Add("city", cityName);
+            dictResult.Add("coor", coordinate);
+            return dictResult;
         }
     }
 }

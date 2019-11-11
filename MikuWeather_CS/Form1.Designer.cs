@@ -47,9 +47,9 @@ namespace MikuWeather
             this.picBox.ContextMenuStrip = this.cmMenu;
             this.picBox.Image = ((System.Drawing.Image)(resources.GetObject("picBox.Image")));
             this.picBox.Location = new System.Drawing.Point(0, 0);
-            this.picBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(140, 152);
+            this.picBox.Size = new System.Drawing.Size(280, 281);
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBox.TabIndex = 0;
             this.picBox.TabStop = false;
@@ -65,37 +65,38 @@ namespace MikuWeather
             this.cmUpdate,
             this.cmExit});
             this.cmMenu.Name = "cmMenu";
-            this.cmMenu.Size = new System.Drawing.Size(163, 70);
+            this.cmMenu.Size = new System.Drawing.Size(263, 118);
             // 
             // cmWebsite
             // 
             this.cmWebsite.Name = "cmWebsite";
-            this.cmWebsite.Size = new System.Drawing.Size(162, 22);
+            this.cmWebsite.Size = new System.Drawing.Size(262, 38);
             this.cmWebsite.Text = "访问Github仓库";
             this.cmWebsite.Click += new System.EventHandler(this.CmWebsite_Click);
             // 
             // cmUpdate
             // 
             this.cmUpdate.Name = "cmUpdate";
-            this.cmUpdate.Size = new System.Drawing.Size(162, 22);
+            this.cmUpdate.Size = new System.Drawing.Size(262, 38);
             this.cmUpdate.Text = "Update";
             this.cmUpdate.Click += new System.EventHandler(this.CmUpdate_Click);
             // 
             // cmExit
             // 
             this.cmExit.Name = "cmExit";
-            this.cmExit.Size = new System.Drawing.Size(162, 22);
+            this.cmExit.Size = new System.Drawing.Size(262, 38);
             this.cmExit.Text = "退出";
             this.cmExit.Click += new System.EventHandler(this.CmExit_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(140, 152);
+            this.BackColor = System.Drawing.Color.Honeydew;
+            this.ClientSize = new System.Drawing.Size(280, 281);
             this.Controls.Add(this.picBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";

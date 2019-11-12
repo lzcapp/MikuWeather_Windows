@@ -4,9 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 
 namespace MikuWeather {
-
     public partial class FormShow : Form {
-
         public FormShow() {
             InitializeComponent();
         }
@@ -21,8 +19,7 @@ namespace MikuWeather {
             lnkTomorrowWeather.Text = tomorrowWeather;
         }
 
-        public void SetPic(Bitmap todayPic, Bitmap tomorrowPic)
-        {
+        public void SetPic(Bitmap todayPic, Bitmap tomorrowPic) {
             picToday.Image = todayPic;
             picTomorrow.Image = tomorrowPic;
         }

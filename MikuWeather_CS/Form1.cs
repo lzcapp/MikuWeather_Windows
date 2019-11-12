@@ -8,9 +8,7 @@ using System.Windows.Forms;
 using MikuWeather.Properties;
 
 namespace MikuWeather {
-
     public partial class Form1 : Form {
-
         // ReSharper disable once FieldCanBeMadeReadOnly.Local
         private readonly FormShow _frmShow = new FormShow();
 
@@ -18,6 +16,7 @@ namespace MikuWeather {
         private string _coor;
         private DateTime _sunrise;
         private DateTime _sunset;
+        private string _provider;
 
         public Form1() {
             InitializeComponent();
@@ -33,6 +32,7 @@ namespace MikuWeather {
             SetBounds(Screen.PrimaryScreen.WorkingArea.Width - 272,
                 intScreenY - Size.Height + 13,
                 Size.Width, Size.Height);
+
             var dictLocation = DataQuery.GetLocation();
             _city = dictLocation["city"];
             _coor = dictLocation["coor"];
@@ -41,7 +41,8 @@ namespace MikuWeather {
             var sunset = dictAstro["sunset"];
             _sunrise = DateTime.ParseExact(sunrise, "HH:mm", CultureInfo.CurrentCulture);
             _sunset = DateTime.ParseExact(sunset, "HH:mm", CultureInfo.CurrentCulture);
-            Update();
+            _provider = ConfigurationManager.AppSettings["provider"];
+            Update(_provider);
         }
 
         private void Form1_MouseHover(object sender, EventArgs e) {
@@ -65,35 +66,36 @@ namespace MikuWeather {
             Environment.Exit(0);
         }
 
-        private void CmUpdate_Click(object sender, EventArgs e) {
-            Update();
-        }
-
-        private new void Update() {
-            var provider = ConfigurationManager.AppSettings["provider"];
+        private void Update(string provider) {
             Dictionary<string, string> dict;
+            string todayTemp = null;
+            string tomorrowTemp = null;
+            string todayWeather = null;
+            string tomorrowWeather = null;
+            var nowDt = DateTime.Now;
             Bitmap todayPic;
             Bitmap tomorrowPic;
-            string todayPicUrl;
-            string tomorrowPicUrl;
-            var nowDt = DateTime.Now;
-            switch (provider)
-            {
+            switch (provider) {
                 case "baidu":
                     bool isDay;
                     dict = DataQuery.UpdateData_Baidu(_city);
-                    if (nowDt >= _sunrise && nowDt < _sunset)
-                    {
+                    string todayPicUrl;
+                    string tomorrowPicUrl;
+                    if (nowDt >= _sunrise && nowDt < _sunset) {
                         todayPicUrl = dict["today day pic url"];
                         tomorrowPicUrl = dict["tomorrow day pic url"];
+                        todayTemp = dict["today temp"];
+                        tomorrowTemp = dict["tomorrow temp"];
+                        todayWeather = dict["today weather"];
+                        tomorrowWeather = dict["tomorrow weather"];
                         isDay = true;
                     }
-                    else
-                    {
+                    else {
                         todayPicUrl = dict["today night pic url"];
                         tomorrowPicUrl = dict["tomorrow night pic url"];
                         isDay = false;
                     }
+
                     var todayPicUrlSplit = todayPicUrl.Split('/');
                     var todayPicName = todayPicUrlSplit[todayPicUrlSplit.Length - 1];
                     todayPic = SwitchBaiduPic(todayPicName, isDay);
@@ -103,22 +105,30 @@ namespace MikuWeather {
                     break;
                 case "caiyun":
                     dict = DataQuery.UpdateData_Caiyun(_coor);
-                    var todayWeather = dict["today pic"];
-                    var tomorrowWeather = dict["tomorrow pic"];
+                    todayWeather = SwitchCaiyun(dict["today pic"]);
+                    tomorrowWeather = SwitchCaiyun(dict["tomorrow pic"]);
+                    todayTemp = dict["today temp"];
+                    tomorrowTemp = dict["tomorrow temp"];
+                    if (nowDt >= _sunrise && nowDt < _sunset)
+                        isDay = true;
+                    else
+                        isDay = false;
+
+                    todayPic = SwitchCaiyunPic(todayWeather, isDay);
+                    tomorrowPic = SwitchCaiyunPic(tomorrowWeather, isDay);
                     break;
                 default:
                     return;
             }
-            _frmShow.SetTemp(dict["today temp"], dict["tomorrow temp"]);
-            _frmShow.SetWeather(dict["today weather"], dict["tomorrow weather"]);
+
+            _frmShow.SetTemp(todayTemp, tomorrowTemp);
+            _frmShow.SetWeather(todayWeather, tomorrowWeather);
             _frmShow.SetPic(todayPic, tomorrowPic);
-            picBox.Image = bitmapPic;
+            picBox.Image = todayPic;
         }
 
-        private string SwitchCaiyun(string weather)
-        {
-            switch (weather)
-            {
+        private static string SwitchCaiyun(string weather) {
+            switch (weather) {
                 case "CLEAR_DAY":
                 case "CLEAR_NIGHT":
                     return "晴";
@@ -136,11 +146,48 @@ namespace MikuWeather {
                 case "SNOW":
                     return "雪";
             }
+
             return null;
         }
 
+        private static Bitmap SwitchCaiyunPic(string weather, bool isDay) {
+            if (isDay)
+                switch (weather) {
+                    case "晴":
+                    case "大风":
+                        return Resources.晴_日;
+                    case "多云":
+                        return Resources.多云_日;
+                    case "雨":
+                        return Resources.雨_日;
+                    case "雪":
+                        return Resources.雪_日;
+                }
+            else
+                switch (weather) {
+                    case "晴":
+                    case "大风":
+                        return Resources.晴_夜;
+                    case "多云":
+                        return Resources.多云_夜;
+                    case "雨":
+                        return Resources.雨_夜;
+                    case "雪":
+                        return Resources.雪_夜;
+                }
+
+            switch (weather) {
+                case "阴":
+                    return Resources.阴;
+                case "雾霾":
+                    return Resources.雾;
+                default:
+                    return null;
+            }
+        }
+
         private Bitmap SwitchBaiduPic(string picName, bool isDay) {
-            if (isDay) {
+            if (isDay)
                 switch (picName) {
                     case "qing.png":
                         return Resources.晴_日;
@@ -161,7 +208,7 @@ namespace MikuWeather {
                     case "leizhenyubanyoubingbao.png":
                         return Resources.雷阵雨_日;
                 }
-            } else {
+            else
                 switch (picName) {
                     case "qing.png":
                         return Resources.晴_夜;
@@ -182,7 +229,7 @@ namespace MikuWeather {
                     case "leizhenyubanyoubingbao.png":
                         return Resources.雷阵雨_夜;
                 }
-            }
+
             switch (picName) {
                 case "yin.png":
                     return Resources.阴;
@@ -215,7 +262,16 @@ namespace MikuWeather {
                 case "yujiaxue.png":
                     return Resources.雨夹雪;
             }
+
             return null;
+        }
+
+        private void CmBaidu_Click(object sender, EventArgs e) {
+            Update("baidu");
+        }
+
+        private void CmCaiyun_Click(object sender, EventArgs e) {
+            Update("caiyun");
         }
     }
 }

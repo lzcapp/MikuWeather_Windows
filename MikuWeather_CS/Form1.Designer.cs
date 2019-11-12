@@ -36,8 +36,12 @@ namespace MikuWeather
             this.picBox = new System.Windows.Forms.PictureBox();
             this.cmMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmWebsite = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmBaidu = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmCaiyun = new System.Windows.Forms.ToolStripMenuItem();
             this.cmExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsTextBox = new System.Windows.Forms.ToolStripTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.cmMenu.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +51,7 @@ namespace MikuWeather
             this.picBox.ContextMenuStrip = this.cmMenu;
             this.picBox.Image = ((System.Drawing.Image)(resources.GetObject("picBox.Image")));
             this.picBox.Location = new System.Drawing.Point(0, 0);
-            this.picBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picBox.Margin = new System.Windows.Forms.Padding(4);
             this.picBox.Name = "picBox";
             this.picBox.Size = new System.Drawing.Size(280, 281);
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -62,31 +66,63 @@ namespace MikuWeather
             this.cmMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.cmMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cmWebsite,
-            this.cmUpdate,
+            this.tsSeparator1,
+            this.tsTextBox,
+            this.cmBaidu,
+            this.cmCaiyun,
+            this.tsSeparator2,
             this.cmExit});
             this.cmMenu.Name = "cmMenu";
-            this.cmMenu.Size = new System.Drawing.Size(263, 118);
+            this.cmMenu.Size = new System.Drawing.Size(301, 248);
             // 
             // cmWebsite
             // 
             this.cmWebsite.Name = "cmWebsite";
-            this.cmWebsite.Size = new System.Drawing.Size(262, 38);
-            this.cmWebsite.Text = "访问Github仓库";
+            this.cmWebsite.ShortcutKeyDisplayString = "";
+            this.cmWebsite.Size = new System.Drawing.Size(300, 38);
+            this.cmWebsite.Text = "🏚 Github Repo";
             this.cmWebsite.Click += new System.EventHandler(this.CmWebsite_Click);
             // 
-            // cmUpdate
+            // cmBaidu
             // 
-            this.cmUpdate.Name = "cmUpdate";
-            this.cmUpdate.Size = new System.Drawing.Size(262, 38);
-            this.cmUpdate.Text = "Update";
-            this.cmUpdate.Click += new System.EventHandler(this.CmUpdate_Click);
+            this.cmBaidu.Name = "cmBaidu";
+            this.cmBaidu.Size = new System.Drawing.Size(300, 38);
+            this.cmBaidu.Text = " · 百度API";
+            this.cmBaidu.Click += new System.EventHandler(this.CmBaidu_Click);
+            // 
+            // cmCaiyun
+            // 
+            this.cmCaiyun.Name = "cmCaiyun";
+            this.cmCaiyun.Size = new System.Drawing.Size(300, 38);
+            this.cmCaiyun.Text = " · 彩云API";
+            this.cmCaiyun.Click += new System.EventHandler(this.CmCaiyun_Click);
             // 
             // cmExit
             // 
             this.cmExit.Name = "cmExit";
-            this.cmExit.Size = new System.Drawing.Size(262, 38);
+            this.cmExit.Size = new System.Drawing.Size(300, 38);
             this.cmExit.Text = "退出";
             this.cmExit.Click += new System.EventHandler(this.CmExit_Click);
+            // 
+            // tsSeparator1
+            // 
+            this.tsSeparator1.Name = "tsSeparator1";
+            this.tsSeparator1.Size = new System.Drawing.Size(297, 6);
+            // 
+            // tsSeparator2
+            // 
+            this.tsSeparator2.Name = "tsSeparator2";
+            this.tsSeparator2.Size = new System.Drawing.Size(297, 6);
+            // 
+            // tsTextBox
+            // 
+            this.tsTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.tsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tsTextBox.Enabled = false;
+            this.tsTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsTextBox.Name = "tsTextBox";
+            this.tsTextBox.Size = new System.Drawing.Size(100, 32);
+            this.tsTextBox.Text = "更新源：";
             // 
             // Form1
             // 
@@ -111,6 +147,7 @@ namespace MikuWeather
             this.MouseHover += new System.EventHandler(this.Form1_MouseHover);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.cmMenu.ResumeLayout(false);
+            this.cmMenu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -121,6 +158,10 @@ namespace MikuWeather
         private ContextMenuStrip cmMenu;
         private ToolStripMenuItem cmWebsite;
         private ToolStripMenuItem cmExit;
-        private ToolStripMenuItem cmUpdate;
+        private ToolStripMenuItem cmBaidu;
+        private ToolStripMenuItem cmCaiyun;
+        private ToolStripSeparator tsSeparator1;
+        private ToolStripTextBox tsTextBox;
+        private ToolStripSeparator tsSeparator2;
     }
 }

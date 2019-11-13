@@ -268,10 +268,22 @@ namespace MikuWeather {
 
         private void CmBaidu_Click(object sender, EventArgs e) {
             Update("baidu");
+            Update_Setting("baidu");
         }
 
         private void CmCaiyun_Click(object sender, EventArgs e) {
             Update("caiyun");
+            Update_Setting("caiyun");
+        }
+
+        private static void Update_Setting(string provider) {
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            if (config.AppSettings.Settings["provider"] != null)
+                config.AppSettings.Settings["provider"].Value = provider;
+            else
+                config.AppSettings.Settings.Add("provider", provider);
+            config.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
         }
     }
 }

@@ -41,6 +41,8 @@ namespace MikuWeather {
             var sunset = dictAstro["sunset"];
             _sunrise = DateTime.ParseExact(sunrise, "HH:mm", CultureInfo.CurrentCulture);
             _sunset = DateTime.ParseExact(sunset, "HH:mm", CultureInfo.CurrentCulture);
+            cmWebsite.Text = @" 🔗  我们的Github仓库";
+            cmExit.Text = @" ✖  退出";
             _provider = ConfigurationManager.AppSettings["provider"];
             Update(_provider);
         }
@@ -67,6 +69,11 @@ namespace MikuWeather {
         }
 
         private void Update(string provider) {
+            if (provider == "caiyun") {
+                cmCaiyun.Text = @" ✔  彩云天气API";
+                cmBaidu.Text = @" 🔘  百度车联网API";
+            }
+
             Dictionary<string, string> dict;
             string todayTemp = null;
             string tomorrowTemp = null;

@@ -70,8 +70,13 @@ namespace MikuWeather {
 
         private void Update(string provider) {
             if (provider == "caiyun") {
+                cmCaiyun.Enabled = false;
                 cmCaiyun.Text = @" ✔  彩云天气API";
-                cmBaidu.Text = @" 🔘  百度车联网API";
+                cmBaidu.Text = @" ⭕  百度车联网API";
+            } else if (provider == "baidu") {
+                cmBaidu.Enabled = false;
+                cmCaiyun.Text = @" ⭕  彩云天气API";
+                cmBaidu.Text = @" ✔  百度车联网API";
             }
 
             Dictionary<string, string> dict;

@@ -69,14 +69,20 @@ namespace MikuWeather {
         }
 
         private void Update(string provider) {
-            if (provider == "caiyun") {
-                cmCaiyun.Enabled = false;
-                cmCaiyun.Text = @" ✔  彩云天气API";
-                cmBaidu.Text = @" ⭕  百度车联网API";
-            } else if (provider == "baidu") {
-                cmBaidu.Enabled = false;
-                cmCaiyun.Text = @" ⭕  彩云天气API";
-                cmBaidu.Text = @" ✔  百度车联网API";
+            switch (provider)
+            {
+                case "caiyun":
+                    cmCaiyun.Enabled = false;
+                    cmBaidu.Enabled = true;
+                    cmCaiyun.Text = @" ✔  彩云天气API";
+                    cmBaidu.Text = @" ⭕  百度车联网API";
+                    break;
+                case "baidu":
+                    cmBaidu.Enabled = false;
+                    cmCaiyun.Enabled = true;
+                    cmCaiyun.Text = @" ⭕  彩云天气API";
+                    cmBaidu.Text = @" ✔  百度车联网API";
+                    break;
             }
 
             Dictionary<string, string> dict;
@@ -107,7 +113,6 @@ namespace MikuWeather {
                         tomorrowPicUrl = dict["tomorrow night pic url"];
                         isDay = false;
                     }
-
                     var todayPicUrlSplit = todayPicUrl.Split('/');
                     var todayPicName = todayPicUrlSplit[todayPicUrlSplit.Length - 1];
                     todayPic = SwitchBaiduPic(todayPicName, isDay);
@@ -125,7 +130,6 @@ namespace MikuWeather {
                         isDay = true;
                     else
                         isDay = false;
-
                     todayPic = SwitchCaiyunPic(todayWeather, isDay);
                     tomorrowPic = SwitchCaiyunPic(tomorrowWeather, isDay);
                     break;
@@ -296,6 +300,10 @@ namespace MikuWeather {
                 config.AppSettings.Settings.Add("provider", provider);
             config.Save(ConfigurationSaveMode.Modified);
             ConfigurationManager.RefreshSection("appSettings");
+        }
+
+        private void cmRefresh_Click(object sender, EventArgs e) {
+            Update(_provider);
         }
     }
 }

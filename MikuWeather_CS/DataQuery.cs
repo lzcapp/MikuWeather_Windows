@@ -5,7 +5,6 @@ using System.Configuration;
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Windows.Forms;
 
 namespace MikuWeather {
     internal static class DataQuery {
@@ -56,11 +55,8 @@ namespace MikuWeather {
             string result;
             try {
                 var response = (HttpWebResponse) request.GetResponse();
-                using (var reader =
-                    new StreamReader(response.GetResponseStream() ?? throw new InvalidOperationException(),
-                        Encoding.UTF8)) {
-                    result = reader.ReadToEnd();
-                }
+                var reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+                result = reader.ReadToEnd();
             }
             catch (Exception exception) {
                 resultDict.Add("exception", exception.Message);
@@ -138,7 +134,7 @@ namespace MikuWeather {
 
             var resultToken = resultTodayJo.SelectToken("result");
 
-            var todayTemp = resultToken.SelectToken("temperature").ToString() + " °C";
+            var todayTemp = resultToken.SelectToken("temperature") + " °C";
             var todayPic = resultToken.SelectToken("skycon").ToString();
             resultDict.Add("today temp", todayTemp);
             resultDict.Add("today pic", todayPic);
@@ -220,7 +216,7 @@ namespace MikuWeather {
             var cityToken = addressToken.SelectToken("city");
             var cityName = cityToken.ToString().Split(Convert.ToChar("市"))[0];
             var pointToken = contentToken.SelectToken("point");
-            var coordinate = pointToken.SelectToken("x").ToString() + "," + pointToken.SelectToken("y");
+            var coordinate = pointToken.SelectToken("x") + "," + pointToken.SelectToken("y");
             dictResult.Add("city", cityName);
             dictResult.Add("coor", coordinate);
             return dictResult;

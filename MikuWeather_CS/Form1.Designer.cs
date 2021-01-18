@@ -97,7 +97,7 @@ namespace MikuWeather
             this.cmRefresh.Name = "cmRefresh";
             this.cmRefresh.Size = new System.Drawing.Size(180, 22);
             this.cmRefresh.Text = "更新";
-            this.cmRefresh.Click += new System.EventHandler(this.CmRefresh_Click);
+            this.cmRefresh.Click += new System.EventHandler(this.cmRefresh_Click);
             // 
             // tsSeparator2
             // 

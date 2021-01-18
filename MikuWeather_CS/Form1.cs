@@ -69,7 +69,8 @@ namespace MikuWeather {
         }
 
         private void Update(string provider) {
-            switch (provider) {
+            switch (provider)
+            {
                 case "caiyun":
                     cmCaiyun.Enabled = false;
                     cmBaidu.Enabled = true;
@@ -106,7 +107,8 @@ namespace MikuWeather {
                         todayWeather = dict["today weather"];
                         tomorrowWeather = dict["tomorrow weather"];
                         isDay = true;
-                    } else {
+                    }
+                    else {
                         todayPicUrl = dict["today night pic url"];
                         tomorrowPicUrl = dict["tomorrow night pic url"];
                         isDay = false;
@@ -176,7 +178,8 @@ namespace MikuWeather {
                         return Resources.雨_日;
                     case "雪":
                         return Resources.雪_日;
-                } else
+                }
+            else
                 switch (weather) {
                     case "晴":
                     case "大风":
@@ -220,7 +223,8 @@ namespace MikuWeather {
                     case "leizhenyu.png":
                     case "leizhenyubanyoubingbao.png":
                         return Resources.雷阵雨_日;
-                } else
+                }
+            else
                 switch (picName) {
                     case "qing.png":
                         return Resources.晴_夜;
@@ -298,7 +302,7 @@ namespace MikuWeather {
             ConfigurationManager.RefreshSection("appSettings");
         }
 
-        private void CmRefresh_Click(object sender, EventArgs e) {
+        private void cmRefresh_Click(object sender, EventArgs e) {
             Update(_provider);
         }
     }

@@ -55,7 +55,7 @@ namespace MikuWeather {
             string result;
             try {
                 var response = (HttpWebResponse) request.GetResponse();
-                var reader = new StreamReader(response.GetResponseStream() ?? throw new InvalidOperationException(), Encoding.UTF8);
+                var reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
                 result = reader.ReadToEnd();
             }
             catch (Exception exception) {

@@ -6,7 +6,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
-using System.Drawing.Text;
 
 namespace MikuWeather {
     public partial class Form1 : Form {

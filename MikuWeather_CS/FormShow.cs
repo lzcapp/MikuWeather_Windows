@@ -44,7 +44,7 @@ namespace MikuWeather {
             lnkTomorrowWeather.Text = tomorrowWeather;
             lnkTomorrowWeather.LinkArea = blankArea;
         }
-
+        
         public void SetPic(Bitmap todayPic, Bitmap tomorrowPic) {
             picToday.Image = todayPic;
             picTomorrow.Image = tomorrowPic;

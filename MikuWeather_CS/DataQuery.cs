@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,24 +15,23 @@ namespace MikuWeather {
             var key = ConfigurationManager.AppSettings["apikey_caiyun"];
             var requestUrl = url + key + "/" + coor + "/daily.json";
 
-            var requestToday = (HttpWebRequest) WebRequest.Create(requestUrl);
+            var requestToday = (HttpWebRequest)WebRequest.Create(requestUrl);
             requestToday.Method = "GET";
             string result;
             try {
-                var response = (HttpWebResponse) requestToday.GetResponse();
+                var response = (HttpWebResponse)requestToday.GetResponse();
                 using (var reader =
                     new StreamReader(response.GetResponseStream() ?? throw new InvalidOperationException(),
                         Encoding.UTF8)) {
                     result = reader.ReadToEnd();
                 }
-            }
-            catch (Exception exception) {
+            } catch (Exception exception) {
                 resultDict.Add("exception", exception.Message);
                 return resultDict;
             }
 
             var resultTodayJo = JObject.Parse(result);
-            var status = (string) resultTodayJo.SelectToken("status");
+            var status = (string)resultTodayJo.SelectToken("status");
             if (status != "ok") {
                 resultDict.Add("exception", "error code");
                 return resultDict;
@@ -45,26 +45,16 @@ namespace MikuWeather {
             return resultDict;
         }
 
-        public static Dictionary<string, string> UpdateData_Baidu(string city) {
+        public static Dictionary<string, string> UpdateData_Baidu(string coor) {
             var resultDict = new Dictionary<string, string>();
-            const string url = "http://api.map.baidu.com/telematics/v3/weather?location=";
             var key = ConfigurationManager.AppSettings["apikey_baidu"];
-            var requestUrl = url + city + "&output=json&ak=" + key;
-            var request = (HttpWebRequest) WebRequest.Create(requestUrl);
-            request.Method = "GET";
-            string result;
-            try {
-                var response = (HttpWebResponse) request.GetResponse();
-                var reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
-                result = reader.ReadToEnd();
-            }
-            catch (Exception exception) {
-                resultDict.Add("exception", exception.Message);
-                return resultDict;
-            }
+            var client = new RestClient("http://api.map.baidu.com/telematics/v3/weather?location=" + coor + "&data_type=all&ak=" + key);
+            var request = new RestRequest();
+            var response = client.Execute(request);
+            var result = response.Content;
 
             var resultJo = JObject.Parse(result);
-            var status = (string) resultJo.SelectToken("error");
+            var status = (string)resultJo.SelectToken("error");
             if (status != "0") {
                 resultDict.Add("exception", "error code");
                 return resultDict;
@@ -103,30 +93,15 @@ namespace MikuWeather {
 
         public static Dictionary<string, string> UpdateData_Caiyun(string coor) {
             var resultDict = new Dictionary<string, string>();
-            const string url = "http://api.caiyunapp.com/v2/";
             var key = ConfigurationManager.AppSettings["apikey_caiyun"];
-            var requestUrl = url + key + "/" + coor;
-            var requestUrlRealtime = requestUrl + "/realtime.json";
-            var requestUrlForecast = requestUrl + "/daily.json";
 
-            var requestToday = (HttpWebRequest) WebRequest.Create(requestUrlRealtime);
-            requestToday.Method = "GET";
-            string resultToday;
-            try {
-                var response = (HttpWebResponse) requestToday.GetResponse();
-                using (var reader =
-                    new StreamReader(response.GetResponseStream() ?? throw new InvalidOperationException(),
-                        Encoding.UTF8)) {
-                    resultToday = reader.ReadToEnd();
-                }
-            }
-            catch (Exception exception) {
-                resultDict.Add("exception", exception.Message);
-                return resultDict;
-            }
+            var client = new RestClient("http://api.caiyunapp.com/v2/" + key + "/" + coor + "/realtime.json");
+            var request = new RestRequest();
+            var response = client.Execute(request);
+            var resultToday = response.Content;
 
             var resultTodayJo = JObject.Parse(resultToday);
-            var status = (string) resultTodayJo.SelectToken("status");
+            var status = (string)resultTodayJo.SelectToken("status");
             if (status != "ok") {
                 resultDict.Add("exception", "error code");
                 return resultDict;
@@ -139,24 +114,13 @@ namespace MikuWeather {
             resultDict.Add("today temp", todayTemp);
             resultDict.Add("today pic", todayPic);
 
-            var request = (HttpWebRequest) WebRequest.Create(requestUrlForecast);
-            request.Method = "GET";
-            string result;
-            try {
-                var response = (HttpWebResponse) request.GetResponse();
-                using (var reader =
-                    new StreamReader(response.GetResponseStream() ?? throw new InvalidOperationException(),
-                        Encoding.UTF8)) {
-                    result = reader.ReadToEnd();
-                }
-            }
-            catch (Exception exception) {
-                resultDict.Add("exception", exception.Message);
-                return resultDict;
-            }
+            var client2 = new RestClient("http://api.caiyunapp.com/v2/" + key + "/" + coor + "/daily.json");
+            var request2 = new RestRequest();
+            var response2 = client2.Execute(request2);
+            var result = response2.Content;
 
             var resultJo = JObject.Parse(result);
-            status = (string) resultJo.SelectToken("status");
+            status = (string)resultJo.SelectToken("status");
             if (status != "ok") {
                 resultDict.Add("exception", "error code");
                 return resultDict;
@@ -185,27 +149,15 @@ namespace MikuWeather {
 
         public static Dictionary<string, string> GetLocation() {
             var dictResult = new Dictionary<string, string>();
-            const string url = "http://api.map.baidu.com/location/ip?ak=";
             var key = ConfigurationManager.AppSettings["apikey_baidu"];
-            var requestUrl = url + key + "&coor=gcj02";
-            var request = (HttpWebRequest) WebRequest.Create(requestUrl);
-            request.Method = "GET";
-            string result;
-            try {
-                var response = (HttpWebResponse) request.GetResponse();
-                using (var reader =
-                    new StreamReader(response.GetResponseStream() ?? throw new InvalidOperationException(),
-                        Encoding.UTF8)) {
-                    result = reader.ReadToEnd();
-                }
-            }
-            catch (Exception ex) {
-                dictResult.Add("exception", ex.Message);
-                return dictResult;
-            }
 
-            var resultJo = JObject.Parse(result);
-            var status = (string) resultJo.SelectToken("status");
+            var client = new RestClient("https://api.map.baidu.com/location/ip?ak=" + key + "&coor=gcj02");
+            var request = new RestRequest();
+            var response = client.Execute(request);
+            var result = response.Content;
+
+            var resultJo = JObject.Parse(result.ToString());
+            var status = (string)resultJo.SelectToken("status");
             if (status != "0") {
                 dictResult.Add("exception", "status code ≠  0");
                 return dictResult;

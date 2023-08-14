@@ -1,18 +1,18 @@
-﻿using System;
+﻿using MikuWeather.Properties;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
-using MikuWeather.Properties;
+using System.Drawing.Text;
 
 namespace MikuWeather {
     public partial class Form1 : Form {
         // ReSharper disable once FieldCanBeMadeReadOnly.Local
         private readonly FormShow _frmShow = new FormShow();
 
-        private string _city;
         private string _coor;
         private DateTime _sunrise;
         private DateTime _sunset;
@@ -34,7 +34,6 @@ namespace MikuWeather {
                 Size.Width, Size.Height);
 
             var dictLocation = DataQuery.GetLocation();
-            _city = dictLocation["city"];
             _coor = dictLocation["coor"];
             var dictAstro = DataQuery.GetAstro_Caiyun(_coor);
             var sunrise = dictAstro["sunrise"];
@@ -43,7 +42,8 @@ namespace MikuWeather {
             _sunset = DateTime.ParseExact(sunset, "HH:mm", CultureInfo.CurrentCulture);
             cmWebsite.Text = @" 🔗  我们的Github仓库";
             cmExit.Text = @" ✖  退出";
-            _provider = ConfigurationManager.AppSettings["provider"];
+            //_provider = ConfigurationManager.AppSettings["provider"];
+            _provider = "caiyun";
             Update(_provider);
         }
 
@@ -69,11 +69,10 @@ namespace MikuWeather {
         }
 
         private void Update(string provider) {
-            switch (provider)
-            {
+            switch (provider) {
                 case "caiyun":
                     cmCaiyun.Enabled = false;
-                    cmBaidu.Enabled = true;
+                    cmBaidu.Enabled = false;
                     cmCaiyun.Text = @" ✔  彩云天气API";
                     cmBaidu.Text = @" ⭕  百度车联网API";
                     break;
@@ -96,7 +95,7 @@ namespace MikuWeather {
             switch (provider) {
                 case "baidu":
                     bool isDay;
-                    dict = DataQuery.UpdateData_Baidu(_city);
+                    dict = DataQuery.UpdateData_Baidu(_coor);
                     string todayPicUrl;
                     string tomorrowPicUrl;
                     if (nowDt >= _sunrise && nowDt < _sunset) {
@@ -107,8 +106,7 @@ namespace MikuWeather {
                         todayWeather = dict["today weather"];
                         tomorrowWeather = dict["tomorrow weather"];
                         isDay = true;
-                    }
-                    else {
+                    } else {
                         todayPicUrl = dict["today night pic url"];
                         tomorrowPicUrl = dict["tomorrow night pic url"];
                         isDay = false;
@@ -178,8 +176,7 @@ namespace MikuWeather {
                         return Resources.雨_日;
                     case "雪":
                         return Resources.雪_日;
-                }
-            else
+                } else
                 switch (weather) {
                     case "晴":
                     case "大风":
@@ -223,8 +220,7 @@ namespace MikuWeather {
                     case "leizhenyu.png":
                     case "leizhenyubanyoubingbao.png":
                         return Resources.雷阵雨_日;
-                }
-            else
+                } else
                 switch (picName) {
                     case "qing.png":
                         return Resources.晴_夜;

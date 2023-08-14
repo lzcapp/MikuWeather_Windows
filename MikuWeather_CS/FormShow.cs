@@ -19,13 +19,13 @@ namespace MikuWeather {
 
         private void FormShow_Load(object sender, EventArgs e) {
             AddPrivateFont();
-            lnkTodayWeather.Font = new Font(PFCAwe.Families[0], 12, System.Drawing.FontStyle.Bold);
+            lnkTodayWeather.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
             lnkTodayWeather.UseCompatibleTextRendering = true;
-            lnkTodayTemp.Font = new Font(PFCAwe.Families[0], 12, System.Drawing.FontStyle.Bold);
+            lnkTodayTemp.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
             lnkTodayTemp.UseCompatibleTextRendering = true;
-            lnkTomorrowWeather.Font = new Font(PFCAwe.Families[0], 12, System.Drawing.FontStyle.Bold);
+            lnkTomorrowWeather.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
             lnkTomorrowWeather.UseCompatibleTextRendering = true;
-            lnkTomorrowTemp.Font = new Font(PFCAwe.Families[0], 12, System.Drawing.FontStyle.Bold);
+            lnkTomorrowTemp.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
             lnkTomorrowTemp.UseCompatibleTextRendering = true;
         }
 

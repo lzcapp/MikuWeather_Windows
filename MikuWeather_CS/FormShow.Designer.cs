@@ -41,10 +41,10 @@ namespace MikuWeather {
             // 
             this.picToday.BackColor = System.Drawing.Color.Transparent;
             this.picToday.Image = global::MikuWeather.Properties.Resources.晴_日;
-            this.picToday.Location = new System.Drawing.Point(46, 22);
-            this.picToday.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.picToday.Location = new System.Drawing.Point(34, 16);
+            this.picToday.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picToday.Name = "picToday";
-            this.picToday.Size = new System.Drawing.Size(270, 270);
+            this.picToday.Size = new System.Drawing.Size(202, 202);
             this.picToday.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picToday.TabIndex = 0;
             this.picToday.TabStop = false;
@@ -53,10 +53,10 @@ namespace MikuWeather {
             // 
             this.picTomorrow.BackColor = System.Drawing.Color.Transparent;
             this.picTomorrow.Image = global::MikuWeather.Properties.Resources.晴_日;
-            this.picTomorrow.Location = new System.Drawing.Point(372, 22);
-            this.picTomorrow.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.picTomorrow.Location = new System.Drawing.Point(279, 16);
+            this.picTomorrow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.picTomorrow.Name = "picTomorrow";
-            this.picTomorrow.Size = new System.Drawing.Size(270, 270);
+            this.picTomorrow.Size = new System.Drawing.Size(202, 202);
             this.picTomorrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picTomorrow.TabIndex = 1;
             this.picTomorrow.TabStop = false;
@@ -64,13 +64,12 @@ namespace MikuWeather {
             // lnkTodayWeather
             // 
             this.lnkTodayWeather.BackColor = System.Drawing.Color.Transparent;
-            this.lnkTodayWeather.Font = new System.Drawing.Font("条幅黑体", 13.5F);
+            this.lnkTodayWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F);
             this.lnkTodayWeather.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lnkTodayWeather.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.lnkTodayWeather.Location = new System.Drawing.Point(0, 273);
-            this.lnkTodayWeather.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lnkTodayWeather.Location = new System.Drawing.Point(0, 205);
             this.lnkTodayWeather.Name = "lnkTodayWeather";
-            this.lnkTodayWeather.Size = new System.Drawing.Size(348, 42);
+            this.lnkTodayWeather.Size = new System.Drawing.Size(261, 32);
             this.lnkTodayWeather.TabIndex = 2;
             this.lnkTodayWeather.Text = "无数据";
             this.lnkTodayWeather.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -78,13 +77,12 @@ namespace MikuWeather {
             // lnkTodayTemp
             // 
             this.lnkTodayTemp.BackColor = System.Drawing.Color.Transparent;
-            this.lnkTodayTemp.Font = new System.Drawing.Font("MF YaYuan (Noncommercial) Regul", 13F);
+            this.lnkTodayTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.lnkTodayTemp.ForeColor = System.Drawing.Color.LightGreen;
             this.lnkTodayTemp.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.lnkTodayTemp.Location = new System.Drawing.Point(0, 312);
-            this.lnkTodayTemp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lnkTodayTemp.Location = new System.Drawing.Point(0, 234);
             this.lnkTodayTemp.Name = "lnkTodayTemp";
-            this.lnkTodayTemp.Size = new System.Drawing.Size(348, 48);
+            this.lnkTodayTemp.Size = new System.Drawing.Size(261, 36);
             this.lnkTodayTemp.TabIndex = 4;
             this.lnkTodayTemp.Text = "-- °C";
             this.lnkTodayTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,13 +90,12 @@ namespace MikuWeather {
             // lnkTomorrowTemp
             // 
             this.lnkTomorrowTemp.BackColor = System.Drawing.Color.Transparent;
-            this.lnkTomorrowTemp.Font = new System.Drawing.Font("MF YaYuan (Noncommercial) Regul", 13F);
+            this.lnkTomorrowTemp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.lnkTomorrowTemp.ForeColor = System.Drawing.Color.LightGreen;
             this.lnkTomorrowTemp.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.lnkTomorrowTemp.Location = new System.Drawing.Point(349, 312);
-            this.lnkTomorrowTemp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lnkTomorrowTemp.Location = new System.Drawing.Point(262, 234);
             this.lnkTomorrowTemp.Name = "lnkTomorrowTemp";
-            this.lnkTomorrowTemp.Size = new System.Drawing.Size(348, 48);
+            this.lnkTomorrowTemp.Size = new System.Drawing.Size(261, 36);
             this.lnkTomorrowTemp.TabIndex = 6;
             this.lnkTomorrowTemp.Text = "-- °C";
             this.lnkTomorrowTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -106,24 +103,23 @@ namespace MikuWeather {
             // lnkTomorrowWeather
             // 
             this.lnkTomorrowWeather.BackColor = System.Drawing.Color.Transparent;
-            this.lnkTomorrowWeather.Font = new System.Drawing.Font("条幅黑体", 13.5F);
+            this.lnkTomorrowWeather.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F);
             this.lnkTomorrowWeather.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lnkTomorrowWeather.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.lnkTomorrowWeather.Location = new System.Drawing.Point(350, 273);
-            this.lnkTomorrowWeather.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lnkTomorrowWeather.Location = new System.Drawing.Point(262, 205);
             this.lnkTomorrowWeather.Name = "lnkTomorrowWeather";
-            this.lnkTomorrowWeather.Size = new System.Drawing.Size(348, 42);
+            this.lnkTomorrowWeather.Size = new System.Drawing.Size(261, 32);
             this.lnkTomorrowWeather.TabIndex = 5;
             this.lnkTomorrowWeather.Text = "无数据";
             this.lnkTomorrowWeather.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormShow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::MikuWeather.Properties.Resources.bg_wdt;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(698, 360);
+            this.ClientSize = new System.Drawing.Size(524, 270);
             this.Controls.Add(this.lnkTomorrowTemp);
             this.Controls.Add(this.lnkTomorrowWeather);
             this.Controls.Add(this.lnkTodayTemp);
@@ -132,7 +128,6 @@ namespace MikuWeather {
             this.Controls.Add(this.picToday);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormShow";
@@ -140,6 +135,7 @@ namespace MikuWeather {
             this.ShowInTaskbar = false;
             this.Text = "FormShow";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.FormShow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picToday)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTomorrow)).EndInit();
             this.ResumeLayout(false);

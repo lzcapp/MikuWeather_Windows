@@ -1,12 +1,32 @@
-﻿using MikuWeather.Properties;
-using System;
+﻿using System;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 namespace MikuWeather {
     public partial class FormShow : Form {
+        private static readonly PrivateFontCollection PFCAwe = new PrivateFontCollection();
+
+        static void AddPrivateFont() {
+            var hObject = System.Runtime.InteropServices.GCHandle.Alloc(Properties.Resources.MFYaYuan, System.Runtime.InteropServices.GCHandleType.Pinned);
+            var intptr = hObject.AddrOfPinnedObject();
+            PFCAwe.AddMemoryFont(intptr, Properties.Resources.MFYaYuan.Length);
+        }
+
         public FormShow() {
             InitializeComponent();
+        }
+
+        private void FormShow_Load(object sender, EventArgs e) {
+            AddPrivateFont();
+            lnkTodayWeather.Font = new Font(PFCAwe.Families[0], 12, System.Drawing.FontStyle.Bold);
+            lnkTodayWeather.UseCompatibleTextRendering = true;
+            lnkTodayTemp.Font = new Font(PFCAwe.Families[0], 12, System.Drawing.FontStyle.Bold);
+            lnkTodayTemp.UseCompatibleTextRendering = true;
+            lnkTomorrowWeather.Font = new Font(PFCAwe.Families[0], 12, System.Drawing.FontStyle.Bold);
+            lnkTomorrowWeather.UseCompatibleTextRendering = true;
+            lnkTomorrowTemp.Font = new Font(PFCAwe.Families[0], 12, System.Drawing.FontStyle.Bold);
+            lnkTomorrowTemp.UseCompatibleTextRendering = true;
         }
 
         public void SetTemp(string todayTemp, string tomorrowTemp) {

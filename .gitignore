@@ -156,3 +156,6 @@ $RECYCLE.BIN/
 # Mac desktop service store files
 .DS_Store
 *.ide
+
+fonts/
+MikuWeather_CS/MigrationBackup/63c3541b/MikuWeather/NuGetUpgradeLog.html

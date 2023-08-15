@@ -136,7 +136,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\MFYaYuan.ttf" />
     <None Include="Resources\MFYaYuan_Noncommercial-Regular.otf" />
   </ItemGroup>
   <ItemGroup>
@@ -145,63 +144,24 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="Resources\bg_wdt.png" />
-    <Content Include="Resources\中雨1.png" />
     <None Include="Resources\多云_日.png" />
     <None Include="Resources\多云_夜.png" />
     <None Include="Resources\中雨_日.png" />
-    <Content Include="Resources\夜多云.png" />
-    <Content Include="Resources\夜晴.png" />
-    <Content Include="Resources\夜雨1.png" />
-    <Content Include="Resources\夜雪.png" />
-    <Content Include="Resources\夜雷阵雨.png" />
     <None Include="Resources\大雨.png" />
-    <Content Include="Resources\大雨1.png" />
     <None Include="Resources\大雪.png" />
-    <Content Include="Resources\小雨1.png" />
-    <None Include="Resources\新建文件夹\暴雪.png" />
-    <None Include="Resources\新建文件夹\多云_日.png" />
-    <None Include="Resources\新建文件夹\多云_夜.png" />
-    <None Include="Resources\新建文件夹\晴_日.png" />
-    <None Include="Resources\新建文件夹\晴_夜.png" />
-    <None Include="Resources\新建文件夹\雪.png" />
-    <None Include="Resources\新建文件夹\雪_日.png" />
-    <None Include="Resources\新建文件夹\雪_夜.png" />
-    <None Include="Resources\新建文件夹\阴.png" />
-    <None Include="Resources\新建文件夹\雨_日.png" />
-    <None Include="Resources\新建文件夹\雨_夜.png" />
-    <None Include="Resources\新建文件夹\中雨_日.png" />
-    <None Include="Resources\新建文件夹\大雪.png" />
-    <None Include="Resources\新建文件夹\大雨.png" />
-    <None Include="Resources\新建文件夹\雨.png" />
-    <None Include="Resources\新建文件夹\雾.png" />
-    <None Include="Resources\新建文件夹\雷雨.png" />
-    <None Include="Resources\新建文件夹\雷雨_夜.png" />
-    <None Include="Resources\新建文件夹\雨雪.png" />
-    <Content Include="Resources\无标题_1.png" />
-    <Content Include="Resources\无标题_1M.png" />
-    <Content Include="Resources\日多云.png" />
-    <Content Include="Resources\日雪.png" />
-    <Content Include="Resources\晴1.png" />
     <None Include="Resources\晴_日.png" />
     <None Include="Resources\晴_夜.png" />
-    <Content Include="Resources\暴雪1.png" />
     <None Include="Resources\阴.png" />
-    <Content Include="Resources\阴1.png" />
-    <Content Include="Resources\阴雨1.png" />
     <None Include="Resources\雨.png" />
     <None Include="Resources\雨_日.png" />
     <None Include="Resources\雨_夜.png" />
-    <Content Include="Resources\雨夹雪1.png" />
     <None Include="Resources\雪.png" />
     <None Include="Resources\雨雪.png" />
-    <Content Include="Resources\雪1.png" />
     <None Include="Resources\雪_日.png" />
     <None Include="Resources\雪_夜.png" />
-    <Content Include="Resources\雷阵雨1.png" />
     <None Include="Resources\雷雨.png" />
     <None Include="Resources\雷雨_夜.png" />
     <None Include="Resources\雾.png" />
-    <Content Include="Resources\雾1.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Costura.Fody">

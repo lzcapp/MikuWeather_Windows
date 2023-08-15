@@ -21,11 +21,11 @@ namespace MikuWeather {
             AddPrivateFont();
             //lnkTodayWeather.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
             //lnkTodayWeather.UseCompatibleTextRendering = true;
-            lnkTodayTemp.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
+            lnkTodayTemp.Font = new Font(PFCAwe.Families[0], 14, FontStyle.Bold);
             lnkTodayTemp.UseCompatibleTextRendering = true;
             //lnkTomorrowWeather.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
             //lnkTomorrowWeather.UseCompatibleTextRendering = true;
-            lnkTomorrowTemp.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
+            lnkTomorrowTemp.Font = new Font(PFCAwe.Families[0], 14, FontStyle.Bold);
             lnkTomorrowTemp.UseCompatibleTextRendering = true;
         }
 

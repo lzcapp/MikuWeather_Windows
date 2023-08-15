@@ -77,13 +77,12 @@ namespace MikuWeather {
             var daily = jObject.result.daily;
             status = daily.status;
             if (status != "ok") {
-                resultDict.Add("exception", "error code");
                 return resultDict;
             }
 
             var tomorrowTempToken = daily.temperature_20h_32h;
-            var tomorrowTemp = tomorrowTempToken[0].min + " ~ " +
-                               tomorrowTempToken[0].max + " °C";
+            var tomorrowTemp = Math.Round(tomorrowTempToken[0].min, 0) + " °C ~ " +
+                               Math.Round(tomorrowTempToken[0].max, 0) + " °C";
             var tomorrowPic = daily.skycon_20h_32h[0].value;
             resultDict.Add("tomorrow temp", tomorrowTemp);
             resultDict.Add("tomorrow pic", tomorrowPic);

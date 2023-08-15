@@ -25,9 +25,6 @@ namespace MikuWeather {
                 locationX,
                 locationY,
                 Size.Width, Size.Height);
-            _frmShow.SetBounds(locationX - _frmShow.Width / 2 + Width / 2 - 15,
-                locationY - _frmShow.Height,
-                _frmShow.Width, _frmShow.Height);
 
             var dictLocation = DataQuery.GetLocation();
             _coor = dictLocation["coor"];
@@ -44,7 +41,7 @@ namespace MikuWeather {
 
         private void FormMain_MouseHover(object sender, EventArgs e) {
             _frmShow.SetBounds(Location.X - _frmShow.Width / 2 + Width / 2 - 15,
-                Location.Y - _frmShow.Height,
+                Location.Y - _frmShow.Height - 20,
                 _frmShow.Width,
                 _frmShow.Height);
             _frmShow.Show();
@@ -154,7 +151,7 @@ namespace MikuWeather {
                         return Resources.多云_夜;
                     case "小雨":
                         return Resources.雨_夜;
-                    case "雪":
+                    case "小雪":
                         return Resources.雪_夜;
                 }
             switch (weather) {

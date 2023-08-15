@@ -3,5 +3,8 @@
 
 ## 应用截图
 
-| ![Screenshot](./Screenshot.png) | ![Screenshot2](./Screenshot2.png) |
-| ---- | ---- |
+|   |
+| ---- |
+| ![Screenshot](./Screenshot.png) |
+| ![Screenshot2](./Screenshot2.png) |
+

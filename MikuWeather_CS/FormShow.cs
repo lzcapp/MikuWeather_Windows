@@ -7,7 +7,7 @@ namespace MikuWeather {
     public partial class FormShow : Form {
         private static readonly PrivateFontCollection PFCAwe = new PrivateFontCollection();
 
-        static void AddPrivateFont() {
+        private static void AddPrivateFont() {
             var hObject = System.Runtime.InteropServices.GCHandle.Alloc(Properties.Resources.MFYaYuan, System.Runtime.InteropServices.GCHandleType.Pinned);
             var intptr = hObject.AddrOfPinnedObject();
             PFCAwe.AddMemoryFont(intptr, Properties.Resources.MFYaYuan.Length);
@@ -19,12 +19,12 @@ namespace MikuWeather {
 
         private void FormShow_Load(object sender, EventArgs e) {
             AddPrivateFont();
-            lnkTodayWeather.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
-            lnkTodayWeather.UseCompatibleTextRendering = true;
+            //lnkTodayWeather.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
+            //lnkTodayWeather.UseCompatibleTextRendering = true;
             lnkTodayTemp.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
             lnkTodayTemp.UseCompatibleTextRendering = true;
-            lnkTomorrowWeather.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
-            lnkTomorrowWeather.UseCompatibleTextRendering = true;
+            //lnkTomorrowWeather.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
+            //lnkTomorrowWeather.UseCompatibleTextRendering = true;
             lnkTomorrowTemp.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
             lnkTomorrowTemp.UseCompatibleTextRendering = true;
         }
@@ -44,7 +44,7 @@ namespace MikuWeather {
             lnkTomorrowWeather.Text = tomorrowWeather;
             lnkTomorrowWeather.LinkArea = blankArea;
         }
-        
+
         public void SetPic(Bitmap todayPic, Bitmap tomorrowPic) {
             picToday.Image = todayPic;
             picTomorrow.Image = tomorrowPic;

@@ -83,9 +83,9 @@ namespace MikuWeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap 中雨 {
+        internal static System.Drawing.Bitmap 中雨_日 {
             get {
-                object obj = ResourceManager.GetObject("中雨", resourceCulture);
+                object obj = ResourceManager.GetObject("中雨_日", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +123,16 @@ namespace MikuWeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap 大雪 {
+            get {
+                object obj = ResourceManager.GetObject("大雪", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap 晴_夜 {
             get {
                 object obj = ResourceManager.GetObject("晴_夜", resourceCulture);
@@ -143,16 +153,6 @@ namespace MikuWeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap 暴雪 {
-            get {
-                object obj = ResourceManager.GetObject("暴雪", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap 阴 {
             get {
                 object obj = ResourceManager.GetObject("阴", resourceCulture);
@@ -163,9 +163,9 @@ namespace MikuWeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap 阴雨 {
+        internal static System.Drawing.Bitmap 雨 {
             get {
-                object obj = ResourceManager.GetObject("阴雨", resourceCulture);
+                object obj = ResourceManager.GetObject("雨", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace MikuWeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap 雨夹雪 {
+        internal static System.Drawing.Bitmap 雨雪 {
             get {
-                object obj = ResourceManager.GetObject("雨夹雪", resourceCulture);
+                object obj = ResourceManager.GetObject("雨雪", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +233,9 @@ namespace MikuWeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap 雷阵雨_夜 {
+        internal static System.Drawing.Bitmap 雷雨 {
             get {
-                object obj = ResourceManager.GetObject("雷阵雨_夜", resourceCulture);
+                object obj = ResourceManager.GetObject("雷雨", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +243,9 @@ namespace MikuWeather.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap 雷阵雨_日 {
+        internal static System.Drawing.Bitmap 雷雨_夜 {
             get {
-                object obj = ResourceManager.GetObject("雷阵雨_日", resourceCulture);
+                object obj = ResourceManager.GetObject("雷雨_夜", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

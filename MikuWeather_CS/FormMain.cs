@@ -152,7 +152,7 @@ namespace MikuWeather {
                         return Resources.晴_夜;
                     case "多云":
                         return Resources.多云_夜;
-                    case "雨":
+                    case "小雨":
                         return Resources.雨_夜;
                     case "雪":
                         return Resources.雪_夜;

@@ -11,8 +11,6 @@ namespace MikuWeather {
         private readonly FormShow _frmShow = new FormShow();
 
         private string _coor;
-        private DateTime _sunrise;
-        private DateTime _sunset;
 
         public FormMain() {
             InitializeComponent();
@@ -28,11 +26,6 @@ namespace MikuWeather {
 
             var dictLocation = DataQuery.GetLocation();
             _coor = dictLocation["coor"];
-            var dictAstro = DataQuery.GetAstro_Caiyun(_coor);
-            var sunrise = dictAstro["sunrise"];
-            var sunset = dictAstro["sunset"];
-            _sunrise = DateTime.ParseExact(sunrise, "HH:mm", CultureInfo.CurrentCulture);
-            _sunset = DateTime.ParseExact(sunset, "HH:mm", CultureInfo.CurrentCulture);
             cmWebsite.Text = @"Github仓库";
             cmExit.Text = @"退出";
             UpdateData();
@@ -67,8 +60,10 @@ namespace MikuWeather {
             var tomorrowWeather = SwitchCaiyun(dict["tomorrow pic"]);
             var todayTemp = dict["today temp"];
             var tomorrowTemp = dict["tomorrow temp"];
+            var sunrise = DateTime.ParseExact(dict["sunrise"], "HH:mm", CultureInfo.CurrentCulture);
+            var sunset = DateTime.ParseExact(dict["sunset"], "HH:mm", CultureInfo.CurrentCulture);
             bool isDay;
-            if (nowDt >= _sunrise && nowDt < _sunset)
+            if (nowDt >= sunrise && nowDt < sunset)
                 isDay = true;
             else
                 isDay = false;

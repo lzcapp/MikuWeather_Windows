@@ -1,52 +1,12 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Net;
-using System.Text;
 
 namespace MikuWeather {
     internal static class DataQuery {
         private const string baidu_key = "edUWu66ddGavrmj9a6vcsa75";
         private const string caiyun_key = "XX3OXGV581TJoQNP";
-
-        public static Dictionary<string, string> GetAstro_Caiyun(string coor) {
-            var resultDict = new Dictionary<string, string>();
-            const string url = "http://api.caiyunapp.com/v2/";
-            var key = caiyun_key;
-            var requestUrl = url + key + "/" + coor + "/daily";
-
-            var requestToday = (HttpWebRequest)WebRequest.Create(requestUrl);
-            requestToday.Method = "GET";
-            string result;
-            try {
-                var response = (HttpWebResponse)requestToday.GetResponse();
-                using (var reader =
-                    new StreamReader(response.GetResponseStream() ?? throw new InvalidOperationException(),
-                        Encoding.UTF8)) {
-                    result = reader.ReadToEnd();
-                }
-            } catch (Exception exception) {
-                resultDict.Add("exception", exception.Message);
-                return resultDict;
-            }
-
-            var resultTodayJo = JObject.Parse(result);
-            var status = (string)resultTodayJo.SelectToken("status");
-            if (status != "ok") {
-                resultDict.Add("exception", "error code");
-                return resultDict;
-            }
-
-            var resultToken = resultTodayJo.SelectToken("result").SelectToken("daily").SelectToken("astro")[0];
-            var sunrise = resultToken.SelectToken("sunrise").SelectToken("time").ToString();
-            var sunset = resultToken.SelectToken("sunset").SelectToken("time").ToString();
-            resultDict.Add("sunrise", sunrise);
-            resultDict.Add("sunset", sunset);
-            return resultDict;
-        }
 
         public static Dictionary<string, string> UpdateData_Caiyun(string coor) {
             var resultDict = new Dictionary<string, string>();
@@ -80,13 +40,16 @@ namespace MikuWeather {
                 return resultDict;
             }
 
-            var tomorrowTempToken = daily.temperature_20h_32h;
-            var tomorrowTemp = Math.Round(tomorrowTempToken[0].min, 0) + " °C ~ " +
-                               Math.Round(tomorrowTempToken[0].max, 0) + " °C";
+            var tomorrowTemp = Math.Round(daily.temperature_20h_32h[0].min, 0) + " °C ~ " +
+                               Math.Round(daily.temperature_20h_32h[0].max, 0) + " °C";
             var tomorrowPic = daily.skycon_20h_32h[0].value;
             resultDict.Add("tomorrow temp", tomorrowTemp);
             resultDict.Add("tomorrow pic", tomorrowPic);
 
+            var sunrise = daily.astro[0].sunrise.time;
+            var sunset = daily.astro[0].sunset.time;
+            resultDict.Add("sunrise", sunrise);
+            resultDict.Add("sunset", sunset);
             return resultDict;
         }
 

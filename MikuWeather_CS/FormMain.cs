@@ -20,7 +20,7 @@ namespace MikuWeather {
 
         private void FormMain_Load(object sender, EventArgs e) {
             var locationX = Screen.PrimaryScreen.WorkingArea.Width - 272;
-            var locationY = Screen.PrimaryScreen.WorkingArea.Bottom - Size.Height - 40;
+            var locationY = Screen.PrimaryScreen.WorkingArea.Bottom - Size.Height - 30;
             SetBounds(
                 locationX,
                 locationY,
@@ -40,7 +40,7 @@ namespace MikuWeather {
         }
 
         private void FormMain_MouseHover(object sender, EventArgs e) {
-            _frmShow.SetBounds(Location.X - _frmShow.Width / 2 + Width / 2 - 15,
+            _frmShow.SetBounds(Location.X - _frmShow.Width / 2 + Width / 2 - 40,
                 Location.Y - _frmShow.Height - 20,
                 _frmShow.Width,
                 _frmShow.Height);
@@ -183,12 +183,12 @@ namespace MikuWeather {
         }
 
         private void TransparentForm() {
-            var img = (Bitmap)picBox.Image;
-            var graph = BitmapUtil.GetNoneTransparentRegion(img, 10);
+            var img = new Bitmap((Bitmap)picBox.Image, new Size(200, 176));
+            var graph = BitmapUtil.GetNoneTransparentRegion(img, 0);
             Region = new Region(graph);
 
-            BackgroundImage = picBox.Image;
-            BackgroundImageLayout = ImageLayout.Zoom;
+            BackgroundImage = img;
+            BackgroundImageLayout = ImageLayout.None;
 
             FormBorderStyle = FormBorderStyle.None;
             Width = picBox.Image.Width;

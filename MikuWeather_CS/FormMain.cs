@@ -10,7 +10,7 @@ namespace MikuWeather {
         // ReSharper disable once FieldCanBeMadeReadOnly.Local
         private readonly FormShow _frmShow = new FormShow();
 
-        private string _coor;
+        private string coordinate;
 
         public FormMain() {
             InitializeComponent();
@@ -25,7 +25,7 @@ namespace MikuWeather {
                 Size.Width, Size.Height);
 
             var dictLocation = DataQuery.GetLocation();
-            _coor = dictLocation["coor"];
+            coordinate = dictLocation["coordinate"];
             cmWebsite.Text = @"Github仓库";
             cmExit.Text = @"退出";
             UpdateData();
@@ -55,7 +55,7 @@ namespace MikuWeather {
 
         private void UpdateData() {
             var nowDt = DateTime.Now;
-            var dict = DataQuery.UpdateData_Caiyun(_coor);
+            var dict = DataQuery.UpdateData_Caiyun(coordinate);
             var todayWeather = SwitchCaiyun(dict["today pic"]);
             var tomorrowWeather = SwitchCaiyun(dict["tomorrow pic"]);
             var todayTemp = dict["today temp"];

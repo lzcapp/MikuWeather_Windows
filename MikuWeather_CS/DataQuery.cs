@@ -55,14 +55,13 @@ namespace MikuWeather {
 
         public static Dictionary<string, string> GetLocation() {
             var dictResult = new Dictionary<string, string>();
-            var key = baidu_key;
 
-            var client = new RestClient("https://api.map.baidu.com/location/ip?ak=" + key + "&coor=gcj02");
+            var client = new RestClient("https://api.map.baidu.com/location/ip?ak=" + baidu_key + "&coor=gcj02");
             var request = new RestRequest();
             var response = client.Execute(request);
             var result = response.Content;
             if (result == null) {
-                dictResult.Add("exception", "error code");
+                dictResult.Add("exception", "fetch api error");
                 return dictResult;
             }
 
@@ -79,7 +78,7 @@ namespace MikuWeather {
             var pointToken = content.point;
             var coordinate = pointToken.x + "," + pointToken.y;
             dictResult.Add("city", cityName);
-            dictResult.Add("coor", coordinate);
+            dictResult.Add("coordinate", coordinate);
             return dictResult;
         }
     }

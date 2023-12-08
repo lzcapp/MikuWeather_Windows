@@ -45,7 +45,7 @@ namespace MikuWeather {
         }
 
         private void CmWebsite_Click(object sender, EventArgs e) {
-            Process.Start("https://github.com/RainySummerLuo/MikuWeather_Windows");
+            Process.Start("https://github.com/lzcapp/MikuWeather_Windows");
         }
 
         private void CmExit_Click(object sender, EventArgs e) {

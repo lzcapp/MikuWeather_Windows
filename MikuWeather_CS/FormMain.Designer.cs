@@ -31,88 +31,85 @@ namespace MikuWeather
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
-            this.picBox = new System.Windows.Forms.PictureBox();
-            this.cmMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cmWebsite = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmRefresh = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmExit = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
-            this.cmMenu.SuspendLayout();
-            this.SuspendLayout();
+            components = new Container();
+            picBox = new PictureBox();
+            cmMenu = new ContextMenuStrip(components);
+            cmWebsite = new ToolStripMenuItem();
+            cmRefresh = new ToolStripMenuItem();
+            cmExit = new ToolStripMenuItem();
+            ((ISupportInitialize)picBox).BeginInit();
+            cmMenu.SuspendLayout();
+            SuspendLayout();
             // 
             // picBox
             // 
-            this.picBox.ContextMenuStrip = this.cmMenu;
-            this.picBox.InitialImage = null;
-            this.picBox.Location = new System.Drawing.Point(0, 0);
-            this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(210, 210);
-            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBox.TabIndex = 0;
-            this.picBox.TabStop = false;
-            this.picBox.Visible = false;
-            this.picBox.MouseEnter += new System.EventHandler(this.FormMain_MouseHover);
-            this.picBox.MouseLeave += new System.EventHandler(this.FormMain_MouseLeave);
-            this.picBox.MouseHover += new System.EventHandler(this.FormMain_MouseHover);
+            picBox.ContextMenuStrip = cmMenu;
+            picBox.InitialImage = null;
+            picBox.Location = new System.Drawing.Point(0, 0);
+            picBox.Margin = new Padding(4, 5, 4, 5);
+            picBox.Name = "picBox";
+            picBox.Size = new System.Drawing.Size(303, 327);
+            picBox.SizeMode = PictureBoxSizeMode.Zoom;
+            picBox.TabIndex = 0;
+            picBox.TabStop = false;
+            picBox.Visible = false;
+            picBox.MouseEnter += FormMain_MouseHover;
+            picBox.MouseLeave += FormMain_MouseLeave;
+            picBox.MouseHover += FormMain_MouseHover;
             // 
             // cmMenu
             // 
-            this.cmMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.cmMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cmWebsite,
-            this.cmRefresh,
-            this.cmExit});
-            this.cmMenu.Name = "cmMenu";
-            this.cmMenu.Size = new System.Drawing.Size(190, 94);
+            cmMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
+            cmMenu.Items.AddRange(new ToolStripItem[] { cmWebsite, cmRefresh, cmExit });
+            cmMenu.Name = "cmMenu";
+            cmMenu.Size = new System.Drawing.Size(212, 106);
             // 
             // cmWebsite
             // 
-            this.cmWebsite.Name = "cmWebsite";
-            this.cmWebsite.ShortcutKeyDisplayString = "";
-            this.cmWebsite.Size = new System.Drawing.Size(240, 30);
-            this.cmWebsite.Text = "Github Repo";
-            this.cmWebsite.Click += new System.EventHandler(this.CmWebsite_Click);
+            cmWebsite.Name = "cmWebsite";
+            cmWebsite.ShortcutKeyDisplayString = "";
+            cmWebsite.Size = new System.Drawing.Size(211, 34);
+            cmWebsite.Text = "Github Repo";
+            cmWebsite.Click += CmWebsite_Click;
             // 
             // cmRefresh
             // 
-            this.cmRefresh.Name = "cmRefresh";
-            this.cmRefresh.Size = new System.Drawing.Size(219, 30);
-            this.cmRefresh.Text = "更新";
-            this.cmRefresh.Click += new System.EventHandler(this.CmRefresh_Click);
+            cmRefresh.Name = "cmRefresh";
+            cmRefresh.Size = new System.Drawing.Size(211, 34);
+            cmRefresh.Text = "更新";
+            cmRefresh.Click += CmRefresh_Click;
             // 
             // cmExit
             // 
-            this.cmExit.Name = "cmExit";
-            this.cmExit.Size = new System.Drawing.Size(219, 30);
-            this.cmExit.Text = "退出";
-            this.cmExit.Click += new System.EventHandler(this.CmExit_Click);
+            cmExit.Name = "cmExit";
+            cmExit.Size = new System.Drawing.Size(211, 34);
+            cmExit.Text = "退出";
+            cmExit.Click += CmExit_Click;
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Honeydew;
-            this.ClientSize = new System.Drawing.Size(210, 210);
-            this.ContextMenuStrip = this.cmMenu;
-            this.Controls.Add(this.picBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FormMain";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.TopMost = true;
-            this.Load += new System.EventHandler(this.FormMain_Load);
-            this.MouseLeave += new System.EventHandler(this.FormMain_MouseLeave);
-            this.MouseHover += new System.EventHandler(this.FormMain_MouseHover);
-            ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
-            this.cmMenu.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(13F, 28F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.Honeydew;
+            ClientSize = new System.Drawing.Size(303, 327);
+            ContextMenuStrip = cmMenu;
+            Controls.Add(picBox);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 6, 4, 6);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormMain";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            SizeGripStyle = SizeGripStyle.Hide;
+            StartPosition = FormStartPosition.Manual;
+            TopMost = true;
+            Load += FormMain_Load;
+            MouseLeave += FormMain_MouseLeave;
+            MouseHover += FormMain_MouseHover;
+            ((ISupportInitialize)picBox).EndInit();
+            cmMenu.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

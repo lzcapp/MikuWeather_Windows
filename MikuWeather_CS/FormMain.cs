@@ -4,9 +4,12 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Globalization;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace MikuWeather {
+    [SupportedOSPlatform("windows")]
+
     public partial class FormMain : Form {
         private readonly FormShow _frmShow = new();
 
@@ -17,9 +20,11 @@ namespace MikuWeather {
         }
 
         private void FormMain_Load(object sender, EventArgs e) {
-            var locationX = Screen.PrimaryScreen.WorkingArea.Width - 290;
-            var locationY = Screen.PrimaryScreen.WorkingArea.Bottom - Size.Height + 20;
-            SetBounds(locationX, locationY, Size.Width, Size.Height);
+            if (Screen.PrimaryScreen != null) {
+                var locationX = Screen.PrimaryScreen.WorkingArea.Width - 290;
+                var locationY = Screen.PrimaryScreen.WorkingArea.Bottom - Size.Height + 20;
+                SetBounds(locationX, locationY, Size.Width, Size.Height);
+            }
 
             var dictLocation = DataQuery.GetLocation();
             coordinate = dictLocation["coordinate"];

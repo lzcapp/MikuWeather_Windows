@@ -2,9 +2,12 @@
 using System.Drawing;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace MikuWeather {
+    [SupportedOSPlatform("windows")]
+
     public partial class FormShow : Form {
         private static readonly PrivateFontCollection PFCAwe = new();
 

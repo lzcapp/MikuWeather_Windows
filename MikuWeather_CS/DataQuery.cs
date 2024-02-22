@@ -40,8 +40,7 @@ namespace MikuWeather {
                 return resultDict;
             }
 
-            var tomorrowTemp = Math.Round(daily.temperature_20h_32h[0].min, 0) + " °C ~ " +
-                               Math.Round(daily.temperature_20h_32h[0].max, 0) + " °C";
+            var tomorrowTemp = Math.Round(daily.temperature_20h_32h[0].min, 0) + " °C ~ " + Math.Round(daily.temperature_20h_32h[0].max, 0) + " °C";
             var tomorrowPic = daily.skycon_20h_32h[0].value;
             resultDict.Add("tomorrow temp", tomorrowTemp);
             resultDict.Add("tomorrow pic", tomorrowPic);

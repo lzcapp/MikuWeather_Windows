@@ -1,5 +1,4 @@
 ﻿namespace MikuWeather {
-
     public class RootBaidu {
         public string address { get; set; }
         public Content content { get; set; }
@@ -26,5 +25,4 @@
         public string x { get; set; }
         public string y { get; set; }
     }
-
 }

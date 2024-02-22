@@ -9,11 +9,10 @@ using System.Windows.Forms;
 
 namespace MikuWeather {
     [SupportedOSPlatform("windows")]
-
     public partial class FormMain : Form {
         private readonly FormShow _frmShow = new();
 
-        private string coordinate;
+        private string _coordinate;
 
         public FormMain() {
             InitializeComponent();
@@ -27,7 +26,7 @@ namespace MikuWeather {
             }
 
             var dictLocation = DataQuery.GetLocation();
-            coordinate = dictLocation["coordinate"];
+            _coordinate = dictLocation["coordinate"];
             cmWebsite.Text = @"Github仓库";
             cmExit.Text = @"退出";
             UpdateData();
@@ -54,7 +53,7 @@ namespace MikuWeather {
 
         private void UpdateData() {
             DateTime nowDt = DateTime.Now;
-            var dict = DataQuery.UpdateData_Caiyun(coordinate);
+            var dict = DataQuery.UpdateData_Caiyun(_coordinate);
             var todayWeather = SwitchCaiyun(dict["today pic"]);
             var tomorrowWeather = SwitchCaiyun(dict["tomorrow pic"]);
             var todayTemp = dict["today temp"];
@@ -62,10 +61,11 @@ namespace MikuWeather {
             DateTime sunrise = DateTime.ParseExact(dict["sunrise"], "HH:mm", CultureInfo.CurrentCulture);
             DateTime sunset = DateTime.ParseExact(dict["sunset"], "HH:mm", CultureInfo.CurrentCulture);
             bool isDay;
-            if (nowDt >= sunrise && nowDt < sunset)
+            if (nowDt >= sunrise && nowDt < sunset) {
                 isDay = true;
-            else
+            } else {
                 isDay = false;
+            }
             Bitmap todayPic = SwitchCaiyunPic(todayWeather, isDay);
             Bitmap tomorrowPic = SwitchCaiyunPic(tomorrowWeather, isDay);
 

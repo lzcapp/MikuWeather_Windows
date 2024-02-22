@@ -20,8 +20,8 @@ namespace MikuWeather {
 
         private void FormMain_Load(object sender, EventArgs e) {
             if (Screen.PrimaryScreen != null) {
-                var locationX = Screen.PrimaryScreen.WorkingArea.Width - 290;
-                var locationY = Screen.PrimaryScreen.WorkingArea.Bottom - Size.Height + 20;
+                var locationX = Screen.PrimaryScreen.WorkingArea.Width - 300;
+                var locationY = Screen.PrimaryScreen.WorkingArea.Bottom - Size.Height - 80;
                 SetBounds(locationX, locationY, Size.Width, Size.Height);
             }
 
@@ -34,7 +34,7 @@ namespace MikuWeather {
         }
 
         private void FormMain_MouseHover(object sender, EventArgs e) {
-            _frmShow.SetBounds(Location.X - _frmShow.Width / 2 + Width / 2 - 50, Location.Y - _frmShow.Height - 20, _frmShow.Width, _frmShow.Height);
+            _frmShow.SetBounds(Location.X - _frmShow.Width / 2 + Width / 2 - 20, Location.Y - _frmShow.Height - 10, _frmShow.Width, _frmShow.Height);
             _frmShow.Show();
         }
 
@@ -43,7 +43,11 @@ namespace MikuWeather {
         }
 
         private void CmWebsite_Click(object sender, EventArgs e) {
-            Process.Start("https://github.com/lzcapp/MikuWeather_Windows");
+            const string repoUrl = "https://github.com/lzcapp/MikuWeather_Windows";
+            Process.Start(new ProcessStartInfo {
+                FileName = repoUrl,
+                UseShellExecute = true
+            });
         }
 
         private void CmExit_Click(object sender, EventArgs e) {
@@ -72,8 +76,7 @@ namespace MikuWeather {
             _frmShow.SetTemp(todayTemp, tomorrowTemp);
             _frmShow.SetWeather(todayWeather, tomorrowWeather);
             _frmShow.SetPic(todayPic, tomorrowPic);
-            picBox.Image = todayPic;
-            picBox.Size = new Size(210, 210);
+            BackgroundImage = todayPic;
             TransparentForm();
         }
 
@@ -144,7 +147,7 @@ namespace MikuWeather {
         }
 
         private void TransparentForm() {
-            var img = new Bitmap((Bitmap)picBox.Image, new Size(200, 176));
+            var img = new Bitmap(((Bitmap)BackgroundImage)!, new Size(200, 176));
             GraphicsPath graph = BitmapUtil.GetNoneTransparentRegion(img, 0);
             Region = new Region(graph);
 
@@ -152,8 +155,8 @@ namespace MikuWeather {
             BackgroundImageLayout = ImageLayout.None;
 
             FormBorderStyle = FormBorderStyle.None;
-            Width = picBox.Image.Width;
-            Height = picBox.Image.Height;
+            Width = BackgroundImage.Width;
+            Height = BackgroundImage.Height;
         }
     }
 }

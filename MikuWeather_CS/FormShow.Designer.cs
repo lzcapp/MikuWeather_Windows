@@ -58,12 +58,12 @@ namespace MikuWeather {
             tableLayoutPanel.Margin = new Padding(0);
             tableLayoutPanel.Name = "tableLayoutPanel";
             tableLayoutPanel.RowCount = 5;
-            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 66F));
-            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 230F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 43F));
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 148F));
             tableLayoutPanel.RowStyles.Add(new RowStyle());
             tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel.Size = new System.Drawing.Size(765, 438);
+            tableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 13F));
+            tableLayoutPanel.Size = new System.Drawing.Size(492, 283);
             tableLayoutPanel.TabIndex = 0;
             // 
             // picToday
@@ -72,9 +72,10 @@ namespace MikuWeather {
             picToday.BackgroundImage = Properties.Resources.晴_日;
             picToday.BackgroundImageLayout = ImageLayout.Zoom;
             picToday.Dock = DockStyle.Fill;
-            picToday.Location = new System.Drawing.Point(3, 69);
+            picToday.Location = new System.Drawing.Point(2, 45);
+            picToday.Margin = new Padding(2);
             picToday.Name = "picToday";
-            picToday.Size = new System.Drawing.Size(376, 224);
+            picToday.Size = new System.Drawing.Size(242, 144);
             picToday.TabIndex = 0;
             picToday.TabStop = false;
             // 
@@ -83,9 +84,10 @@ namespace MikuWeather {
             picTomorrow.BackColor = System.Drawing.Color.Transparent;
             picTomorrow.BackgroundImageLayout = ImageLayout.Zoom;
             picTomorrow.Dock = DockStyle.Fill;
-            picTomorrow.Location = new System.Drawing.Point(385, 69);
+            picTomorrow.Location = new System.Drawing.Point(248, 45);
+            picTomorrow.Margin = new Padding(2);
             picTomorrow.Name = "picTomorrow";
-            picTomorrow.Size = new System.Drawing.Size(377, 224);
+            picTomorrow.Size = new System.Drawing.Size(242, 144);
             picTomorrow.TabIndex = 1;
             picTomorrow.TabStop = false;
             // 
@@ -94,13 +96,13 @@ namespace MikuWeather {
             lnkTomorrowWeather.AutoSize = true;
             lnkTomorrowWeather.BackColor = System.Drawing.Color.Transparent;
             lnkTomorrowWeather.Dock = DockStyle.Fill;
-            lnkTomorrowWeather.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.125F, System.Drawing.FontStyle.Bold);
+            lnkTomorrowWeather.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
             lnkTomorrowWeather.ForeColor = System.Drawing.Color.WhiteSmoke;
             lnkTomorrowWeather.LinkArea = new LinkArea(0, 0);
-            lnkTomorrowWeather.Location = new System.Drawing.Point(382, 316);
-            lnkTomorrowWeather.Margin = new Padding(0, 20, 0, 0);
+            lnkTomorrowWeather.Location = new System.Drawing.Point(246, 204);
+            lnkTomorrowWeather.Margin = new Padding(0, 13, 0, 0);
             lnkTomorrowWeather.Name = "lnkTomorrowWeather";
-            lnkTomorrowWeather.Size = new System.Drawing.Size(383, 36);
+            lnkTomorrowWeather.Size = new System.Drawing.Size(246, 27);
             lnkTomorrowWeather.TabIndex = 5;
             lnkTomorrowWeather.Text = "晴";
             lnkTomorrowWeather.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -112,9 +114,10 @@ namespace MikuWeather {
             lnkTodayTemp.Dock = DockStyle.Fill;
             lnkTodayTemp.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.1428576F);
             lnkTodayTemp.ForeColor = System.Drawing.Color.WhiteSmoke;
-            lnkTodayTemp.Location = new System.Drawing.Point(3, 352);
+            lnkTodayTemp.Location = new System.Drawing.Point(2, 231);
+            lnkTodayTemp.Margin = new Padding(2, 0, 2, 0);
             lnkTodayTemp.Name = "lnkTodayTemp";
-            lnkTodayTemp.Size = new System.Drawing.Size(376, 66);
+            lnkTodayTemp.Size = new System.Drawing.Size(242, 39);
             lnkTodayTemp.TabIndex = 2;
             lnkTodayTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -123,13 +126,13 @@ namespace MikuWeather {
             lnkTodayWeather.AutoSize = true;
             lnkTodayWeather.BackColor = System.Drawing.Color.Transparent;
             lnkTodayWeather.Dock = DockStyle.Fill;
-            lnkTodayWeather.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.125F, System.Drawing.FontStyle.Bold);
+            lnkTodayWeather.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
             lnkTodayWeather.ForeColor = System.Drawing.Color.WhiteSmoke;
             lnkTodayWeather.LinkArea = new LinkArea(0, 0);
-            lnkTodayWeather.Location = new System.Drawing.Point(0, 316);
-            lnkTodayWeather.Margin = new Padding(0, 20, 0, 0);
+            lnkTodayWeather.Location = new System.Drawing.Point(0, 204);
+            lnkTodayWeather.Margin = new Padding(0, 13, 0, 0);
             lnkTodayWeather.Name = "lnkTodayWeather";
-            lnkTodayWeather.Size = new System.Drawing.Size(382, 36);
+            lnkTodayWeather.Size = new System.Drawing.Size(246, 27);
             lnkTodayWeather.TabIndex = 4;
             lnkTodayWeather.Text = "晴";
             lnkTodayWeather.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,23 +144,24 @@ namespace MikuWeather {
             lnkTomorrowTemp.Dock = DockStyle.Fill;
             lnkTomorrowTemp.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.1428576F);
             lnkTomorrowTemp.ForeColor = System.Drawing.Color.WhiteSmoke;
-            lnkTomorrowTemp.Location = new System.Drawing.Point(385, 352);
+            lnkTomorrowTemp.Location = new System.Drawing.Point(248, 231);
+            lnkTomorrowTemp.Margin = new Padding(2, 0, 2, 0);
             lnkTomorrowTemp.Name = "lnkTomorrowTemp";
-            lnkTomorrowTemp.Size = new System.Drawing.Size(377, 66);
+            lnkTomorrowTemp.Size = new System.Drawing.Size(242, 39);
             lnkTomorrowTemp.TabIndex = 3;
             lnkTomorrowTemp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormShow
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(14F, 31F);
+            AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new System.Drawing.Size(765, 438);
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new System.Drawing.Size(492, 283);
             Controls.Add(tableLayoutPanel);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Location = new System.Drawing.Point(1000, 600);
-            Margin = new Padding(4, 6, 4, 6);
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormShow";

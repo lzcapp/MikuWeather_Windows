@@ -1,4 +1,10 @@
-﻿namespace MikuWeather {
+﻿// ReSharper disable UnusedAutoPropertyAccessor.Global
+// ReSharper disable ClassNeverInstantiated.Global
+// ReSharper disable UnusedMember.Global
+// ReSharper disable InconsistentNaming
+// ReSharper disable IdentifierTypo
+
+namespace MikuWeather {
     public class RootCaiyun {
         public string status { get; set; }
         public string api_version { get; set; }
@@ -13,12 +19,42 @@
     }
 
     public class Result {
+        public Alert alert { get; set; }
         public Realtime realtime { get; set; }
         public Minutely minutely { get; set; }
         public Hourly hourly { get; set; }
         public Daily daily { get; set; }
         public int primary { get; set; }
         public string forecast_keypoint { get; set; }
+    }
+
+    public class Alert {
+        public string status { get; set; }
+        public Content[] content { get; set; }
+        public Adcode[] adcodes { get; set; }
+    }
+
+    public class Content {
+        public string province { get; set; }
+        public string status { get; set; }
+        public string code { get; set; }
+        public string description { get; set; }
+        public string regionId { get; set; }
+        public string county { get; set; }
+        public int pubtimestamp { get; set; }
+        public float[] latlon { get; set; }
+        public string city { get; set; }
+        public string alertId { get; set; }
+        public string title { get; set; }
+        public string adcode { get; set; }
+        public string source { get; set; }
+        public string location { get; set; }
+        public string request_status { get; set; }
+    }
+
+    public class Adcode {
+        public int adcode { get; set; }
+        public string name { get; set; }
     }
 
     public class Realtime {

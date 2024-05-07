@@ -148,7 +148,7 @@ namespace MikuWeather {
 
         private void TransparentForm() {
             var img = new Bitmap(((Bitmap)BackgroundImage)!, new Size(200, 176));
-            GraphicsPath graph = BitmapUtil.GetNoneTransparentRegion(img, 0);
+            GraphicsPath graph = BitmapUtil.GetNoneTransparentRegion(img, 20);
             Region = new Region(graph);
 
             BackgroundImage = img;

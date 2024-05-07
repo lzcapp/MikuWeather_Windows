@@ -9,12 +9,12 @@ namespace MikuWeather {
     [SupportedOSPlatform("windows")]
 
     public partial class FormShow : Form {
-        private static readonly PrivateFontCollection PFCAwe = new();
+        private static readonly PrivateFontCollection PfcAwe = new();
 
         private static void AddPrivateFont() {
             GCHandle hObject = GCHandle.Alloc(Properties.Resources.FZMingMT, GCHandleType.Pinned);
             var intptr = hObject.AddrOfPinnedObject();
-            PFCAwe.AddMemoryFont(intptr, Properties.Resources.FZMingMT.Length);
+            PfcAwe.AddMemoryFont(intptr, Properties.Resources.FZMingMT.Length);
         }
 
         public FormShow() {
@@ -24,8 +24,8 @@ namespace MikuWeather {
         private void FormShow_Load(object sender, EventArgs e) {
             AddPrivateFont();
 
-            lnkTodayTemp.Font = new Font(PFCAwe.Families[0], 14, FontStyle.Bold);
-            lnkTomorrowTemp.Font = new Font(PFCAwe.Families[0], 14, FontStyle.Bold);
+            lnkTodayTemp.Font = new Font(PfcAwe.Families[0], 14, FontStyle.Bold);
+            lnkTomorrowTemp.Font = new Font(PfcAwe.Families[0], 14, FontStyle.Bold);
         }
 
         internal void SetTemp(string todayTemp, string tomorrowTemp) {

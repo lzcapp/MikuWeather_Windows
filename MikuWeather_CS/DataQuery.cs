@@ -2,19 +2,20 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Device.Location;
+using System.Globalization;
 
 namespace MikuWeather {
     internal static class DataQuery {
-        private const string BaiduKey = "edUWu66ddGavrmj9a6vcsa75";
-        private const string CaiyunKey = "XX3OXGV581TJoQNP";
+        private const string baidu_key = "edUWu66ddGavrmj9a6vcsa75";
+        private const string caiyun_key = "XX3OXGV581TJoQNP";
 
         public static Dictionary<string, string> UpdateData_Caiyun(string coor) {
             var resultDict = new Dictionary<string, string>();
 
-            var baseUrl = "https://api.caiyunapp.com/v2.6/" + CaiyunKey + "/" + coor + "/weather?alert=true";
-            var client = new RestClient(baseUrl);
+            var client = new RestClient("http://api.caiyunapp.com/v2.6/" + caiyun_key + "/" + coor + "/weather?realtime&dailysteps=1");
             var request = new RestRequest();
-            RestResponse response = client.Execute(request);
+            var response = client.Execute(request);
             var result = response.Content;
             if (result == null) {
                 resultDict.Add("exception", "error code");
@@ -23,33 +24,26 @@ namespace MikuWeather {
 
             var jObject = JsonConvert.DeserializeObject<RootCaiyun>(result);
 
-            Alert alert = jObject.result.alert;
-            var status = alert.status;
+            var realtime = jObject.result.realtime;
+            var status = realtime.status;
             if (status != "ok") {
                 resultDict.Add("exception", "error code");
                 return resultDict;
             }
 
-            Realtime realtime = jObject.result.realtime;
-            status = realtime.status;
-            if (status != "ok") {
-                resultDict.Add("exception", "error code");
-                return resultDict;
-            }
-
-            var todayTemp = realtime.temperature + "℃";
+            var todayTemp = realtime.temperature + " °C";
             var todayPic = realtime.skycon;
             resultDict.Add("today temp", todayTemp);
             resultDict.Add("today pic", todayPic);
 
-            Daily daily = jObject.result.daily;
+            var daily = jObject.result.daily;
             status = daily.status;
             if (status != "ok") {
-                resultDict.Add("exception", "error code");
                 return resultDict;
             }
 
-            var tomorrowTemp = Math.Round(daily.temperature_20h_32h[0].min, 0) + "℃ - " + Math.Round(daily.temperature_20h_32h[0].max, 0) + "℃";
+            var tomorrowTemp = Math.Round(daily.temperature_20h_32h[0].min, 0) + " °C ~ " +
+                               Math.Round(daily.temperature_20h_32h[0].max, 0) + " °C";
             var tomorrowPic = daily.skycon_20h_32h[0].value;
             resultDict.Add("tomorrow temp", tomorrowTemp);
             resultDict.Add("tomorrow pic", tomorrowPic);
@@ -64,10 +58,9 @@ namespace MikuWeather {
         public static Dictionary<string, string> GetLocation() {
             var dictResult = new Dictionary<string, string>();
 
-            var client = new RestClient("https://api.map.baidu.com/location/ip?ak=" + BaiduKey + "&coor=gcj02");
-
+            var client = new RestClient("https://api.map.baidu.com/location/ip?ak=" + baidu_key + "&coor=gcj02");
             var request = new RestRequest();
-            RestResponse response = client.Execute(request);
+            var response = client.Execute(request);
             var result = response.Content;
             if (result == null) {
                 dictResult.Add("exception", "fetch api error");
@@ -82,11 +75,22 @@ namespace MikuWeather {
                 return dictResult;
             }
 
-            Content_Baidu content = jObject.content;
+            var content = jObject.content;
             var cityName = content.address_detail.city.Split(Convert.ToChar("市"))[0];
-            Point pointToken = content.point;
+            var pointToken = content.point;
             var coordinate = pointToken.x + "," + pointToken.y;
             dictResult.Add("city", cityName);
+            dictResult.Add("coordinate", coordinate);
+            return dictResult;
+        }
+
+        public static Dictionary<string, string> GetDeviceLocation() {
+            var dictResult = new Dictionary<string, string>();
+            var watcher = new GeoCoordinateWatcher();
+            watcher.TryStart(false, TimeSpan.FromMilliseconds(5000));
+            var coor = watcher.Position.Location;
+            if (coor.Longitude.ToString(CultureInfo.InvariantCulture) == "NaN" || coor.Latitude.ToString(CultureInfo.InvariantCulture) == "NaN") return null;
+            var coordinate = coor.Longitude + "," + coor.Latitude;
             dictResult.Add("coordinate", coordinate);
             return dictResult;
         }

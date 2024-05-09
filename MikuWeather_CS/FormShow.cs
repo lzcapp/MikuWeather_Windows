@@ -1,20 +1,16 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Text;
-using System.Runtime.InteropServices;
-using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace MikuWeather {
-    [SupportedOSPlatform("windows")]
-
     public partial class FormShow : Form {
-        private static readonly PrivateFontCollection PfcAwe = new();
+        private static readonly PrivateFontCollection PFCAwe = new PrivateFontCollection();
 
         private static void AddPrivateFont() {
-            GCHandle hObject = GCHandle.Alloc(Properties.Resources.FZMingMT, GCHandleType.Pinned);
+            var hObject = System.Runtime.InteropServices.GCHandle.Alloc(Properties.Resources.MFYaYuan, System.Runtime.InteropServices.GCHandleType.Pinned);
             var intptr = hObject.AddrOfPinnedObject();
-            PfcAwe.AddMemoryFont(intptr, Properties.Resources.FZMingMT.Length);
+            PFCAwe.AddMemoryFont(intptr, Properties.Resources.MFYaYuan.Length);
         }
 
         public FormShow() {
@@ -23,12 +19,17 @@ namespace MikuWeather {
 
         private void FormShow_Load(object sender, EventArgs e) {
             AddPrivateFont();
-
-            lnkTodayTemp.Font = new Font(PfcAwe.Families[0], 14, FontStyle.Bold);
-            lnkTomorrowTemp.Font = new Font(PfcAwe.Families[0], 14, FontStyle.Bold);
+            //lnkTodayWeather.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
+            //lnkTodayWeather.UseCompatibleTextRendering = true;
+            lnkTodayTemp.Font = new Font(PFCAwe.Families[0], 14, FontStyle.Bold);
+            lnkTodayTemp.UseCompatibleTextRendering = true;
+            //lnkTomorrowWeather.Font = new Font(PFCAwe.Families[0], 12, FontStyle.Bold);
+            //lnkTomorrowWeather.UseCompatibleTextRendering = true;
+            lnkTomorrowTemp.Font = new Font(PFCAwe.Families[0], 14, FontStyle.Bold);
+            lnkTomorrowTemp.UseCompatibleTextRendering = true;
         }
 
-        internal void SetTemp(string todayTemp, string tomorrowTemp) {
+        public void SetTemp(string todayTemp, string tomorrowTemp) {
             var blankArea = new LinkArea(0, 0);
             lnkTodayTemp.Text = todayTemp;
             lnkTodayTemp.LinkArea = blankArea;
@@ -36,7 +37,7 @@ namespace MikuWeather {
             lnkTomorrowTemp.LinkArea = blankArea;
         }
 
-        internal void SetWeather(string todayWeather, string tomorrowWeather) {
+        public void SetWeather(string todayWeather, string tomorrowWeather) {
             var blankArea = new LinkArea(0, 0);
             lnkTodayWeather.Text = todayWeather;
             lnkTodayWeather.LinkArea = blankArea;
@@ -44,9 +45,9 @@ namespace MikuWeather {
             lnkTomorrowWeather.LinkArea = blankArea;
         }
 
-        internal void SetPic(Bitmap todayPic, Bitmap tomorrowPic) {
-            picToday.BackgroundImage = todayPic;
-            picTomorrow.BackgroundImage = tomorrowPic;
+        public void SetPic(Bitmap todayPic, Bitmap tomorrowPic) {
+            picToday.Image = todayPic;
+            picTomorrow.Image = tomorrowPic;
         }
     }
 }

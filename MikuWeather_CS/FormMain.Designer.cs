@@ -31,71 +31,93 @@ namespace MikuWeather
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            components = new Container();
-            cmMenu = new ContextMenuStrip(components);
-            cmWebsite = new ToolStripMenuItem();
-            cmRefresh = new ToolStripMenuItem();
-            cmExit = new ToolStripMenuItem();
-            cmMenu.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.picBox = new System.Windows.Forms.PictureBox();
+            this.cmMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmWebsite = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmRefresh = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmExit = new System.Windows.Forms.ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
+            this.cmMenu.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // picBox
+            // 
+            this.picBox.ContextMenuStrip = this.cmMenu;
+            this.picBox.InitialImage = null;
+            this.picBox.Location = new System.Drawing.Point(0, 0);
+            this.picBox.Name = "picBox";
+            this.picBox.Size = new System.Drawing.Size(210, 210);
+            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox.TabIndex = 0;
+            this.picBox.TabStop = false;
+            this.picBox.Visible = false;
+            this.picBox.MouseEnter += new System.EventHandler(this.FormMain_MouseHover);
+            this.picBox.MouseLeave += new System.EventHandler(this.FormMain_MouseLeave);
+            this.picBox.MouseHover += new System.EventHandler(this.FormMain_MouseHover);
             // 
             // cmMenu
             // 
-            cmMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
-            cmMenu.Items.AddRange(new ToolStripItem[] { cmWebsite, cmRefresh, cmExit });
-            cmMenu.Name = "cmMenu";
-            cmMenu.Size = new System.Drawing.Size(234, 118);
+            this.cmMenu.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.cmMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmWebsite,
+            this.cmRefresh,
+            this.cmExit});
+            this.cmMenu.Name = "cmMenu";
+            this.cmMenu.Size = new System.Drawing.Size(190, 94);
             // 
             // cmWebsite
             // 
-            cmWebsite.Name = "cmWebsite";
-            cmWebsite.ShortcutKeyDisplayString = "";
-            cmWebsite.Size = new System.Drawing.Size(233, 38);
-            cmWebsite.Text = "Github Repo";
-            cmWebsite.Click += CmWebsite_Click;
+            this.cmWebsite.Name = "cmWebsite";
+            this.cmWebsite.ShortcutKeyDisplayString = "";
+            this.cmWebsite.Size = new System.Drawing.Size(240, 30);
+            this.cmWebsite.Text = "Github Repo";
+            this.cmWebsite.Click += new System.EventHandler(this.CmWebsite_Click);
             // 
             // cmRefresh
             // 
-            cmRefresh.Name = "cmRefresh";
-            cmRefresh.Size = new System.Drawing.Size(233, 38);
-            cmRefresh.Text = "更新";
-            cmRefresh.Click += CmRefresh_Click;
+            this.cmRefresh.Name = "cmRefresh";
+            this.cmRefresh.Size = new System.Drawing.Size(219, 30);
+            this.cmRefresh.Text = "更新";
+            this.cmRefresh.Click += new System.EventHandler(this.CmRefresh_Click);
             // 
             // cmExit
             // 
-            cmExit.Name = "cmExit";
-            cmExit.Size = new System.Drawing.Size(233, 38);
-            cmExit.Text = "退出";
-            cmExit.Click += CmExit_Click;
+            this.cmExit.Name = "cmExit";
+            this.cmExit.Size = new System.Drawing.Size(219, 30);
+            this.cmExit.Text = "退出";
+            this.cmExit.Click += new System.EventHandler(this.CmExit_Click);
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(14F, 31F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.Honeydew;
-            BackgroundImage = Properties.Resources.晴_日;
-            BackgroundImageLayout = ImageLayout.Zoom;
-            ClientSize = new System.Drawing.Size(200, 179);
-            ContextMenuStrip = cmMenu;
-            DoubleBuffered = true;
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 7, 4, 7);
-            MaximizeBox = false;
-            MinimizeBox = false;
-            Name = "FormMain";
-            ShowIcon = false;
-            ShowInTaskbar = false;
-            SizeGripStyle = SizeGripStyle.Hide;
-            StartPosition = FormStartPosition.Manual;
-            TopMost = true;
-            Load += FormMain_Load;
-            MouseLeave += FormMain_MouseLeave;
-            MouseHover += FormMain_MouseHover;
-            cmMenu.ResumeLayout(false);
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Honeydew;
+            this.ClientSize = new System.Drawing.Size(210, 210);
+            this.ContextMenuStrip = this.cmMenu;
+            this.Controls.Add(this.picBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FormMain";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.FormMain_Load);
+            this.MouseLeave += new System.EventHandler(this.FormMain_MouseLeave);
+            this.MouseHover += new System.EventHandler(this.FormMain_MouseHover);
+            ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
+            this.cmMenu.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private PictureBox picBox;
         private ContextMenuStrip cmMenu;
         private ToolStripMenuItem cmWebsite;
         private ToolStripMenuItem cmExit;

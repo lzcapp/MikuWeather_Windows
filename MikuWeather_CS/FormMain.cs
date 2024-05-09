@@ -25,16 +25,20 @@ namespace MikuWeather {
                 Size.Width, Size.Height);
 
             var dictLocation = DataQuery.GetDeviceLocation() ?? DataQuery.GetLocation();
-            _coordinate = dictLocation["coordinate"];
-            cmWebsite.Text = @"Github仓库";
-            cmExit.Text = @"退出";
-            UpdateData();
-            TransparentForm();
+            if (dictLocation == null) {
+                CmExit_Click(null, null);
+            } else {
+                _coordinate = dictLocation["coordinate"];
+                cmWebsite.Text = @"Github仓库";
+                cmExit.Text = @"退出";
+                UpdateData();
+                TransparentForm();
+            }
         }
 
         private void FormMain_MouseHover(object sender, EventArgs e) {
-            _frmShow.SetBounds(Location.X - _frmShow.Width / 2 + Width / 2 - 40,
-                Location.Y - _frmShow.Height - 20,
+            _frmShow.SetBounds(Location.X - _frmShow.Width / 2 + Width / 2 - 50,
+                Location.Y - _frmShow.Height - 10,
                 _frmShow.Width,
                 _frmShow.Height);
             _frmShow.Show();

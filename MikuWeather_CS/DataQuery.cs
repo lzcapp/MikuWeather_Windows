@@ -7,13 +7,16 @@ using System.Globalization;
 
 namespace MikuWeather {
     internal static class DataQuery {
-        private const string baidu_key = "edUWu66ddGavrmj9a6vcsa75";
-        private const string caiyun_key = "XX3OXGV581TJoQNP";
+        private const string BaiduKey = "edUWu66ddGavrmj9a6vcsa75";
 
+        private const string CaiyunKey = "XX3OXGV581TJoQNP";
+
+        // ReSharper disable once IdentifierTypo
         public static Dictionary<string, string> UpdateData_Caiyun(string coor) {
             var resultDict = new Dictionary<string, string>();
 
-            var client = new RestClient("http://api.caiyunapp.com/v2.6/" + caiyun_key + "/" + coor + "/weather?realtime&dailysteps=1");
+            // ReSharper disable once StringLiteralTypo
+            var client = new RestClient("http://api.caiyunapp.com/v2.6/" + CaiyunKey + "/" + coor + "/weather?realtime&dailysteps=1");
             var request = new RestRequest();
             var response = client.Execute(request);
             var result = response.Content;
@@ -58,7 +61,8 @@ namespace MikuWeather {
         public static Dictionary<string, string> GetLocation() {
             var dictResult = new Dictionary<string, string>();
 
-            var client = new RestClient("https://api.map.baidu.com/location/ip?ak=" + baidu_key + "&coor=gcj02");
+            // ReSharper disable once StringLiteralTypo
+            var client = new RestClient("https://api.map.baidu.com/location/ip?ak=" + BaiduKey + "&coor=gcj02");
             var request = new RestRequest();
             var response = client.Execute(request);
             var result = response.Content;
@@ -88,8 +92,12 @@ namespace MikuWeather {
             var dictResult = new Dictionary<string, string>();
             var watcher = new GeoCoordinateWatcher();
             watcher.TryStart(false, TimeSpan.FromMilliseconds(5000));
+            // ReSharper disable once IdentifierTypo
             var coor = watcher.Position.Location;
-            if (coor.Longitude.ToString(CultureInfo.InvariantCulture) == "NaN" || coor.Latitude.ToString(CultureInfo.InvariantCulture) == "NaN") return null;
+            if (coor.Longitude.ToString(CultureInfo.InvariantCulture) == "NaN" || coor.Latitude.ToString(CultureInfo.InvariantCulture) == "NaN") {
+                return null;
+            }
+
             var coordinate = coor.Longitude + "," + coor.Latitude;
             dictResult.Add("coordinate", coordinate);
             return dictResult;

@@ -63,10 +63,12 @@ namespace MikuWeather {
             var sunrise = DateTime.ParseExact(dict["sunrise"], "HH:mm", CultureInfo.CurrentCulture);
             var sunset = DateTime.ParseExact(dict["sunset"], "HH:mm", CultureInfo.CurrentCulture);
             bool isDay;
-            if (nowDt >= sunrise && nowDt < sunset)
+            if (nowDt >= sunrise && nowDt < sunset) {
                 isDay = true;
-            else
+            } else {
                 isDay = false;
+            }
+
             var todayPic = SwitchCaiyunPic(todayWeather, isDay);
             var tomorrowPic = SwitchCaiyunPic(tomorrowWeather, isDay);
 
@@ -124,7 +126,7 @@ namespace MikuWeather {
         }
 
         private static Bitmap SwitchCaiyunPic(string weather, bool isDay) {
-            if (isDay)
+            if (isDay) {
                 switch (weather) {
                     case "晴":
                     case "大风":
@@ -137,7 +139,8 @@ namespace MikuWeather {
                         return Resources.中雨_日;
                     case "小雪":
                         return Resources.雪_日;
-                } else
+                }
+            } else {
                 switch (weather) {
                     case "晴":
                     case "大风":
@@ -149,6 +152,8 @@ namespace MikuWeather {
                     case "小雪":
                         return Resources.雪_夜;
                 }
+            }
+
             switch (weather) {
                 case "阴":
                     return Resources.阴;

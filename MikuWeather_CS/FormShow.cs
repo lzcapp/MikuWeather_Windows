@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace MikuWeather {
     public partial class FormShow : Form {
+        // ReSharper disable once InconsistentNaming
         private static readonly PrivateFontCollection PFCAwe = new PrivateFontCollection();
 
         private static void AddPrivateFont() {

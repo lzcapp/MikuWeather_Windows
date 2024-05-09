@@ -13,16 +13,19 @@ namespace MikuWeather {
                     while (x < width && img.GetPixel(x, y).A <= alpha) {
                         x++;
                     }
+
                     var xStart = x;
                     while (x < width && img.GetPixel(x, y).A > alpha) {
                         x++;
                     }
+
                     var xEnd = x;
                     if (img.GetPixel(x - 1, y).A > alpha) {
                         grpPath.AddRectangle(new Rectangle(xStart, y, xEnd - xStart, 1));
                     }
                 }
             }
+
             return grpPath;
         }
     }

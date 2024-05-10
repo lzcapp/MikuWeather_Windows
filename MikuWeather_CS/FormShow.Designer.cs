@@ -70,7 +70,7 @@ namespace MikuWeather {
             // 
             this.lnkTodayWeather.BackColor = System.Drawing.Color.Transparent;
             this.lnkTodayWeather.Font = new System.Drawing.Font("微软雅黑", 12.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lnkTodayWeather.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lnkTodayWeather.ForeColor = System.Drawing.Color.Turquoise;
             this.lnkTodayWeather.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
             this.lnkTodayWeather.Location = new System.Drawing.Point(0, 267);
             this.lnkTodayWeather.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
@@ -112,7 +112,7 @@ namespace MikuWeather {
             // 
             this.lnkTomorrowWeather.BackColor = System.Drawing.Color.Transparent;
             this.lnkTomorrowWeather.Font = new System.Drawing.Font("微软雅黑", 12.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lnkTomorrowWeather.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.lnkTomorrowWeather.ForeColor = System.Drawing.Color.Turquoise;
             this.lnkTomorrowWeather.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
             this.lnkTomorrowWeather.Location = new System.Drawing.Point(330, 267);
             this.lnkTomorrowWeather.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
@@ -156,7 +156,7 @@ namespace MikuWeather {
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(1000, 600);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormShow";

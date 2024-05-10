@@ -114,6 +114,12 @@
       <DependentUpon>FormShow.cs</DependentUpon>
     </Compile>
     <Compile Include="Caiyun.cs" />
+    <Compile Include="FrmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMessage.Designer.cs">
+      <DependentUpon>FrmMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormMain.resx">
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormShow.resx">
       <DependentUpon>FormShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMessage.resx">
+      <DependentUpon>FrmMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -150,6 +159,7 @@
   <ItemGroup>
     <Content Include="icon.ico" />
     <Content Include="Resources\bg_wdt.png" />
+    <None Include="Resources\bg_wdt_nt.png" />
     <None Include="Resources\多云_日.png" />
     <None Include="Resources\多云_夜.png" />
     <None Include="Resources\中雨_日.png" />

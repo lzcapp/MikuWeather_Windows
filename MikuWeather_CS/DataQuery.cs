@@ -55,6 +55,17 @@ namespace MikuWeather {
             var sunset = daily.astro[0].sunset.time;
             resultDict.Add("sunrise", sunrise);
             resultDict.Add("sunset", sunset);
+
+            var strAlertTitle = "";
+            var strAlertDescription = "";
+            if (jObject.result.alert.content.Length > 0) {
+                strAlertTitle = jObject.result.alert.content[0].title;
+                strAlertDescription = jObject.result.alert.content[0].description;
+            }
+
+            resultDict.Add("AlertTitle", strAlertTitle);
+            resultDict.Add("AlertDescription", strAlertDescription);
+
             return resultDict;
         }
 

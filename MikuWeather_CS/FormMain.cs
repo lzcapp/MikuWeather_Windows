@@ -27,7 +27,8 @@ namespace MikuWeather {
             var dictLocation = DataQuery.GetDeviceLocation() ?? DataQuery.GetLocation();
             if (dictLocation == null) {
                 CmExit_Click(null, null);
-            } else {
+            }
+            else {
                 _coordinate = dictLocation["coordinate"];
                 cmWebsite.Text = @"Github仓库";
                 cmExit.Text = @"退出";
@@ -69,7 +70,8 @@ namespace MikuWeather {
             bool isDay;
             if (nowDt >= sunrise && nowDt < sunset) {
                 isDay = true;
-            } else {
+            }
+            else {
                 isDay = false;
             }
 
@@ -79,9 +81,19 @@ namespace MikuWeather {
             _frmShow.SetTemp(todayTemp, tomorrowTemp);
             _frmShow.SetWeather(todayWeather, tomorrowWeather);
             _frmShow.SetPic(todayPic, tomorrowPic);
+
             picBox.Image = todayPic;
             picBox.Size = new Size(210, 210);
+
             TransparentForm();
+
+
+            var strAlertTitle = dict["AlertTitle"];
+            var strAlertDescription = dict["AlertDescription"];
+            if (!strAlertTitle.Equals("")) {
+                var frmMessage = new FrmMessage(strAlertTitle, strAlertDescription);
+                frmMessage.Show();
+            }
         }
 
         private static string SwitchCaiyun(string weather) {
@@ -144,7 +156,8 @@ namespace MikuWeather {
                     case "小雪":
                         return Resources.雪_日;
                 }
-            } else {
+            }
+            else {
                 switch (weather) {
                     case "晴":
                     case "大风":

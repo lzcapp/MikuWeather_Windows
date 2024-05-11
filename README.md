@@ -3,5 +3,4 @@
 
 ## 应用截图
 
-| ![Screenshot](./Screenshot.png) | ![Screenshot2](./Screenshot2.png) |
-| ---- | ---- |
+<img src="./Screenshot.png" width="50%"><img src="./Screenshot2.png" width="50%">

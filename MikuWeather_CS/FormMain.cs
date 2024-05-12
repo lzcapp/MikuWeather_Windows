@@ -87,13 +87,13 @@ namespace MikuWeather {
 
             TransparentForm();
 
-
             var strAlertTitle = dict["AlertTitle"];
             var strAlertDescription = dict["AlertDescription"];
-            if (!strAlertTitle.Equals("")) {
-                var frmMessage = new FrmMessage(strAlertTitle, strAlertDescription);
-                frmMessage.Show();
-            }
+            if (strAlertTitle.Equals("")) return;
+            var frmMessage = new FrmMessage();
+            frmMessage.SetTitle(strAlertTitle);
+            frmMessage.SetDescription(strAlertDescription);
+            frmMessage.Show();
         }
 
         private static string SwitchCaiyun(string weather) {

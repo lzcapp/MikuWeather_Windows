@@ -29,7 +29,14 @@ namespace MikuWeather {
                 CmExit_Click(null, null);
             }
             else {
-                _coordinate = dictLocation["coordinate"];
+                try
+                {
+                    _coordinate = dictLocation["coordinate"];
+                } catch (Exception)
+                {
+                    Close();
+                    Environment.Exit(0);
+                }
                 cmWebsite.Text = @"Github仓库";
                 cmExit.Text = @"退出";
                 UpdateData();

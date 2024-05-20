@@ -58,9 +58,11 @@ namespace MikuWeather {
 
             var strAlertTitle = "";
             var strAlertDescription = "";
-            if (jObject.result.alert.content.Length > 0) {
-                strAlertTitle = jObject.result.alert.content[0].title;
-                strAlertDescription = jObject.result.alert.content[0].description;
+            if (jObject.result.alert != null) {
+                if (jObject.result.alert.content.Length > 0) {
+                    strAlertTitle = jObject.result.alert.content[0].title;
+                    strAlertDescription = jObject.result.alert.content[0].description;
+                }
             }
 
             resultDict.Add("AlertTitle", strAlertTitle);
